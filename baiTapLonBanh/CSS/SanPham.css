@@ -1,0 +1,297 @@
+﻿
+/* ==============================
+   SWEETCAKE - PRODUCT PAGE
+   ============================== */
+
+.product-page {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 32px 0 64px;
+    color: #35282c;
+}
+
+    .product-page section {
+        margin-bottom: 30px;
+    }
+
+    .product-page h1,
+    .product-page h2,
+    .product-page p {
+        margin-top: 0;
+    }
+
+    .product-page h1 {
+        margin-bottom: 12px;
+        color: #c94f78;
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .product-page h2 {
+        margin-bottom: 18px;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    /* Banner: tạm dùng nền CSS vì chưa có ảnh */
+
+    .product-page .product-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 48px 42px;
+        border-radius: 20px;
+        background: linear-gradient(120deg, #fff0f4, #fff8ec);
+    }
+
+        .product-page .product-hero p {
+            margin-bottom: 0;
+            color: #725861;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .product-page .product-hero::after {
+            position: absolute;
+            top: -45px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(231, 121, 157, 0.14);
+            content: "";
+            pointer-events: none;
+        }
+
+    /* Danh mục bánh */
+
+    .product-page .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .product-page .category-list li {
+            padding: 10px 18px;
+            border: 1px solid #efdce2;
+            border-radius: 24px;
+            background: #fff;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+            .product-page .category-list li a {
+                color: #694853;
+                text-decoration: none;
+            }
+
+            .product-page .category-list li:hover,
+            .product-page .category-list li.active {
+                border-color: #d95f89;
+                background: #d95f89;
+            }
+
+                .product-page .category-list li:hover a,
+                .product-page .category-list li.active a {
+                    color: #fff;
+                }
+
+    /* Ô tìm kiếm */
+
+    .product-page .product-search-section input {
+        display: block;
+        width: 100%;
+        max-width: 520px;
+        box-sizing: border-box;
+        padding: 12px 16px;
+        border: 1px solid #e7d5dc;
+        border-radius: 10px;
+        outline: none;
+        background: #fff;
+        color: #35282c;
+        font: inherit;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        .product-page .product-search-section input:focus {
+            border-color: #d95f89;
+            box-shadow: 0 0 0 3px rgba(217, 95, 137, 0.12);
+        }
+
+    /* Chọn số lượng và sắp xếp */
+
+    .product-page .product-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        border: 1px solid #f0e4e8;
+        border-radius: 12px;
+        background: #fff9fb;
+    }
+
+        .product-page .product-toolbar label {
+            color: #634851;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .product-page .product-toolbar select {
+            padding: 9px 30px 9px 12px;
+            border: 1px solid #e7d5dc;
+            border-radius: 8px;
+            background: #fff;
+            color: #35282c;
+            font: inherit;
+            cursor: pointer;
+        }
+
+    /* Lưới sản phẩm */
+
+    .product-page #danhSachBanh {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    .product-page .the_san_pham {
+        min-width: 0;
+        padding: 14px;
+        overflow: hidden;
+        border: 1px solid #f0e2e7;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 4px 16px rgba(92, 45, 62, 0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .product-page .the_san_pham:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(92, 45, 62, 0.12);
+        }
+
+        /* Ẩn ảnh lỗi tạm thời, tạo vùng ảnh thay thế */
+
+        .product-page .the_san_pham img,
+        .product-page .product-hero img {
+            display: none;
+        }
+
+        .product-page .the_san_pham::before {
+            display: grid;
+            height: 210px;
+            margin-bottom: 18px;
+            place-items: center;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #fff0f4, #fff5e8);
+            content: "🧁";
+            font-size: 58px;
+        }
+
+        .product-page .the_san_pham .ten_banh {
+            margin-bottom: 10px;
+            color: #4b303a;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .product-page .the_san_pham p:not(.ten_banh) {
+            margin-bottom: 16px;
+            color: #c94f78;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .product-page .the_san_pham a {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid #d95f89;
+            border-radius: 8px;
+            background: #d95f89;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+            .product-page .the_san_pham a:hover {
+                background: #bd426d;
+            }
+
+    /* Phân trang */
+
+    .product-page .product-pagination-section {
+        margin-top: 32px;
+    }
+
+    .product-page .phan_trang {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+        .product-page .phan_trang button {
+            min-width: 40px;
+            height: 40px;
+            padding: 0 12px;
+            border: 1px solid #ead6de;
+            border-radius: 9px;
+            background: #fff;
+            color: #694853;
+            font: inherit;
+            cursor: pointer;
+        }
+
+            .product-page .phan_trang button:hover,
+            .product-page .phan_trang button.active {
+                border-color: #d95f89;
+                background: #d95f89;
+                color: #fff;
+            }
+
+/* Responsive */
+
+@media (max-width: 850px) {
+    .product-page #danhSachBanh {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .product-page .product-hero {
+        padding: 36px 28px;
+    }
+}
+
+@media (max-width: 520px) {
+    .product-page {
+        width: calc(100% - 28px);
+        padding-top: 22px;
+    }
+
+        .product-page h1 {
+            font-size: 29px;
+        }
+
+        .product-page h2 {
+            font-size: 20px;
+        }
+
+        .product-page #danhSachBanh {
+            grid-template-columns: 1fr;
+        }
+
+        .product-page .the_san_pham::before {
+            height: 190px;
+        }
+
+        .product-page .product-hero {
+            padding: 30px 22px;
+        }
+}

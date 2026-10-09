@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="baiTapLonBanh.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="vi">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SweetCake</title>
+
+    <link href="CSS/Site.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="TrangChu.aspx">SweetCake</a>
+                </div>
+
+                <nav class="menu">
+                    <a href="TrangChu.aspx">Trang chủ</a>
+                    <a href="SanPham.aspx">Sản phẩm</a>
+                    <a href="GioiThieu.aspx">Giới thiệu</a>
+                    <a href="TuVan.aspx">Tư vấn</a>
+                    <a href="GioHang.aspx">Giỏ hàng</a>
+                    <a href="TaiKhoan.aspx">Tài Khoản</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© 2026 SweetCake</p>
+                <p>Website bán bánh</p>
+            </div>
+        </footer>
+
+    </form>
+
+</body>
+</html>
