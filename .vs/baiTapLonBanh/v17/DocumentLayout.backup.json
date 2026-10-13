@@ -1,145 +1,137 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\",
+  "WorkspaceRootPath": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|c:\\users\\adminn\\source\\repos\\baitaplonweb\\baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\trangchu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\trangchu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|c:\\users\\admin\\source\\repos\\baitaplonweb\\baitaplonbanh\\chitietsanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\chitietsanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\sanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\sanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\sanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangnhap.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangnhap.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\trangchu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\trangchu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\dangnhapvadangky.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\dangnhapvadangky.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangky.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangky.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangky.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangky.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangnhap.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangnhap.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\tintuc.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\tintuc.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\gioithieu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\gioithieu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\chitietsanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\chitietsanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\gioithieu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\gioithieu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\trangchu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\trangchu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\giohang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\giohang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\chitietsanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\chitietsanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dathang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dathang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\dathang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\dathang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\giohang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\giohang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\chitietsanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\chitietsanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\tuvan.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\tuvan.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\sanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\sanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\sanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanphambanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\trangchu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\trangchu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangnhap.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangnhap.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\trangchu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\trangchu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\dangnhapvadangky.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\dangnhapvadangky.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangky.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangky.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangky.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangky.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dangnhap.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dangnhap.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\tintuc.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\tintuc.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\gioithieu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\gioithieu.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\chitietsanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\chitietsanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\gioithieu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\gioithieu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\trangchu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\trangchu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dathang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\giohang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\giohang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\chitietsanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\js\\chitietsanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\dathang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\dathang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\dathang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\dathang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\giohang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\giohang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\giohang.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\chitietsanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\chitietsanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\tuvan.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\tuvan.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanphambanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanphambanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\gioithieu.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\gioithieu.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\gioithieu.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\tuvan.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\tuvan.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\tuvan.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -155,112 +147,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TrangChu.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TrangChu.aspx",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\TrangChu.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TrangChu.aspx",
-              "RelativeToolTip": "baiTapLonBanh\\TrangChu.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-09T13:18:18.588Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Site.js",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\Site.js",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\JS\\Site.js",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\Site.js",
-              "RelativeToolTip": "baiTapLonBanh\\JS\\Site.js",
-              "ViewState": "AgIAAMQAAAAAAAAAAAAkwAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-12T03:10:34.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Site.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\Site.css",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\Site.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\Site.css",
-              "RelativeToolTip": "baiTapLonBanh\\CSS\\Site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-10-09T13:30:49.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SanPham.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\SanPham.css",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\SanPham.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\SanPham.css",
-              "RelativeToolTip": "baiTapLonBanh\\CSS\\SanPham.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-10-09T15:01:42.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SanPham.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\SanPham.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx",
-              "RelativeToolTip": "baiTapLonBanh\\SanPham.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-09T13:48:40.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "SanPham.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\SanPham.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx.cs",
               "RelativeToolTip": "baiTapLonBanh\\SanPham.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowFAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-09T13:49:53.567Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChiTietSanPham.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\ChiTietSanPham.aspx.cs",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\ChiTietSanPham.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\ChiTietSanPham.aspx.cs",
-              "RelativeToolTip": "baiTapLonBanh\\ChiTietSanPham.aspx.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAYwJAAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-09T13:47:42.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Site.Master",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\Site.Master",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Site.Master*",
-              "RelativeToolTip": "baiTapLonBanh\\Site.Master*",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-09T13:19:27.111Z",
+              "WhenOpened": "2026-10-09T13:49:53.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "TinTuc.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TinTuc.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TinTuc.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\TinTuc.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TinTuc.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TinTuc.aspx",
               "RelativeToolTip": "baiTapLonBanh\\TinTuc.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -270,9 +173,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "TinTuc.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TinTuc.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TinTuc.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\TinTuc.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TinTuc.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TinTuc.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\TinTuc.css",
               "ViewState": "AgIAADsBAAAAAAAAAAAAwPMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -280,23 +183,89 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NguoiDung.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\NguoiDung.cs",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\NguoiDung.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\NguoiDung.cs",
-              "RelativeToolTip": "baiTapLonBanh\\NguoiDung.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Global.asax.cs",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Global.asax.cs",
+              "RelativeToolTip": "baiTapLonBanh\\Global.asax.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAGoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T13:03:28.385Z"
+              "WhenOpened": "2026-10-09T13:40:30.837Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
+              "Title": "SanPham.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\SanPham.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx",
+              "RelativeToolTip": "baiTapLonBanh\\SanPham.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-10-09T13:48:40.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SanPham.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\SanPham.css",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\SanPham.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\SanPham.css",
+              "RelativeToolTip": "baiTapLonBanh\\CSS\\SanPham.css",
+              "ViewState": "AgIAACUCAAAAAAAAAAAuwFMCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-09T15:01:42.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SanPham.js",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\SanPham.js",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\JS\\SanPham.js",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\SanPham.js",
+              "RelativeToolTip": "baiTapLonBanh\\JS\\SanPham.js",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAkwOYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-10-09T14:07:42.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Site.Master",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Site.Master",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\Site.Master",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Site.Master",
+              "RelativeToolTip": "baiTapLonBanh\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-10-09T13:19:27.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrangChu.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TrangChu.aspx",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\TrangChu.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TrangChu.aspx",
+              "RelativeToolTip": "baiTapLonBanh\\TrangChu.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-10-09T13:18:18.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DangNhap.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\DangNhap.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx",
               "RelativeToolTip": "baiTapLonBanh\\DangNhap.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -304,11 +273,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
+              "Title": "Site.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\Site.css",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\Site.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\Site.css",
+              "RelativeToolTip": "baiTapLonBanh\\CSS\\Site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-09T13:30:49.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Site.js",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\Site.js",
+              "RelativeDocumentMoniker": "baiTapLonBanh\\JS\\Site.js",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\Site.js",
+              "RelativeToolTip": "baiTapLonBanh\\JS\\Site.js",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAkwAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-10-12T03:10:34.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "DangNhap.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\DangNhap.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangNhap.aspx.cs",
               "RelativeToolTip": "baiTapLonBanh\\DangNhap.aspx.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -316,11 +309,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DangKy.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\DangKy.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx",
               "RelativeToolTip": "baiTapLonBanh\\DangKy.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -328,11 +321,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DangNhapvaDangKy.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DangNhapvaDangKy.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DangNhapvaDangKy.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\DangNhapvaDangKy.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DangNhapvaDangKy.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DangNhapvaDangKy.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\DangNhapvaDangKy.css",
               "ViewState": "AgIAAF4AAAAAAAAAAAAqwH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -340,11 +333,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TrangChu.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TrangChu.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TrangChu.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\TrangChu.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TrangChu.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TrangChu.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\TrangChu.css",
               "ViewState": "AgIAAMUCAAAAAAAAAAAqwN4CAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -352,11 +345,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "DangKy.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\DangKy.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DangKy.aspx.cs",
               "RelativeToolTip": "baiTapLonBanh\\DangKy.aspx.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -366,9 +359,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "GioiThieu.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\GioiThieu.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx",
               "RelativeToolTip": "baiTapLonBanh\\GioiThieu.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -378,9 +371,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "TrangChu.js",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\TrangChu.js",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\TrangChu.js",
               "RelativeDocumentMoniker": "baiTapLonBanh\\JS\\TrangChu.js",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\TrangChu.js",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\TrangChu.js",
               "RelativeToolTip": "baiTapLonBanh\\JS\\TrangChu.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -390,9 +383,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "GioiThieu.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioiThieu.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioiThieu.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\GioiThieu.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioiThieu.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioiThieu.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\GioiThieu.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAPUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -402,9 +395,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "ChiTietSanPham.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\ChiTietSanPham.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\ChiTietSanPham.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\ChiTietSanPham.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\ChiTietSanPham.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\ChiTietSanPham.aspx",
               "RelativeToolTip": "baiTapLonBanh\\ChiTietSanPham.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -414,9 +407,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "DatHang.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\DatHang.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx",
               "RelativeToolTip": "baiTapLonBanh\\DatHang.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -424,11 +417,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 31,
               "Title": "GioiThieu.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\GioiThieu.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioiThieu.aspx.cs",
               "RelativeToolTip": "baiTapLonBanh\\GioiThieu.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -438,9 +431,9 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "GioHang.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\GioHang.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx",
               "RelativeToolTip": "baiTapLonBanh\\GioHang.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -450,9 +443,9 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "ChiTietSanPham.js",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\ChiTietSanPham.js",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\ChiTietSanPham.js",
               "RelativeDocumentMoniker": "baiTapLonBanh\\JS\\ChiTietSanPham.js",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\ChiTietSanPham.js",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\ChiTietSanPham.js",
               "RelativeToolTip": "baiTapLonBanh\\JS\\ChiTietSanPham.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -462,9 +455,9 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "GioHang.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\GioHang.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\GioHang.aspx.cs",
               "RelativeToolTip": "baiTapLonBanh\\GioHang.aspx.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAYwG8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -474,9 +467,9 @@
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "GioHang.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioHang.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioHang.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\GioHang.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioHang.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\GioHang.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\GioHang.css",
               "ViewState": "AgIAAFoAAAAAAAAAAAAAwHwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -486,9 +479,9 @@
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "DatHang.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\DatHang.aspx.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\DatHang.aspx.cs",
               "RelativeToolTip": "baiTapLonBanh\\DatHang.aspx.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -498,9 +491,9 @@
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "DatHang.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DatHang.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DatHang.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\DatHang.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DatHang.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\DatHang.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\DatHang.css",
               "ViewState": "AgIAAHQAAAAAAAAAAAAAwJYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -510,9 +503,9 @@
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "ChiTietSanPham.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\ChiTietSanPham.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\ChiTietSanPham.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\ChiTietSanPham.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\ChiTietSanPham.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\ChiTietSanPham.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\ChiTietSanPham.css",
               "ViewState": "AgIAAJMAAAAAAAAAAAAswMQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -520,23 +513,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Global.asax.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Global.asax.cs",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\Global.asax.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\Global.asax.cs",
-              "RelativeToolTip": "baiTapLonBanh\\Global.asax.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwDoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-09T13:40:30.837Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 32,
               "Title": "TuVan.aspx",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TuVan.aspx",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TuVan.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\TuVan.aspx",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TuVan.aspx",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\TuVan.aspx",
               "RelativeToolTip": "baiTapLonBanh\\TuVan.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -544,11 +525,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "TuVan.css",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TuVan.css",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TuVan.css",
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\TuVan.css",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TuVan.css",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\TuVan.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\TuVan.css",
               "ViewState": "AgIAAC4AAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -556,23 +537,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "SanPham.js",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\SanPham.js",
-              "RelativeDocumentMoniker": "baiTapLonBanh\\JS\\SanPham.js",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\JS\\SanPham.js",
-              "RelativeToolTip": "baiTapLonBanh\\JS\\SanPham.js",
-              "ViewState": "AgIAAMgAAAAAAAAAAAAIwNsAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-09T14:07:42.619Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 30,
               "Title": "SanPhamBanh.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPhamBanh.cs",
+              "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPhamBanh.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\SanPhamBanh.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPhamBanh.cs",
+              "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPhamBanh.cs",
               "RelativeToolTip": "baiTapLonBanh\\SanPhamBanh.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

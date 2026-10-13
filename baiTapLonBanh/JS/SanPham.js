@@ -1,20 +1,38 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     // 1. Lấy các phần tử HTML
-    var nutMousse = document.getElementById("banh_mousse");
-    var nutSinhNhat = document.getElementById("banh_sinh_nhat");
-    var nutTatCa = document.getElementById("tat_ca_loai_banh");
+    // Các nút "Loại bánh": Tất cả, Bánh kem, Bánh tươi, Bánh mì (thẻ li trong .category-list)
+    // Mỗi thẻ li có id trùng với class của thẻ bánh: banh_kem, banh_tuoi, banh_mi
+    // Riêng "Tất cả" có id tat_ca_loai_banh (không lọc)
+    var cacNutLoai = document.querySelectorAll(".category-list li");
 
     var danhSachBanh = document.getElementsByClassName("the_san_pham");
     var oTimKiem = document.getElementById("timKiemBanh");
     var selectSoLuong = document.getElementById("soLuongHienThi");
     var selectSapXep = document.getElementById("sapXepSanPham");
     var phanTrang = document.getElementById("phanTrang");
+    var khungDanhSach = document.getElementById("danhSachBanh");
+
+    // Dòng thông báo khi không có bánh phù hợp
+    var thongBaoTrong = document.createElement("p");
+    thongBaoTrong.className = "khong-co-banh";
+    thongBaoTrong.textContent = "Không tìm thấy bánh phù hợp.";
+    thongBaoTrong.style.display = "none";
+    khungDanhSach.parentNode.insertBefore(thongBaoTrong, khungDanhSach);
 
     // 2. Lưu trạng thái hiện tại
     var loaiDangChon = "";
     var tuKhoaDangTim = "";
     var soLuongHienThi = selectSoLuong.value;
     var trangHienTai = 1;
+
+    // Bỏ dấu tiếng Việt, chữ thường (để gõ "banh kem" vẫn tìm ra "Bánh Kem")
+    function boDau(chuoi) {
+        return (chuoi || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d");
+    }
 
     // 3. Hàm lọc, sắp xếp và phân trang sản phẩm
     function locSanPham() {
@@ -61,10 +79,10 @@
                 card.getElementsByClassName("ten_banh")[0];
 
             var tenBanh = phanTuTen
-                ? phanTuTen.innerText.toLowerCase()
+                ? boDau(phanTuTen.textContent)
                 : "";
 
-            var dungTuKhoa = tenBanh.includes(tuKhoaDangTim);
+            var dungTuKhoa = tenBanh.indexOf(tuKhoaDangTim) !== -1;
 
             if (dungLoai && dungTuKhoa) {
                 mangLoc.push(card);
@@ -84,9 +102,17 @@
             ? Math.ceil(mangLoc.length / soMoiTrang)
             : 1;
 
+        if (soTrang < 1) {
+            soTrang = 1;
+        }
+
         // Đảm bảo trang hiện tại hợp lệ
         if (trangHienTai > soTrang) {
             trangHienTai = soTrang;
+        }
+
+        if (trangHienTai < 1) {
+            trangHienTai = 1;
         }
 
         // Ẩn tất cả sản phẩm trước
@@ -105,87 +131,97 @@
             mangLoc[m].style.display = "";
         }
 
+        // Báo khi không có bánh nào phù hợp
+        thongBaoTrong.style.display = mangLoc.length === 0 ? "" : "none";
+
         // Tạo nút phân trang
         var html = "";
 
         if (mangLoc.length > 0 && soTrang > 1) {
-            // Nút trang trước
+            // Nút trang trước (mờ đi khi đang ở trang 1)
             if (trangHienTai > 1) {
                 html +=
                     '<button type="button" data-page="' +
                     (trangHienTai - 1) +
                     '">&lt;</button>';
+            } else {
+                html += '<button type="button" disabled>&lt;</button>';
             }
 
-            // Các nút số trang
+            // Các nút số trang (nhiều trang thì rút gọn bằng dấu ...)
+            var soTruoc = 0;
+
             for (var p = 1; p <= soTrang; p++) {
-                html +=
-                    '<button type="button" data-page="' +
-                    p +
-                    '" class="' +
-                    (p === trangHienTai ? "active" : "") +
-                    '">' +
-                    p +
-                    '</button>';
+                var hienNut =
+                    soTrang <= 7 ||
+                    p === 1 ||
+                    p === soTrang ||
+                    Math.abs(p - trangHienTai) <= 1;
+
+                if (hienNut) {
+                    if (soTruoc && p - soTruoc > 1) {
+                        html += '<span class="dau-cham">&hellip;</span>';
+                    }
+
+                    html +=
+                        '<button type="button" data-page="' +
+                        p +
+                        '" class="' +
+                        (p === trangHienTai ? "active" : "") +
+                        '">' +
+                        p +
+                        '</button>';
+
+                    soTruoc = p;
+                }
             }
 
-            // Nút trang tiếp theo
+            // Nút trang tiếp theo (mờ đi khi đang ở trang cuối)
             if (trangHienTai < soTrang) {
                 html +=
                     '<button type="button" data-page="' +
                     (trangHienTai + 1) +
                     '">&gt;</button>';
+            } else {
+                html += '<button type="button" disabled>&gt;</button>';
             }
         }
 
         phanTrang.innerHTML = html;
     }
 
-    // 4. Bấm Bánh Mousse
-    nutMousse.onclick = function () {
-        loaiDangChon = "banh_mousse";
+    // 4. Bấm vào một loại bánh (Tất cả / Bánh kem / Bánh tươi / Bánh mì)
+    //    -> nút đó được thêm class "active" (hồng lên), các nút khác bỏ "active"
+    function chonLoai(nutDuocBam) {
+        // "Tất cả" thì không lọc, còn lại lọc theo id (trùng với class của thẻ bánh)
+        loaiDangChon = nutDuocBam.id === "tat_ca_loai_banh" ? "" : nutDuocBam.id;
         trangHienTai = 1;
 
-        nutMousse.classList.add("active");
-        nutSinhNhat.classList.remove("active");
-        nutTatCa.classList.remove("active");
+        for (var i = 0; i < cacNutLoai.length; i++) {
+            cacNutLoai[i].classList.remove("active");
+        }
+
+        nutDuocBam.classList.add("active");
 
         locSanPham();
-    };
+    }
 
-    // 5. Bấm Bánh Sinh Nhật
-    nutSinhNhat.onclick = function () {
-        loaiDangChon = "banh_sinh_nhat";
-        trangHienTai = 1;
+    for (var n = 0; n < cacNutLoai.length; n++) {
+        cacNutLoai[n].onclick = function (e) {
+            e.preventDefault(); // không nhảy lên đầu trang do href="#"
+            chonLoai(this);
+        };
+    }
 
-        nutSinhNhat.classList.add("active");
-        nutMousse.classList.remove("active");
-        nutTatCa.classList.remove("active");
-
-        locSanPham();
-    };
-
-    // 6. Bấm Tất cả
-    nutTatCa.onclick = function () {
-        loaiDangChon = "";
-        trangHienTai = 1;
-
-        nutTatCa.classList.add("active");
-        nutMousse.classList.remove("active");
-        nutSinhNhat.classList.remove("active");
-
-        locSanPham();
-    };
-
-    // 7. Tìm kiếm khi nhập nội dung
+    // 5. Tìm kiếm khi nhập nội dung
     oTimKiem.oninput = function () {
-        tuKhoaDangTim = oTimKiem.value.trim().toLowerCase();
+        tuKhoaDangTim = boDau(oTimKiem.value.trim());
         trangHienTai = 1;
 
         locSanPham();
     };
 
-    // 8. Thay đổi số lượng sản phẩm hiển thị
+    // 6. Thay đổi số lượng sản phẩm hiển thị
     selectSoLuong.onchange = function () {
         soLuongHienThi = selectSoLuong.value;
         trangHienTai = 1;
@@ -193,14 +229,14 @@
         locSanPham();
     };
 
-    // 9. Thay đổi thứ tự sắp xếp
+    // 7. Thay đổi thứ tự sắp xếp
     selectSapXep.onchange = function () {
         trangHienTai = 1;
 
         locSanPham();
     };
 
-    // 10. Xử lý khi bấm nút phân trang
+    // 8. Xử lý khi bấm nút phân trang
     phanTrang.onclick = function (e) {
         var nut = e.target.closest("button[data-page]");
 
@@ -211,10 +247,21 @@
             );
 
             locSanPham();
+
+            // Cuộn lên đầu danh sách bánh
+            var khuVuc = document.querySelector(".product-list-section");
+            if (khuVuc) {
+                khuVuc.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
     };
 
-    // 11. Mặc định chọn Tất cả và hiển thị sản phẩm
-    nutTatCa.classList.add("active");
+    // 9. Mặc định chọn Tất cả và hiển thị sản phẩm
+    var nutTatCa = document.getElementById("tat_ca_loai_banh");
+
+    if (nutTatCa) {
+        nutTatCa.classList.add("active");
+    }
+
     locSanPham();
 });
