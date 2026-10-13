@@ -17,7 +17,7 @@
                 <img id="anhBanh"
                      runat="server"
                      class="anh_banh_chinh"
-                     src="#"
+                     src="image/SanPham/banh3_SP.ipg"
                      alt="Ảnh sản phẩm" />
             </div>
 

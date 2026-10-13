@@ -100,7 +100,7 @@
 
             <article class="product">
                 <div class="product-image">
-                    <img src="images/banh3.jpg" alt="Bánh mousse Chanh leo" />
+                    <img src="image/TrangChu/banhchanhleo_TC.jpg" alt="Bánh mousse Chanh leo" />
                     <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 <div class="product-info">
@@ -119,7 +119,7 @@
 
             <article class="product">
                 <div class="product-image">
-                    <img src="images/banh4.jpg" alt="Bánh kem Vàng anh" />
+                    <img src="image/TrangChu/banhvanganh_TC.jpg" alt="Bánh kem Vàng anh" />
                     <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 <div class="product-info">
@@ -191,7 +191,7 @@
 
             <article class="product">
                 <div class="product-image">
-                    <img src="images/banh5.jpg"
+                    <img src="image/TrangChu/hotdog_TC.jpg"
                          alt="Bánh mì hấp xúc xích phô mai" />
                     <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
                 </div>
@@ -211,7 +211,7 @@
 
             <article class="product">
                 <div class="product-image">
-                    <img src="images/banh6.jpg" alt="Pizza gà nướng kiểu Thái" />
+                    <img src="image/TrangChu/pizza_TC.jpg" alt="Pizza gà nướng kiểu Thái" />
                     <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 <div class="product-info">
@@ -230,7 +230,7 @@
 
             <article class="product">
                 <div class="product-image">
-                    <img src="images/banh7.jpg" alt="Bánh mì xúc xích đại" />
+                    <img src="image/TrangChu/xucxich_TC.jpg" alt="Bánh mì xúc xích đại" />
                     <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 <div class="product-info">
@@ -249,7 +249,7 @@
 
             <article class="product">
                 <div class="product-image">
-                    <img src="images/banh8.jpg" alt="Bánh croissant bơ" />
+                    <img src="image/TrangChu/croissant_TC.jpg" alt="Bánh croissant bơ" />
                     <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
                 </div>
                 <div class="product-info">
@@ -273,7 +273,7 @@
     <section class="story-section">
         <div class="story-card">
             <div class="story-photo">
-                <img src="images/baiviet1.jpg" alt="Những chiếc bánh ngọt SweetCake" />
+                <img src="image/TrangChu/cacloai_TC.jpg" alt="Những chiếc bánh ngọt SweetCake" />
             </div>
             <div class="story-copy">
                 <span class="section-kicker">VÌ SAO CHỌN SWEETCAKE?</span>
@@ -334,7 +334,7 @@
 
             <article class="news-item">
                 <div class="news-image">
-                    <img src="images/baiviet1.jpg" alt="Ngọt ngào gửi trao" />
+                    <img src="image/TrangChu/baiviet4_TC.jpg" alt="Ngọt ngào gửi trao" />
                 </div>
                 <div class="news-content">
                     <span class="news-category"><i class="fa-solid fa-heart"></i> Câu chuyện ngọt ngào</span>
@@ -345,7 +345,7 @@
 
             <article class="news-item">
                 <div class="news-image">
-                    <img src="images/baiviet2.jpg" alt="Mua 1 tặng 1 bánh Trung Thu" />
+                    <img src="image/TrangChu/banhtrungthu_TC.jpg" alt="Mua 1 tặng 1 bánh Trung Thu" />
                 </div>
                 <div class="news-content">
                     <span class="news-category"><i class="fa-solid fa-gift"></i> Ưu đãi</span>
@@ -356,7 +356,7 @@
 
             <article class="news-item">
                 <div class="news-image">
-                    <img src="images/baiviet3.jpg" alt="Bánh Trung Thu ưu đãi 15%" />
+                    <img src="image/TrangChu/banhtrungthu2_TC.jpg" alt="Bánh Trung Thu ưu đãi 15%" />
                 </div>
                 <div class="news-content">
                     <span class="news-category"><i class="fa-solid fa-tag"></i> Khuyến mãi</span>
@@ -367,7 +367,7 @@
 
             <article class="news-item">
                 <div class="news-image">
-                    <img src="images/baiviet4.jpg" alt="Ưu đãi hộp quà Trung Thu" />
+                    <img src="image/TrangChu/hop_TC.jpg" alt="Ưu đãi hộp quà Trung Thu" />
                 </div>
                 <div class="news-content">
                     <span class="news-category"><i class="fa-solid fa-gift"></i> Quà tặng</span>
@@ -378,7 +378,7 @@
 
             <article class="news-item">
                 <div class="news-image">
-                    <img src="images/baiviet5.jpg" alt="Mua 3 tính tiền 2" />
+                    <img src="image/TrangChu/baiviet5_TC.jpg" alt="Mua 3 tính tiền 2" />
                 </div>
                 <div class="news-content">
                     <span class="news-category"><i class="fa-solid fa-percent"></i> Ưu đãi đặc biệt</span>
@@ -389,7 +389,7 @@
 
             <article class="news-item">
                 <div class="news-image">
-                    <img src="images/baiviet6.jpg" alt="12 hương vị cao cấp" />
+                    <img src="image/TrangChu/banhtrungthu3_TC.jpg" alt="12 hương vị cao cấp" />
                 </div>
                 <div class="news-content">
                     <span class="news-category"><i class="fa-solid fa-moon"></i> Bộ sưu tập</span>

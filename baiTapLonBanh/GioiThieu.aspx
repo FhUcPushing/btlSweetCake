@@ -38,7 +38,7 @@
 
         <!-- BANNER -->
         <div class="banner-gioi-thieu">
-            <img src="banner.jpg"
+            <img src="image/GioiThieu/thanh_lap.jpg"
                  alt="SweetCake" />
         </div>
 
@@ -47,7 +47,7 @@
         <section class="noi-dung">
 
             <h2>THÀNH LẬP</h2>
-            <img src="thanh_lap.jpg"
+            <img src="image/GioiThieu/anh3_GT.jpg"
      alt="Quá trình thành lập SweetCake"
      class="anh-gioi-thieu" />
             <p>
@@ -69,7 +69,7 @@
         <section class="noi-dung">
 
             <h2>NHIỆM VỤ</h2>
-                     <img src="nhiem_vu_gioi_thieu.jpg"
+                     <img src="image/GioiThieu/anh7_GT.jpg"
                         alt="Nhiệm vụ của SweetCake"
                         class="anh-gioi-thieu" />
             <p>
@@ -85,7 +85,7 @@
     <section class="noi-dung">
         <h2>CAM KẾT KINH DOANH</h2>
 
-        <img src="cam_ket_kd.jpg"
+        <img src="image/GioiThieu/anh4_GT.jpg"
              alt="Cam kết chất lượng bánh SweetCake"
              class="anh-gioi-thieu" />
 
@@ -130,7 +130,7 @@
     <!-- ĐOẠN KẾT -->
     <section class="ket-thuc">
         <h2>CÙNG SWEETCAKE TẠO NÊN NHỮNG KỶ NIỆM NGỌT NGÀO!</h2>
-        <img src="doan_ket_gt.png"
+        <img src="image/GioiThieu/anh5_GT.png"
      alt="Những chiếc bánh ngọt SweetCake"
      class="anh-gioi-thieu" />
         <p>

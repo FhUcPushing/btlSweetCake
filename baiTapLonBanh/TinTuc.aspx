@@ -39,7 +39,7 @@
             <!-- BAI VIET 1 -->
             <article class="news-card">
                 <a href="#" class="news-image">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85"
+                    <img src="image/TinTuc/banh1_TT.jpg"
                          alt="Bánh kem sinh nhật" />
                     <span class="news-category">BÍ QUYẾT</span>
                 </a>
@@ -69,7 +69,7 @@
             <!-- BAI VIET 2 -->
             <article class="news-card">
                 <a href="#" class="news-image">
-                    <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=800&q=85"
+                    <img src="image/TinTuc/banh11_TT.jpg"
                          alt="Bánh ngọt trang trí đẹp" />
                     <span class="news-category">KIẾN THỨC</span>
                 </a>
@@ -99,7 +99,7 @@
             <!-- BAI VIET 3 -->
             <article class="news-card">
                 <a href="#" class="news-image">
-                    <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=85"
+                    <img src="image/TinTuc/banh7_TT.jpg"
                          alt="Cupcake nhiều màu sắc" />
                     <span class="news-category">CẢM HỨNG</span>
                 </a>
@@ -129,7 +129,7 @@
             <!-- BAI VIET 4 -->
             <article class="news-card">
                 <a href="#" class="news-image">
-                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=85"
+                    <img src="image/TinTuc/banh9_TT.jpg"
                          alt="Bánh chocolate" />
                     <span class="news-category">BÍ QUYẾT</span>
                 </a>
@@ -159,7 +159,7 @@
             <!-- BAI VIET 5 -->
             <article class="news-card">
                 <a href="#" class="news-image">
-                    <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=800&q=85"
+                    <img src="image/TinTuc/banh3_TT.jpg"
                          alt="Bánh ngọt trang trí" />
                     <span class="news-category">SỰ KIỆN</span>
                 </a>
@@ -189,7 +189,7 @@
             <!-- BAI VIET 6 -->
             <article class="news-card">
                 <a href="#" class="news-image">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=85"
+                    <img src="image/TinTuc/banh8_TT.jpg"
                          alt="Bánh mì mới nướng" />
                     <span class="news-category">GÓC BẾP</span>
                 </a>
