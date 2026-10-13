@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|c:\\users\\adminn\\source\\repos\\baitaplonweb\\baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\css\\sanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\css\\sanpham.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|c:\\users\\adminn\\source\\repos\\baitaplonweb\\baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|solutionrelative:baitaplonbanh\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C41C13FC-3D4D-4BF9-889E-7615ACF5B0D9}|baiTapLonBanh\\baiTapLonBanh.csproj|C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baitaplonbanh\\js\\sanpham.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -142,11 +142,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "SanPham.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx.cs",
               "RelativeDocumentMoniker": "baiTapLonBanh\\SanPham.aspx.cs",
@@ -154,7 +154,8 @@
               "RelativeToolTip": "baiTapLonBanh\\SanPham.aspx.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowFAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-09T13:49:53.567Z"
+              "WhenOpened": "2026-10-09T13:49:53.567Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -194,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SanPham.aspx",
               "DocumentMoniker": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\SanPham.aspx",
               "RelativeDocumentMoniker": "baiTapLonBanh\\SanPham.aspx",
@@ -213,9 +214,10 @@
               "RelativeDocumentMoniker": "baiTapLonBanh\\CSS\\SanPham.css",
               "ToolTip": "C:\\Users\\Adminn\\source\\repos\\baiTapLonWeb\\baiTapLonBanh\\CSS\\SanPham.css",
               "RelativeToolTip": "baiTapLonBanh\\CSS\\SanPham.css",
-              "ViewState": "AgIAACUCAAAAAAAAAAAuwFMCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD0CAAAAAAAAAAAAAFABAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-10-09T15:01:42.672Z"
+              "WhenOpened": "2026-10-09T15:01:42.672Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
