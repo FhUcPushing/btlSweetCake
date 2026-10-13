@@ -61,8 +61,10 @@ namespace baiTapLonBanh
 
                     HtmlGenericControl newImg = new HtmlGenericControl("img");
 
-                    newImg.Attributes["src"] = x.anhBanh;
+                    newImg.Attributes["src"] = ResolveUrl("~/" + x.anhBanh);
                     newImg.Attributes["alt"] = x.tenBanh;
+                    // Ảnh lỗi: hiện khung 🧁 thay thế (giống trang Sản phẩm)
+                    newImg.Attributes["onerror"] = "this.parentNode.classList.add('khong-anh');";
 
                     newDiv.Controls.Add(newImg);
 
@@ -106,6 +108,19 @@ namespace baiTapLonBanh
                 khuVucGoiY.Visible = false;
             }
         }
+        // Hiện thông báo dưới nút mua hàng.
+        // thanhCong = true -> màu xanh (tự ẩn sau 10 giây bằng CSS), false -> màu hồng báo lỗi
+        private void HienThongBao(string noiDung, bool thanhCong)
+        {
+            string icon = thanhCong
+                ? "<i class=\"fa-solid fa-circle-check\"></i> "
+                : "<i class=\"fa-solid fa-circle-exclamation\"></i> ";
+
+            thongBaoGioHang.InnerHtml = icon + HttpUtility.HtmlEncode(noiDung);
+            thongBaoGioHang.Attributes["class"] = "thong_bao_gio_hang " + (thanhCong ? "thanh_cong" : "loi");
+            thongBaoGioHang.Visible = true;
+        }
+
         protected void btnThemVaoGio_ServerClick(object sender, EventArgs e)
         {
             string maBanh = Request.QueryString["id"];
@@ -115,8 +130,7 @@ namespace baiTapLonBanh
 
             if (!int.TryParse(soLuongBanh.Value, out soLuong) || soLuong < 1)
             {
-                thongBaoGioHang.InnerText = "Vui lòng nhập số lượng hợp lệ.";
-                thongBaoGioHang.Visible = true;
+                HienThongBao("Vui lòng nhập số lượng hợp lệ.", false);
                 return;
             }
             List<SanPhamBanh> danhSachSanPham =
@@ -137,8 +151,7 @@ namespace baiTapLonBanh
 
             if (!timThay)
             {
-                thongBaoGioHang.InnerText = "Không tìm thấy sản phẩm.";
-                thongBaoGioHang.Visible = true;
+                HienThongBao("Không tìm thấy sản phẩm.", false);
                 return;
             }
             Dictionary<string, int> gioHang =
@@ -162,8 +175,7 @@ namespace baiTapLonBanh
             // Lưu giỏ hàng vào Session
             Session["GioHang"] = gioHang;
 
-            thongBaoGioHang.InnerText = "Đã thêm sản phẩm vào giỏ hàng!";
-            thongBaoGioHang.Visible = true;
+            HienThongBao("Bạn đã thêm vào giỏ hàng thành công!", true);
         }
         protected void btnMuaNgay_ServerClick(object sender, EventArgs e)
         {
@@ -174,8 +186,7 @@ namespace baiTapLonBanh
             if (!int.TryParse(soLuongBanh.Value, out soLuong)
                 || soLuong < 1)
             {
-                thongBaoGioHang.InnerText = "Vui lòng nhập số lượng hợp lệ.";
-                thongBaoGioHang.Visible = true;
+                HienThongBao("Vui lòng nhập số lượng hợp lệ.", false);
                 return;
             }
 

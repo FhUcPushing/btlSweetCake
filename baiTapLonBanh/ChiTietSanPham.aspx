@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="baiTapLonBanh.ChiTietSanPham" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="ChiTietSanPham.aspx.cs" Inherits="baiTapLonBanh.ChiTietSanPham" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/ChiTietSanPham.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/ChiTietSanPham.css?v=3" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
     <div class="container product-page">
-                <section id="thongTinBanh"
+
+        <section id="thongTinBanh"
                  runat="server"
                  visible="false"
                  class="chi_tiet_san_pham">
@@ -30,34 +31,35 @@
                 <p id="giaBanh" runat="server" class="gia_banh"></p>
 
                 <div class="chon_so_luong">
-    <label for="soLuongBanh">Số lượng:</label>
+                    <label for="soLuongBanh">Số lượng:</label>
 
-    <button type="button" id="giamSoLuong">−</button>
+                    <button type="button" id="giamSoLuong">−</button>
 
-    <input type="number"
-       id="soLuongBanh"
-       runat="server"
-       ClientIDMode="Static"
-       value="1"
-       min="1" />
+                    <input type="number"
+                           id="soLuongBanh"
+                           runat="server"
+                           ClientIDMode="Static"
+                           value="1"
+                           min="1" />
 
-    <button type="button" id="tangSoLuong">+</button>
-</div>
+                    <button type="button" id="tangSoLuong">+</button>
+                </div>
 
                 <div class="hanh_dong_mua_hang">
                     <button id="btnThemVaoGio"
-        runat="server"
-        type="submit"
-        onserverclick="btnThemVaoGio_ServerClick">
-    Thêm vào giỏ hàng
-</button>
-                    <p id="thongBaoGioHang" runat="server" visible="false"></p>
+                            runat="server"
+                            type="submit"
+                            onserverclick="btnThemVaoGio_ServerClick">
+                        <i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng
+                    </button>
                     <a id="btnMuaNgay"
-   runat="server"
-   onserverclick="btnMuaNgay_ServerClick">
-    Mua ngay
-</a>
+                       runat="server"
+                       onserverclick="btnMuaNgay_ServerClick">
+                        Mua ngay
+                    </a>
                 </div>
+
+                <p id="thongBaoGioHang" runat="server" visible="false" class="thong_bao_gio_hang"></p>
             </div>
 
         </section>
@@ -66,21 +68,24 @@
            class="thong_bao_loi">
             Không tìm thấy sản phẩm
         </p>
+
         <section id="khuVucGoiY"
-         runat="server"
-         class="goi-y-san-pham">
+                 runat="server"
+                 class="goi-y-san-pham">
 
-    <div class="goi-y-header">
-        <h2>CÓ LẼ BẠN CŨNG SẼ THÍCH</h2>
-        <a href="SanPham.aspx">VIEW ALL</a>
-    </div>
+            <div class="goi-y-header">
+                <h2>CÓ LẼ BẠN CŨNG SẼ THÍCH</h2>
+                <a href="SanPham.aspx" class="nut-xem-them">
+                    Xem thêm <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
-    <div id="danhSachGoiY"
-         runat="server"
-         class="danh-sach-goi-y">
-    </div>
+            <div id="danhSachGoiY"
+                 runat="server"
+                 class="danh-sach-goi-y">
+            </div>
 
-</section>
+        </section>
     </div>
     <script src="JS/ChiTietSanPham.js"></script>
 </asp:Content>

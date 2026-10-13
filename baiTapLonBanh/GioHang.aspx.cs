@@ -41,6 +41,7 @@ namespace baiTapLonBanh
                 {
                     maBanh = b.maBanh,
                     tenBanh = b.tenBanh,
+                    anhBanh = b.anhBanh,
                     giaBanh = b.giaBanh,
                     soLuong = gioHang[b.maBanh],
                     thanhTien = b.giaBanh * gioHang[b.maBanh]

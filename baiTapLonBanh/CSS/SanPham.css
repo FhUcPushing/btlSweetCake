@@ -228,7 +228,7 @@
 
     .product-page .product-toolbar {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
         gap: 12px;
@@ -242,6 +242,7 @@
             color: var(--sp-text);
             font-size: 14px;
             font-weight: 700;
+        
         }
 
         .product-page .product-toolbar select {
@@ -524,24 +525,24 @@
                 font-size: 15px;
             }
 
-        .product-page .category-list {
-            gap: 20px 14px;
+        .product-page .category-list li {
+            flex: 1 1 0; /* 4 mục chia đều chiều rộng */
+            width: auto;
+            min-width: 0;
         }
 
-            .product-page .category-list li {
-                width: 78px;
+            .product-page .category-list li a {
+                gap: 6px;
+                font-size: 12px;
             }
 
-                .product-page .category-list li a {
-                    gap: 8px;
-                    font-size: 13px;
-                }
-
-            .product-page .category-list .category-icon {
-                width: 62px;
-                height: 62px;
-                font-size: 24px;
-            }
+        .product-page .category-list .category-icon {
+            width: 100%; /* vòng tròn co theo cột */
+            max-width: 62px;
+            height: auto;
+            aspect-ratio: 1 / 1; /* luôn giữ hình tròn */
+            font-size: 22px;
+        }
 
         .product-page .danh-sach-banh,
         .product-page #danhSachBanh {

@@ -87,15 +87,6 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.HtmlControls.HtmlButton btnThemVaoGio;
 
         /// <summary>
-        /// thongBaoGioHang control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl thongBaoGioHang;
-
-        /// <summary>
         /// btnMuaNgay control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace baiTapLonBanh
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor btnMuaNgay;
+
+        /// <summary>
+        /// thongBaoGioHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl thongBaoGioHang;
 
         /// <summary>
         /// thongBaoLoi control.
