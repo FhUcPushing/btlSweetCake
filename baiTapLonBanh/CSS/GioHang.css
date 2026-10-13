@@ -1,0 +1,124 @@
+﻿
+/* ===== SWEETCAKE - GIỎ HÀNG ===== */
+
+.bang-gio-hang {
+    width: 100%;
+    margin: 24px 0;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+    .bang-gio-hang th,
+    .bang-gio-hang td {
+        padding: 16px;
+        border-bottom: 1px solid #f0e2e7;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .bang-gio-hang th {
+        background: #fff0f4;
+        color: #694853;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .bang-gio-hang td {
+        color: #4b303a;
+        font-size: 15px;
+    }
+
+    .bang-gio-hang tr:hover td {
+        background: #fffafd;
+    }
+
+    /* Các nút tăng, giảm và xóa */
+
+    .bang-gio-hang input[type="submit"],
+    .bang-gio-hang input[type="button"] {
+        min-width: 34px;
+        min-height: 34px;
+        margin: 3px;
+        padding: 6px 10px;
+        border: 1px solid #e7d5dc;
+        border-radius: 7px;
+        background: #ffffff;
+        color: #bd426d;
+        cursor: pointer;
+    }
+
+        .bang-gio-hang input[type="submit"]:hover {
+            border-color: #d95f89;
+            background: #fff0f4;
+        }
+
+/* Tổng tiền */
+
+#panelGioHang h2 {
+    margin: 24px 0;
+    color: #c94f78;
+    font-size: 25px;
+    text-align: right;
+}
+
+/* Nút tiếp tục mua hàng */
+
+#panelGioHang > a,
+#thongBaoRong a {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #d95f89;
+    border-radius: 9px;
+    background: #d95f89;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    #panelGioHang > a:hover,
+    #thongBaoRong a:hover {
+        background: #bd426d;
+    }
+
+/* Giỏ hàng trống */
+
+#thongBaoRong {
+    margin: 24px 0;
+    padding: 32px;
+    border: 1px solid #f0e2e7;
+    border-radius: 14px;
+    background: #fff9fb;
+    text-align: center;
+}
+
+    #thongBaoRong p {
+        margin-bottom: 20px;
+        color: #694853;
+        font-size: 18px;
+    }
+
+/* Màn hình nhỏ */
+
+@media (max-width: 700px) {
+    .bang-gio-hang {
+        font-size: 13px;
+    }
+
+        .bang-gio-hang th,
+        .bang-gio-hang td {
+            padding: 9px 6px;
+            overflow-wrap: anywhere;
+        }
+
+        .bang-gio-hang th {
+            font-size: 12px;
+        }
+
+        .bang-gio-hang td {
+            font-size: 13px;
+        }
+
+    #panelGioHang h2 {
+        font-size: 21px;
+    }
+}

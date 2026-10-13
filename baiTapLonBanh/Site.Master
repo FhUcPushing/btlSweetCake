@@ -9,46 +9,177 @@
 
     <title>SweetCake</title>
 
-    <link href="CSS/Site.css" rel="stylesheet" />
+    <link href="CSS/Site.css" rel="stylesheet" type="text/css" />
 
+    <link href="<%= ResolveUrl("~/CSS/TrangChu.css") %>"
+      rel="stylesheet" />
+<link href="<%= ResolveUrl( "~/CSS/DangNhapvaDangKy.css") %>" rel="stylesheet" />
+ <link href="<%= ResolveUrl("~/CSS/TinTuc.css") %>" rel="stylesheet" />
+ <link href="<%= ResolveUrl("~/CSS/TuVan.css") %>" rel="stylesheet" />
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 <body>
-
     <form id="form1" runat="server">
+        <%
+            // Tên người dùng được lưu vào Session sau khi đăng nhập/đăng ký thành công.
+            string tenNguoiDung = Session["TenHienThi"] as string;
+            bool daDangNhap = !string.IsNullOrEmpty(tenNguoiDung);
+            string tenAnToan = daDangNhap ? Server.HtmlEncode(tenNguoiDung) : "";
+        %>
 
-        <header class="header">
-            <div class="container">
-                <div class="logo">
-                    <a href="TrangChu.aspx">SweetCake</a>
-                </div>
+        <!-- HEADER DÙNG CHUNG -->
+        <header class="site-header">
+            <div class="nav-container">
+                <!-- Nút menu chỉ hiển thị trên điện thoại -->
+                <div class="mobile-left-controls">
+    <button type="button"
+            class="menu-toggle"
+            aria-label="Mở menu"
+            aria-expanded="false"
+            onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</div>
 
-                <nav class="menu">
-                    <a href="TrangChu.aspx">Trang chủ</a>
-                    <a href="SanPham.aspx">Sản phẩm</a>
-                    <a href="GioiThieu.aspx">Giới thiệu</a>
-                    <a href="TuVan.aspx">Tư vấn</a>
-                    <a href="GioHang.aspx">Giỏ hàng</a>
-                    <a href="TaiKhoan.aspx">Tài Khoản</a>
+                <!-- Logo -->
+                <a href="<%= ResolveUrl("~/TrangChu.aspx") %>"
+                   class="brand"
+                   aria-label="SweetCake - Trang chủ">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </span>
+                    <span class="brand-name">SweetCake</span>
+                </a>
+
+                <!-- Menu điều hướng -->
+                <nav class="main-nav" id="mainNav">
+                    <!-- Tài khoản trong menu điện thoại -->
+                    <% if (daDangNhap) { %>
+                        <div class="nav-account">
+                            <span class="nav-greeting">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <span class="ten">Xin chào, <%= tenAnToan %></span>
+                            </span>
+                            <a href="<%= ResolveUrl("~/DangNhap.aspx?dangxuat=1") %>"
+                               class="nav-logout"
+                               title="Đăng xuất"
+                               aria-label="Đăng xuất">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        </div>
+                    <% } else { %>
+                        <div class="nav-account">
+                            <a href="<%= ResolveUrl("~/DangNhap.aspx") %>">
+                                <i class="fa-solid fa-user"></i>
+                                Đăng nhập
+                            </a>
+                            <span>/</span>
+                            <a href="<%= ResolveUrl("~/DangKy.aspx") %>">
+                                <i class="fa-solid fa-user-plus"></i>
+                                Đăng ký
+                            </a>
+                        </div>
+                    <% } %>
+
+                    <a href="<%= ResolveUrl("~/TrangChu.aspx") %>">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Trang chủ</span>
+                    </a>
+                    <a href="<%= ResolveUrl("~/SanPham.aspx") %>">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <span>Sản phẩm</span>
+                    </a>
+                    <a href="<%= ResolveUrl("~/GioiThieu.aspx") %>">
+                        <i class="fa-solid fa-store"></i>
+                        <span>Giới thiệu</span>
+                    </a>
+                    <a href="<%= ResolveUrl("~/TinTuc.aspx") %>">
+                        <i class="fa-regular fa-newspaper"></i>
+                        <span>Tin tức</span>
+                    </a>
+                    <a href="<%= ResolveUrl("~/TuVan.aspx") %>">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Tư vấn</span>
+                    </a>
                 </nav>
+
+                <!-- Giỏ hàng và tài khoản -->
+                <div class="header-right">
+                    <div class="header-search" id="headerSearch">
+    <input type="search"
+           id="txtTimKiem"
+           placeholder="Tìm bánh..."
+           autocomplete="off"
+           enterkeyhint="search"
+           aria-label="Tìm kiếm bánh" />
+
+    <button type="button"
+            onclick="xuLyTimKiem()"
+            aria-label="Tìm kiếm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
+                    <div class="header-account">
+                        <a href="<%= ResolveUrl("~/GioHang.aspx") %>"
+                           class="cart-link"
+                           aria-label="Giỏ hàng"
+                           title="Giỏ hàng">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </a>
+
+                        <% if (daDangNhap) { %>
+                            <span class="user-greeting" title="<%= tenAnToan %>">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <span class="ten">Xin chào, <%= tenAnToan %></span>
+                            </span>
+                            <a href="<%= ResolveUrl("~/DangNhap.aspx?dangxuat=1") %>"
+                               class="logout-link"
+                               title="Đăng xuất"
+                               aria-label="Đăng xuất">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        <% } else { %>
+                            <a href="<%= ResolveUrl("~/DangNhap.aspx") %>"
+                               class="login-link">
+                                <i class="fa-solid fa-user"></i>
+                                Đăng nhập
+                            </a>
+                            <span class="account-separator">/</span>
+                            <a href="<%= ResolveUrl("~/DangKy.aspx") %>"
+                               class="register-link">
+                                <i class="fa-solid fa-user-plus"></i>
+                                Đăng ký
+                            </a>
+                        <% } %>
+                    </div>
+                </div>
             </div>
         </header>
 
+        <!-- NỘI DUNG CỦA TỪNG TRANG -->
         <main>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </main>
 
+        <!-- FOOTER DÙNG CHUNG -->
         <footer class="footer">
             <div class="container">
+                <p class="footer-brand">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    SweetCake
+                </p>
                 <p>© 2026 SweetCake</p>
-                <p>Website bán bánh</p>
+                <p>Ngọt ngào trong từng chiếc bánh.</p>
             </div>
         </footer>
-
     </form>
 
+    <!-- JavaScript dùng chung: menu mobile và menu active -->
+    <script src="<%= ResolveUrl("~/JS/Site.js") %>"></script>
 </body>
 </html>

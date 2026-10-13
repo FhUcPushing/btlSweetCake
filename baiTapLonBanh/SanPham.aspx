@@ -16,7 +16,7 @@
             <p>Khám phá các loại bánh của SweetCake</p>
             <img src="product-banner.png" alt="ảnh banner sản phẩm"/>
         </section>
-        <!-- Loại bánh -->
+
         <section class="product-category-section">
             <h2>Loại bánh</h2>
             <ul class="category-list">
@@ -26,12 +26,12 @@
                 <li id="banh_sinh_nhat"><a href="#">Bánh sinh nhật</a></li>
             </ul>
         </section>
-        <!-- Tìm kiếm -->
+
         <section class="product-search-section">
             <h2>Tìm kiếm</h2>
             <input type="text" id="timKiemBanh" placeholder="Nhập tên bánh..." /> 
         </section>
-        <!-- Chọn số lượng và sắp xếp -->
+
         <section class="product-toolbar">
             <label for="soLuongHienThi">Xem</label>
             <select id="soLuongHienThi">
@@ -47,7 +47,7 @@
                 <option value="oldest">Cũ nhất</option>
             </select>
         </section>
-        <!-- Danh sách bánh -->
+
         <section class="product-list-section">
             <h2>Danh sách bánh</h2>
             <div id="danhSachBanh" runat="server">

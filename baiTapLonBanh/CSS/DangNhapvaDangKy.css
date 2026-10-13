@@ -1,0 +1,125 @@
+﻿.auth-container {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.15);
+    width: 100%;
+    max-width: 420px;
+    margin: 40px auto;
+}
+
+.brand-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+    .brand-header h2 {
+        color: #d63384;
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .brand-header p {
+        color: #888;
+        font-size: 14px;
+    }
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        color: #495057;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #ffe1e6;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+        .form-group input:focus {
+            border-color: #ff85a2;
+            box-shadow: 0 0 8px rgba(255, 133, 162, 0.25);
+        }
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6b8b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-submit:hover {
+        background-color: #d63384;
+    }
+
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+    .message.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+    .auth-footer a {
+        color: #d63384;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+/* Style cho ô Nhớ mật khẩu */
+.form-group.remember-me label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none; /* Tránh bôi đen chữ khi bấm vào */
+}
+
+.form-group.remember-me {
+    margin-bottom: 15px;
+    margin-top: -5px;
+}
+
+    .form-group.remember-me input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #ff6b8b; /* Màu checkbox tông hồng SweetCake */
+        cursor: pointer;
+    }

@@ -69,6 +69,42 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl giaBanh;
 
         /// <summary>
+        /// soLuongBanh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl soLuongBanh;
+
+        /// <summary>
+        /// btnThemVaoGio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnThemVaoGio;
+
+        /// <summary>
+        /// thongBaoGioHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl thongBaoGioHang;
+
+        /// <summary>
+        /// btnMuaNgay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnMuaNgay;
+
+        /// <summary>
         /// thongBaoLoi control.
         /// </summary>
         /// <remarks>
@@ -76,5 +112,23 @@ namespace baiTapLonBanh
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl thongBaoLoi;
+
+        /// <summary>
+        /// khuVucGoiY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl khuVucGoiY;
+
+        /// <summary>
+        /// danhSachGoiY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl danhSachGoiY;
     }
 }

@@ -33,8 +33,30 @@ namespace baiTapLonBanh
                 loaiBanh = "Bánh Sinh Nhật",
                 ngayTao = new DateTime(2025, 6, 20)
             };
+            SanPhamBanh banh3 = new SanPhamBanh()
+            {
+                maBanh = "3",
+                tenBanh = "Bánh Su Kem",
+                giaBanh = 10000m,
+                anhBanh = "FRESH-MANGO.png",
+                moTa = "Bánh bông lan vani kem tươi và mứt trái cây\r\n\r\n                Nhân bánh mềm xốp được bao quanh bởi một lớp kem tươi, phủ lên trên mặt bánh là lớp cốt dừa sánh mịn và mứt xoài chua ngọt",
+                loaiBanh = "Bánh Sinh Nhật",
+                ngayTao = new DateTime(2025, 6, 20)
+            };
+            SanPhamBanh banh4 = new SanPhamBanh()
+            {
+                maBanh = "4",
+                tenBanh = "Bánh Cưới 3 tầng",
+                giaBanh = 500000m,
+                anhBanh = "FRESH-MANGO.png",
+                moTa = "Bánh bông lan vani kem tươi và mứt trái cây\r\n\r\n                Nhân bánh mềm xốp được bao quanh bởi một lớp kem tươi, phủ lên trên mặt bánh là lớp cốt dừa sánh mịn và mứt xoài chua ngọt",
+                loaiBanh = "Bánh Sinh Nhật",
+                ngayTao = new DateTime(2025, 6, 20)
+            };
             danhSachSanPham.Add(banh1);
             danhSachSanPham.Add(banh2);
+            danhSachSanPham.Add(banh3);
+            danhSachSanPham.Add(banh4);
             Application["DanhSachSanPham"] = danhSachSanPham;
         }
 
