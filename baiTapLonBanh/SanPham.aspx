@@ -10,41 +10,39 @@
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
     <div class="container product-page">
-
-        <!-- BANNER ĐẦU TRANG -->
         <section class="product-hero">
             <img src="product-banner.png" alt="ảnh banner sản phẩm"/>
             <span class="product-kicker">BỘ SƯU TẬP SWEETCAKE</span>
             <h1>Sản phẩm</h1>
             <p>Khám phá các loại bánh của SweetCake</p>
         </section>
-
-        <!-- LOẠI BÁNH: hình tròn, icon ở giữa, tên ở dưới.
-             "Tất cả" là vòng tròn đầu tiên. Giữ nguyên id của từng thẻ li
-             (SanPham.js dùng id này để lọc; mục đang chọn được thêm class "active" -> hồng). -->
         <section class="product-category-section">
             <h2>Loại bánh</h2>
             <ul class="category-list">
-                <li id="tat_ca_loai_banh" class="active">
-                    <a href="#">
+                <li id="tat_ca_loai_banh"
+    class='<%= string.IsNullOrEmpty(Request.QueryString["loai"]) ? "active" : "" %>'>
+                    <a href="SanPham.aspx">
                         <span class="category-icon"><i class="fa-solid fa-table-cells-large"></i></span>
                         <span class="category-name">Tất cả</span>
                     </a>
                 </li>
-                <li id="banh_kem">
-                    <a href="#">
+                            <li id="banh_kem"
+    class='<%= Request.QueryString["loai"] == "banh_kem" ? "active" : "" %>'>
+                    <a href="?loai=banh_kem">
                         <span class="category-icon"><i class="fa-solid fa-cake-candles"></i></span>
                         <span class="category-name">Bánh kem</span>
                     </a>
                 </li>
-                <li id="banh_tuoi">
-                    <a href="#">
+                            <li id="banh_tuoi"
+    class='<%= Request.QueryString["loai"] == "banh_tuoi" ? "active" : "" %>'>
+                    <a href="?loai=banh_tuoi">
                         <span class="category-icon"><i class="fa-solid fa-cookie-bite"></i></span>
                         <span class="category-name">Bánh tươi</span>
                     </a>
                 </li>
-                <li id="banh_mi">
-                    <a href="#">
+                            <li id="banh_mi"
+    class='<%= Request.QueryString["loai"] == "banh_mi" ? "active" : "" %>'>
+                    <a href="?loai=banh_mi">
                         <span class="category-icon"><i class="fa-solid fa-bread-slice"></i></span>
                         <span class="category-name">Bánh mì</span>
                     </a>
@@ -75,10 +73,42 @@
 
         <section class="product-list-section">
             <h2>Danh sách bánh</h2>
-            <!-- ClientIDMode="Static": giữ nguyên id "danhSachBanh" khi chạy (không bị ASP.NET đổi tên),
-                 nên CSS dạng lưới và file JS đều tìm thấy khung này -->
-            <div id="danhSachBanh" runat="server" ClientIDMode="Static" class="danh-sach-banh">
-            </div>
+            <div id="danhSachBanh" runat="server"
+     ClientIDMode="Static"
+     class="danh-sach-banh">
+
+    
+
+<asp:Repeater ID="rptDanhSachBanh" runat="server">
+    <ItemTemplate>
+
+        <article class='<%# LayClassSanPham(Eval("loaiBanh").ToString()) %>'
+                 data-ngay-tao='<%# Eval("ngayTao", "{0:yyyy-MM-dd}") %>'>
+
+            <img src='<%# ResolveUrl("~/" + Eval("anhBanh")) %>'
+                 alt='<%# Eval("tenBanh") %>'
+                 onerror="this.parentNode.classList.add('khong-anh');" />
+
+            <p class="ten_banh">
+                <%# Eval("tenBanh") %>
+            </p>
+
+            <p class="gia_banh">
+                <%# Eval("giaBanh", "{0:N0}") %>đ
+            </p>
+
+            <a href='ChiTietSanPham.aspx?id=<%# Eval("maBanh") %>'>
+                Xem bánh
+            </a>
+
+        </article>
+
+    </ItemTemplate>
+</asp:Repeater>
+
+
+
+</div>
         </section>
         <section class="product-pagination-section">
             <div id="phanTrang" class="phan_trang"></div>

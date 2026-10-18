@@ -192,26 +192,6 @@
 
     // 4. Bấm vào một loại bánh (Tất cả / Bánh kem / Bánh tươi / Bánh mì)
     //    -> nút đó được thêm class "active" (hồng lên), các nút khác bỏ "active"
-    function chonLoai(nutDuocBam) {
-        // "Tất cả" thì không lọc, còn lại lọc theo id (trùng với class của thẻ bánh)
-        loaiDangChon = nutDuocBam.id === "tat_ca_loai_banh" ? "" : nutDuocBam.id;
-        trangHienTai = 1;
-
-        for (var i = 0; i < cacNutLoai.length; i++) {
-            cacNutLoai[i].classList.remove("active");
-        }
-
-        nutDuocBam.classList.add("active");
-
-        locSanPham();
-    }
-
-    for (var n = 0; n < cacNutLoai.length; n++) {
-        cacNutLoai[n].onclick = function (e) {
-            e.preventDefault(); // không nhảy lên đầu trang do href="#"
-            chonLoai(this);
-        };
-    }
 
     // 5. Tìm kiếm khi nhập nội dung
     oTimKiem.oninput = function () {
@@ -256,12 +236,6 @@
         }
     };
 
-    // 9. Mặc định chọn Tất cả và hiển thị sản phẩm
-    var nutTatCa = document.getElementById("tat_ca_loai_banh");
-
-    if (nutTatCa) {
-        nutTatCa.classList.add("active");
-    }
 
     locSanPham();
 });

@@ -8,6 +8,12 @@
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
     <!-- BANNER CHINH -->
+    <asp:Label
+    ID="lblThongBaoGioHang"
+    runat="server"
+    CssClass="thong-bao-gio-hang"
+    Visible="false">
+</asp:Label>
     <section class="cake-hero">
         <img class="hero-bg" src="product-banner.png"
              alt="Bộ sưu tập bánh ngọt SweetCake" />
@@ -45,7 +51,6 @@
     </section>
 
 
-    <!-- SAN PHAM NOI BAT -->
     <section class="products section-wrap" id="san-pham">
         <div class="section-title">
             <div>
@@ -59,84 +64,56 @@
 
         <div class="product-list">
 
-            <article class="product">
-                <div class="product-image">
-                    <img src="banh1.jpg" alt="Bánh mousse Hawaii" />
-                    <span class="product-badge">Nổi bật</span>
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Bánh mousse Hawaii</h3>
-                    <p class="product-desc">Mousse mềm mịn, vị ngọt dịu.</p>
-                    <div class="product-bottom">
-                        <span class="price">450.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh mousse Hawaii')"
-                            aria-label="Thêm bánh mousse Hawaii vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
+    <asp:Repeater ID="rptSanPhamNoiBat" runat="server">
+        <ItemTemplate>
 
             <article class="product">
+
                 <div class="product-image">
-                    <img src="banh2.jpg" alt="Bánh kem Mật ngọt" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
+                    <img src='<%# Eval("anhBanh") %>'
+                         alt='<%# Eval("tenBanh") %>' />
+
+                    <span class="product-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
                 </div>
+
                 <div class="product-info">
-                    <h3>Bánh kem Mật ngọt</h3>
-                    <p class="product-desc">Ngọt ngào cho ngày đặc biệt.</p>
+
+                    <h3><%# Eval("tenBanh") %></h3>
+
+                    <p class="product-desc">
+                        <%# Eval("moTa") %>
+                    </p>
+
                     <div class="product-bottom">
-                        <span class="price">380.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh kem Mật ngọt')"
-                            aria-label="Thêm bánh kem Mật ngọt vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
+
+                        <span class="price">
+                            <%# Eval("giaBanh", "{0:N0}") %>đ
+                        </span>
+
+                        <asp:LinkButton
+    ID="btnThemVaoGio"
+    runat="server"
+    CssClass="add-cart"
+    CommandArgument='<%# Eval("maBanh") %>'
+    OnCommand="btnThemVaoGio_Command"
+    CausesValidation="false"
+    ToolTip="Thêm vào giỏ hàng">
+
+    <i class="fa-solid fa-plus"></i>
+
+</asp:LinkButton>
+
                     </div>
                 </div>
+
             </article>
 
-            <article class="product">
-                <div class="product-image">
-                    <img src="image/TrangChu/banhchanhleo_TC.jpg" alt="Bánh mousse Chanh leo" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Bánh mousse Chanh leo</h3>
-                    <p class="product-desc">Chua ngọt hài hòa, tươi mát.</p>
-                    <div class="product-bottom">
-                        <span class="price">450.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh mousse Chanh leo')"
-                            aria-label="Thêm bánh mousse Chanh leo vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
+        </ItemTemplate>
+    </asp:Repeater>
 
-            <article class="product">
-                <div class="product-image">
-                    <img src="image/TrangChu/banhvanganh_TC.jpg" alt="Bánh kem Vàng anh" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Bánh kem Vàng anh</h3>
-                    <p class="product-desc">Xinh xắn cho những dịp vui.</p>
-                    <div class="product-bottom">
-                        <span class="price">380.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh kem Vàng anh')"
-                            aria-label="Thêm bánh kem Vàng anh vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
+</div>
     </section>
 
 
@@ -189,83 +166,40 @@
 
         <div class="product-list">
 
-            <article class="product">
-                <div class="product-image">
-                    <img src="image/TrangChu/hotdog_TC.jpg"
-                         alt="Bánh mì hấp xúc xích phô mai" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Bánh mì hấp xúc xích phô mai</h3>
-                    <p class="product-desc">Thơm béo, hấp dẫn trong từng miếng.</p>
-                    <div class="product-bottom">
-                        <span class="price">25.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh mì hấp xúc xích phô mai')"
-                            aria-label="Thêm bánh mì vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
+    <asp:Repeater ID="rptBanhTuoi" runat="server">
+        <ItemTemplate>
 
             <article class="product">
-                <div class="product-image">
-                    <img src="image/TrangChu/pizza_TC.jpg" alt="Pizza gà nướng kiểu Thái" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Pizza gà nướng kiểu Thái</h3>
-                    <p class="product-desc">Đậm đà với hương vị độc đáo.</p>
-                    <div class="product-bottom">
-                        <span class="price">49.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Pizza gà nướng kiểu Thái')"
-                            aria-label="Thêm pizza vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
+    <div class="product-image">
+        <img src='<%# Eval("anhBanh") %>'
+             alt='<%# Eval("tenBanh") %>' />
+        <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
+    </div>
+    <div class="product-info">
+        <h3><%#Eval("tenBanh") %></h3>
+        <p class="product-desc"><%#Eval("moTa") %></p>
+        <div class="product-bottom">
+            <span class="price"><%#Eval("giaBanh","{0:N0}") %>đ</span>
+            <asp:LinkButton
+    ID="btnThemVaoGio"
+    runat="server"
+    CssClass="add-cart"
+    CommandArgument='<%# Eval("maBanh") %>'
+    OnCommand="btnThemVaoGio_Command"
+    CausesValidation="false"
+    ToolTip="Thêm vào giỏ hàng">
 
-            <article class="product">
-                <div class="product-image">
-                    <img src="image/TrangChu/xucxich_TC.jpg" alt="Bánh mì xúc xích đại" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Bánh mì xúc xích đại</h3>
-                    <p class="product-desc">Bữa ăn nhẹ tiện lợi, thơm ngon.</p>
-                    <div class="product-bottom">
-                        <span class="price">39.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh mì xúc xích đại')"
-                            aria-label="Thêm bánh mì xúc xích vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
+    <i class="fa-solid fa-plus"></i>
 
-            <article class="product">
-                <div class="product-image">
-                    <img src="image/TrangChu/croissant_TC.jpg" alt="Bánh croissant bơ" />
-                    <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="product-info">
-                    <h3>Bánh croissant bơ</h3>
-                    <p class="product-desc">Vỏ bánh giòn xốp, thơm lừng vị bơ.</p>
-                    <div class="product-bottom">
-                        <span class="price">29.000đ</span>
-                        <button type="button" class="add-cart"
-                            onclick="thongBaoGioHang('Bánh croissant bơ')"
-                            aria-label="Thêm bánh croissant bơ vào giỏ">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </article>
+</asp:LinkButton>
         </div>
+    </div>
+</article>
+
+        </ItemTemplate>
+    </asp:Repeater>
+
+</div>
     </section>
 
 

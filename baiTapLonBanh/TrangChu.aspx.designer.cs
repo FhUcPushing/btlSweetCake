@@ -13,5 +13,32 @@ namespace baiTapLonBanh
 
     public partial class TrangChu
     {
+
+        /// <summary>
+        /// lblThongBaoGioHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblThongBaoGioHang;
+
+        /// <summary>
+        /// rptSanPhamNoiBat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptSanPhamNoiBat;
+
+        /// <summary>
+        /// rptBanhTuoi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptBanhTuoi;
     }
 }

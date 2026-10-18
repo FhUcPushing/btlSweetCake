@@ -123,12 +123,12 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl khuVucGoiY;
 
         /// <summary>
-        /// danhSachGoiY control.
+        /// rptDanhSachGoiY control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl danhSachGoiY;
+        protected global::System.Web.UI.WebControls.Repeater rptDanhSachGoiY;
     }
 }

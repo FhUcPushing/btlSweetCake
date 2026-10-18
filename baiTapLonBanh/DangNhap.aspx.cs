@@ -21,7 +21,7 @@ namespace baiTapLonBanh
             {
                 Session.Remove("TaiKhoan");
                 Session.Remove("TenHienThi");
-                Response.Redirect("Default.aspx");
+                Response.Redirect("TrangChu.aspx");
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace baiTapLonBanh
                             Response.Cookies["SweetCakePass"].Expires = DateTime.Now.AddDays(-1);
                     }
 
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("TrangChu.aspx");
                 }
                 else
                 {

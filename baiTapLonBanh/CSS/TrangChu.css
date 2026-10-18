@@ -1150,3 +1150,27 @@ body {
 .add-cart i {
     opacity: 1;
 }
+.thong-bao-gio-hang {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    background: green;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: anThongBao 3s forwards;
+}
+
+@keyframes anThongBao {
+    0%, 75% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

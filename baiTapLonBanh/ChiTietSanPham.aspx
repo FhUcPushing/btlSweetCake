@@ -80,10 +80,31 @@
                 </a>
             </div>
 
-            <div id="danhSachGoiY"
-                 runat="server"
-                 class="danh-sach-goi-y">
-            </div>
+            <div class="danh-sach-goi-y">
+
+    <asp:Repeater ID="rptDanhSachGoiY" runat="server">
+        <ItemTemplate>
+
+            <div class="the_san_pham goi_y_card">
+
+    <img src='<%# ResolveUrl("~/" + Eval("anhBanh")) %>'
+         alt='<%# Eval("tenBanh") %>'
+         onerror="this.parentNode.classList.add('khong-anh');" />
+
+    <p class="ten_banh"><%# Eval("tenBanh") %></p>
+
+    <p><%# Eval("giaBanh", "{0:N0}") %>đ</p>
+
+    <a href='ChiTietSanPham.aspx?id=<%# Eval("maBanh") %>'>
+        Xem bánh
+    </a>
+
+</div>
+
+        </ItemTemplate>
+    </asp:Repeater>
+
+</div>
 
         </section>
     </div>

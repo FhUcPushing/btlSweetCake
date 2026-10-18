@@ -29,18 +29,10 @@ namespace baiTapLonBanh
         {
             List<SanPhamBanh> ds = new List<SanPhamBanh>();
 
-            string moTaMau = "Bánh bông lan vani kem tươi và mứt trái cây\r\n\r\n                Nhân bánh mềm xốp được bao quanh bởi một lớp kem tươi, phủ lên trên mặt bánh là lớp cốt dừa sánh mịn và mứt xoài chua ngọt";
-
-            // Tên loại (loaiBanh) dùng cho mục "Loại bánh":
-            //   "Bánh Mousse", "Bánh Sinh Nhật", "Bánh Kem"  -> mục Bánh kem
-            //   "Bánh Tươi"                                  -> mục Bánh tươi
-            //   "Bánh Mì"                                    -> mục Bánh mì
-            // Đổi tên ảnh (anhBanh) thành ảnh thật của từng bánh khi có.
-
             // ===== BÁNH KEM =====
-            ThemSanPham(ds, "1", "Bánh Xoài Dừa", 100000m, "image/SanPham/xoaidua_SP.jpg", moTaMau, "Bánh Mousse", new DateTime(2025, 1, 15));
-            ThemSanPham(ds, "2", "Bánh Xoài", 120000m, "image/SanPham/banhkem1_SP.jpg", moTaMau, "Bánh Sinh Nhật", new DateTime(2025, 6, 20));
-            ThemSanPham(ds, "4", "Bánh Cưới 3 tầng", 500000m, "image/SanPham/banh3tang_SP.jpg", moTaMau, "Bánh Sinh Nhật", new DateTime(2025, 6, 20));
+            ThemSanPham(ds, "1", "Bánh Mousse Hawai", 100000m, "image/SanPham/banhMousseHawaii_SP.png", "Mousse dừa bùi thơm, mịn tan trong miệng kết hợp cùng chiffon caramel đậm vị đặc trưng", "Bánh Mousse", new DateTime(2025, 1, 15));
+            ThemSanPham(ds, "2", "Bánh Kem Nơ Hồng", 120000m, "image/SanPham/banhkemnohong_SP.png", "Bánh kem cốt vani, mứt việt quất kết hợp cùng với kem trắng", "Bánh Sinh Nhật", new DateTime(2025, 6, 20));
+            ThemSanPham(ds, "4", "Bánh Cưới 3 tầng", 500000m, "image/SanPham/banh3tang_SP.jpg", "Nhân bánh mềm xốp được bao quanh bởi một lớp kem tươi, phủ lên trên mặt bánh là lớp cốt dừa sánh mịn và mứt xoài chua ngọt", "Bánh Sinh Nhật", new DateTime(2025, 6, 20));
             ThemSanPham(ds, "5", "Bánh Mousse Chanh Leo", 450000m, "image/SanPham/banhchanhleo_TC.jpg", "Mousse chanh leo chua ngọt, tươi mát.", "Bánh Mousse", new DateTime(2025, 2, 10));
             ThemSanPham(ds, "6", "Bánh Mousse Socola", 420000m, "image/SanPham/tiramisu1_SP.jpg", "Mousse socola đậm đà, béo mịn.", "Bánh Mousse", new DateTime(2025, 3, 5));
             ThemSanPham(ds, "7", "Bánh Mousse Dâu Tây", 430000m, "image/SanPham/moussedau_SP.jpg", "Mousse dâu tây ngọt dịu, màu hồng xinh xắn.", "Bánh Mousse", new DateTime(2025, 4, 12));
@@ -53,7 +45,7 @@ namespace baiTapLonBanh
             ThemSanPham(ds, "14", "Bánh Tiramisu", 350000m, "image/SanPham/tiramisu1_SP.jpg", "Tiramisu cà phê, phô mai mascarpone béo mịn.", "Bánh Kem", new DateTime(2025, 9, 25));
 
             // ===== BÁNH TƯƠI =====
-            ThemSanPham(ds, "3", "Bánh Su Kem", 10000m, "image/SanPham/sukem_SP.jpg", moTaMau, "Bánh Tươi", new DateTime(2025, 6, 20));
+            ThemSanPham(ds, "3", "Bánh Su Kem", 10000m, "image/SanPham/sukem_SP.jpg", "Nhân bánh mềm xốp được bao quanh bởi một lớp kem tươi, phủ lên trên mặt bánh là lớp cốt dừa sánh mịn và mứt xoài chua ngọt", "Bánh Tươi", new DateTime(2025, 6, 20));
             ThemSanPham(ds, "15", "Bánh Croissant Bơ", 29000m, "image/SanPham/croissant_TC.jpg", "Vỏ giòn xốp, thơm lừng vị bơ.", "Bánh Tươi", new DateTime(2025, 3, 20));
             ThemSanPham(ds, "16", "Bánh Bông Lan Trứng Muối", 35000m, "image/SanPham/bonglan_SP.jpg", "Bông lan mềm, sốt trứng muối béo mặn.", "Bánh Tươi", new DateTime(2025, 4, 8));
             ThemSanPham(ds, "17", "Bánh Cupcake Vani", 25000m, "image/SanPham/cupcakevani_SP.jpg", "Cupcake nhỏ xinh phủ kem vani.", "Bánh Tươi", new DateTime(2025, 5, 2));

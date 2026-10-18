@@ -17,65 +17,83 @@ namespace baiTapLonBanh
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<SanPhamBanh> danhSachSanPhamBanh = Application["DanhSachSanPham"] as List<SanPhamBanh>;
-            if (danhSachSanPhamBanh == null) return;
-
-            foreach (SanPhamBanh x in danhSachSanPhamBanh)
+            if (!IsPostBack)
             {
-                // loaiBanhClass: loại chi tiết; nhomClass: nhóm ở mục "Loại bánh"
-                // (khớp với id của thẻ li: banh_kem, banh_tuoi, banh_mi)
-                string loaiBanhClass = "";
-                string nhomClass = "";
+                string loai = Request.QueryString["loai"];
 
-                switch (x.loaiBanh)
+                List<SanPhamBanh> danhSachSanPhamBanh =
+                    Application["DanhSachSanPham"] as List<SanPhamBanh>;
+
+                if (danhSachSanPhamBanh == null)
                 {
-                    case "Bánh Mousse":
-                        loaiBanhClass = "banh_mousse";
-                        nhomClass = "banh_kem";
-                        break;
-                    case "Bánh Sinh Nhật":
-                        loaiBanhClass = "banh_sinh_nhat";
-                        nhomClass = "banh_kem";
-                        break;
-                    case "Bánh Kem":
-                        nhomClass = "banh_kem";
-                        break;
-                    case "Bánh Tươi":
-                        nhomClass = "banh_tuoi";
-                        break;
-                    case "Bánh Mì":
-                        nhomClass = "banh_mi";
-                        break;
+                    return;
                 }
 
-                HtmlGenericControl newDiv = new HtmlGenericControl("div");
-                newDiv.Attributes["class"] = ("the_san_pham " + loaiBanhClass + " " + nhomClass).Replace("  ", " ").Trim();
-                newDiv.Attributes["data-ngay-tao"] = x.ngayTao.ToString("yyyy-MM-dd");
+                List<SanPhamBanh> danhSachHienThi =
+                    new List<SanPhamBanh>();
 
-                HtmlGenericControl newImg = new HtmlGenericControl("img");
-                newImg.Attributes["src"] = ResolveUrl(ThuMucAnh + x.anhBanh);
-                newImg.Attributes["alt"] = x.tenBanh;
-                // Ảnh lỗi (sai tên/sai thư mục): hiện khung bánh thay thế thay vì ô trống
-                newImg.Attributes["onerror"] = "this.parentNode.classList.add('khong-anh');";
-                newDiv.Controls.Add(newImg);
+                foreach (SanPhamBanh x in danhSachSanPhamBanh)
+                {
+                    if (string.IsNullOrEmpty(loai))
+                    {
+                        danhSachHienThi.Add(x);
+                    }
+                    else if (loai == "banh_kem" &&
+    (x.loaiBanh == "Bánh Kem" ||
+     x.loaiBanh == "Bánh Sinh Nhật" ||
+     x.loaiBanh == "Bánh Mousse"))
+                    {
+                        danhSachHienThi.Add(x);
+                    }
+                    else if (loai == "banh_tuoi" &&
+         x.loaiBanh == "Bánh Tươi")
+                    {
+                        danhSachHienThi.Add(x);
+                    }
+                    else if (loai == "banh_mi" &&
+                             x.loaiBanh == "Bánh Mì")
+                    {
+                        danhSachHienThi.Add(x);
+                    }
+                }
 
-                HtmlGenericControl newP1 = new HtmlGenericControl("p");
-                newP1.Attributes["class"] = "ten_banh";
-                newP1.InnerText = x.tenBanh;
-                newDiv.Controls.Add(newP1);
-
-                HtmlGenericControl newP2 = new HtmlGenericControl("p");
-                newP2.Attributes["class"] = "gia_banh";
-                newP2.InnerText = x.giaBanh.ToString("N0") + "đ";
-                newDiv.Controls.Add(newP2);
-
-                HtmlGenericControl newA = new HtmlGenericControl("a");
-                newA.Attributes["href"] = "ChiTietSanPham.aspx?id=" + x.maBanh;
-                newA.InnerText = "Xem bánh";
-                newDiv.Controls.Add(newA);
-
-                danhSachBanh.Controls.Add(newDiv);
+                rptDanhSachBanh.DataSource = danhSachHienThi;
+                rptDanhSachBanh.DataBind();
             }
+        }
+        protected string LayClassSanPham(string loaiBanh)
+        {
+            string loaiBanhClass = "";
+            string nhomClass = "";
+
+            switch (loaiBanh)
+            {
+                case "Bánh Mousse":
+                    loaiBanhClass = "banh_mousse";
+                    nhomClass = "banh_kem";
+                    break;
+
+                case "Bánh Sinh Nhật":
+                    loaiBanhClass = "banh_sinh_nhat";
+                    nhomClass = "banh_kem";
+                    break;
+
+                case "Bánh Kem":
+                    nhomClass = "banh_kem";
+                    break;
+
+                case "Bánh Tươi":
+                    nhomClass = "banh_tuoi";
+                    break;
+
+                case "Bánh Mì":
+                    nhomClass = "banh_mi";
+                    break;
+            }
+
+            return ("the_san_pham " + loaiBanhClass + " " + nhomClass)
+                .Replace("  ", " ")
+                .Trim();
         }
     }
 }

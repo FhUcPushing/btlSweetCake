@@ -79,7 +79,7 @@ namespace baiTapLonBanh
             Session["TaiKhoan"] = userMoi;
             Session["TenHienThi"] = userMoi.TenDangNhap;
 
-            Response.Redirect("Default.aspx");
+            Response.Redirect("TrangChu.aspx");
         }
     }
 }

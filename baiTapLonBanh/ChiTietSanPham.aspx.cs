@@ -34,15 +34,12 @@ namespace baiTapLonBanh
                 thongBaoLoi.Visible = false;
 
                 tenBanh.InnerText = banhTimThay.tenBanh;
-                giaBanh.InnerText =
-                    banhTimThay.giaBanh.ToString("N0") + "đ";
+                giaBanh.InnerText = banhTimThay.giaBanh.ToString("N0") + "đ";
                 moTa.InnerText = banhTimThay.moTa;
                 loaiBanh.InnerText = banhTimThay.loaiBanh;
                 anhBanh.Src = banhTimThay.anhBanh;
 
-                danhSachGoiY.Controls.Clear();
-
-                int soLuongGoiY = 0;
+                List<SanPhamBanh> danhSachBanhGoiY = new List<SanPhamBanh>();
 
                 foreach (SanPhamBanh x in danhSachSanPham)
                 {
@@ -50,56 +47,16 @@ namespace baiTapLonBanh
                     {
                         continue;
                     }
-                    if (soLuongGoiY >= 3)
+                    if (danhSachBanhGoiY.Count >= 3)
                     {
                         break;
                     }
-
-                    HtmlGenericControl newDiv = new HtmlGenericControl("div");
-
-                    newDiv.Attributes["class"] = "the_san_pham goi_y_card";
-
-                    HtmlGenericControl newImg = new HtmlGenericControl("img");
-
-                    newImg.Attributes["src"] = ResolveUrl("~/" + x.anhBanh);
-                    newImg.Attributes["alt"] = x.tenBanh;
-                    // Ảnh lỗi: hiện khung 🧁 thay thế (giống trang Sản phẩm)
-                    newImg.Attributes["onerror"] = "this.parentNode.classList.add('khong-anh');";
-
-                    newDiv.Controls.Add(newImg);
-
-                    HtmlGenericControl newP1 =
-                        new HtmlGenericControl("p");
-
-                    newP1.Attributes["class"] = "ten_banh";
-                    newP1.InnerText = x.tenBanh;
-
-                    newDiv.Controls.Add(newP1);
-
-                    HtmlGenericControl newP2 =
-                        new HtmlGenericControl("p");
-
-                    newP2.InnerText =
-                        x.giaBanh.ToString("N0") + "đ";
-
-                    newDiv.Controls.Add(newP2);
-
-                    HtmlGenericControl newA =
-                        new HtmlGenericControl("a");
-
-                    newA.Attributes["href"] =
-                        "ChiTietSanPham.aspx?id=" + x.maBanh;
-
-                    newA.InnerText = "Xem bánh";
-
-                    newDiv.Controls.Add(newA);
-
-                    danhSachGoiY.Controls.Add(newDiv);
-
-                    soLuongGoiY++;
+                    danhSachBanhGoiY.Add(x);
                 }
+                rptDanhSachGoiY.DataSource = danhSachBanhGoiY;
+                rptDanhSachGoiY.DataBind();
 
-                khuVucGoiY.Visible = soLuongGoiY > 0;
+                khuVucGoiY.Visible = danhSachBanhGoiY.Count > 0;
             }
             else
             {
@@ -108,8 +65,6 @@ namespace baiTapLonBanh
                 khuVucGoiY.Visible = false;
             }
         }
-        // Hiện thông báo dưới nút mua hàng.
-        // thanhCong = true -> màu xanh (tự ẩn sau 10 giây bằng CSS), false -> màu hồng báo lỗi
         private void HienThongBao(string noiDung, bool thanhCong)
         {
             string icon = thanhCong
@@ -124,8 +79,6 @@ namespace baiTapLonBanh
         protected void btnThemVaoGio_ServerClick(object sender, EventArgs e)
         {
             string maBanh = Request.QueryString["id"];
-
-            // Kiểm tra số lượng
             int soLuong;
 
             if (!int.TryParse(soLuongBanh.Value, out soLuong) || soLuong < 1)
@@ -133,110 +86,60 @@ namespace baiTapLonBanh
                 HienThongBao("Vui lòng nhập số lượng hợp lệ.", false);
                 return;
             }
-            List<SanPhamBanh> danhSachSanPham =
-                Application["DanhSachSanPham"] as List<SanPhamBanh>;
-            bool timThay = false;
-
-            if (danhSachSanPham != null)
-            {
-                foreach (SanPhamBanh x in danhSachSanPham)
-                {
-                    if (x.maBanh == maBanh)
-                    {
-                        timThay = true;
-                        break;
-                    }
-                }
-            }
-
-            if (!timThay)
-            {
-                HienThongBao("Không tìm thấy sản phẩm.", false);
-                return;
-            }
-            Dictionary<string, int> gioHang =
-                Session["GioHang"] as Dictionary<string, int>;
-
-            if (gioHang == null)
-            {
-                gioHang = new Dictionary<string, int>();
-            }
-
-            // Nếu bánh đã có trong giỏ thì cộng số lượng
-            if (gioHang.ContainsKey(maBanh))
-            {
-                gioHang[maBanh] += soLuong;
+            bool check = ThemBanhVaoGio(maBanh, soLuong);
+            if (check) {
+                HienThongBao("Bạn đã thêm vào giỏ hàng thành công!", true);
             }
             else
             {
-                gioHang.Add(maBanh, soLuong);
+                HienThongBao("Không tìm thấy sản phẩm!", false);
             }
-
-            // Lưu giỏ hàng vào Session
-            Session["GioHang"] = gioHang;
-
-            HienThongBao("Bạn đã thêm vào giỏ hàng thành công!", true);
         }
         protected void btnMuaNgay_ServerClick(object sender, EventArgs e)
         {
             string maBanh = Request.QueryString["id"];
             int soLuong;
-
-            // Kiểm tra số lượng
             if (!int.TryParse(soLuongBanh.Value, out soLuong)
                 || soLuong < 1)
             {
                 HienThongBao("Vui lòng nhập số lượng hợp lệ.", false);
                 return;
             }
-
-            // Kiểm tra bánh tồn tại
-            List<SanPhamBanh> danhSachSanPham =
-                Application["DanhSachSanPham"] as List<SanPhamBanh>;
-
-            bool timThay = false;
-
-            if (danhSachSanPham != null)
+            bool check = ThemBanhVaoGio(maBanh, soLuong);
+            if (check)
             {
-                foreach (SanPhamBanh banh in danhSachSanPham)
-                {
-                    if (banh.maBanh == maBanh)
-                    {
-                        timThay = true;
-                        break;
-                    }
-                }
-            }
-
-            if (!timThay)
-            {
-                Response.Redirect("SanPham.aspx");
-                return;
-            }
-
-            // Lấy giỏ hàng hiện tại
-            Dictionary<string, int> gioHang =
-                Session["GioHang"] as Dictionary<string, int>;
-
-            if (gioHang == null)
-            {
-                gioHang = new Dictionary<string, int>();
-            }
-
-            // Thêm bánh và số lượng đã chọn
-            if (gioHang.ContainsKey(maBanh))
-            {
-                gioHang[maBanh] += soLuong;
+                Response.Redirect("DatHang.aspx");
             }
             else
             {
-                gioHang.Add(maBanh, soLuong);
+                HienThongBao("Không tìm thấy sản phẩm!", false);
             }
-
-            Session["GioHang"] = gioHang;
-
-            // Chuyển đến trang đặt hàng
-            Response.Redirect("DatHang.aspx");
+        }
+        protected bool ThemBanhVaoGio(string maBanh, int soLuong)
+        {
+            List<SanPhamBanh> danhSachBanh = Application["DanhSachSanPham"] as List<SanPhamBanh>;
+            foreach(SanPhamBanh x in danhSachBanh)
+            {
+                if(x.maBanh == maBanh)
+                {
+                    Dictionary<string, int> gioHang = Session["GioHang"] as Dictionary<string, int>;
+                    if(gioHang == null)
+                    {
+                        gioHang = new Dictionary<string, int>();
+                    }
+                    if (gioHang.ContainsKey(maBanh))
+                    {
+                        gioHang[maBanh] = gioHang[maBanh] + soLuong;
+                    }
+                    else
+                    {
+                        gioHang.Add(maBanh, soLuong);
+                    }
+                    Session["GioHang"] = gioHang;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
