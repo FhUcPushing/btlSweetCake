@@ -56,11 +56,58 @@ namespace baiTapLonBanh
 
             if (!IsPostBack)
             {
+                // Lấy mã bánh từ nút Mua ngay ở trang chủ
+                string maBanh = Request.QueryString["maBanh"];
+
+                if (!string.IsNullOrEmpty(maBanh))
+                {
+                    // Lấy danh sách sản phẩm
+                    List<SanPhamBanh> danhSachSanPham =
+                        Application["DanhSachSanPham"] as List<SanPhamBanh>;
+
+                    // Tìm bánh theo mã
+                    SanPhamBanh banhDuocChon = null;
+
+                    if (danhSachSanPham != null)
+                    {
+                        banhDuocChon = danhSachSanPham.Find(
+                            p => p.maBanh == maBanh
+                        );
+                    }
+
+                    if (banhDuocChon != null)
+                    {
+                        // Lấy giỏ hàng hiện tại
+                        Dictionary<string, int> gioHang =
+                            Session["GioHang"] as Dictionary<string, int>;
+
+                        if (gioHang == null)
+                        {
+                            gioHang = new Dictionary<string, int>();
+                        }
+
+                        // Thêm bánh đã chọn vào giỏ hàng
+                        if (gioHang.ContainsKey(maBanh))
+                        {
+                            gioHang[maBanh] += 1;
+                        }
+                        else
+                        {
+                            gioHang.Add(maBanh, 1);
+                        }
+
+                        Session["GioHang"] = gioHang;
+                    }
+                }
+
+                // Chỉ chuyển về giỏ hàng nếu thực sự không có sản phẩm
                 if (LayGioHang().Count == 0)
                 {
                     Response.Redirect("GioHang.aspx");
                     return;
                 }
+
+                // Hiển thị tóm tắt đơn hàng
                 HienThiTomTat();
             }
         }

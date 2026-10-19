@@ -52,7 +52,24 @@ function xuLyTimKiem() {
     timKiemBanh();
 }
 
-// TÌM KIẾM BÁNH
+// Địa chỉ trang Sản phẩm: lấy từ link "Sản phẩm" trong menu (đã được server tính sẵn đường dẫn đúng)
+function layDiaChiSanPham() {
+    var khungTimKiem = document.getElementById("headerSearch");
+    var diaChi = khungTimKiem ? khungTimKiem.getAttribute("data-url") : "";
+
+    if (diaChi) return diaChi;
+
+    var lienKet = document.querySelector('#mainNav a[href*="SanPham"]');
+
+    if (lienKet) {
+        return lienKet.href.split("?")[0].split("#")[0];
+    }
+
+    return "SanPham.aspx";
+}
+
+// TÌM KIẾM BÁNH: luôn chuyển sang trang Sản phẩm bằng GET:  SanPham.aspx?q=từ khóa
+// Trang Sản phẩm (SanPham.aspx.cs) sẽ lọc theo từ khóa, không phân biệt dấu.
 function timKiemBanh() {
     var oTimKiem = document.getElementById("txtTimKiem");
 
@@ -66,46 +83,9 @@ function timKiemBanh() {
         return;
     }
 
-    var trangChu = '<%= ResolveUrl("~/Default.aspx") %>';
-
-    var sanPhams = document.querySelectorAll(".product");
-
-    // Nếu trang hiện tại có danh sách sản phẩm thì lọc
-    if (sanPhams.length > 0) {
-        var dem = 0;
-
-        sanPhams.forEach(function (sanPham) {
-            var ten = sanPham.querySelector("h3");
-
-            var phuHop = ten &&
-                ten.textContent
-                    .toLocaleLowerCase("vi")
-                    .includes(tuKhoa.toLocaleLowerCase("vi"));
-
-            sanPham.style.display = phuHop ? "" : "none";
-
-            if (phuHop) dem++;
-        });
-
-        var khuVuc = document.getElementById("san-pham");
-
-        if (khuVuc) {
-            khuVuc.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-
-        if (dem === 0) {
-            alert("Không tìm thấy bánh phù hợp!");
-        }
-
-        return;
-    }
-
-    // Nếu đang ở trang khác thì chuyển về trang chủ
+    // #khuDanhSach: tải xong tự cuộn tới danh sách bánh
     window.location.href =
-        trangChu + "?q=" + encodeURIComponent(tuKhoa);
+        layDiaChiSanPham() + "?q=" + encodeURIComponent(tuKhoa) + "#khuDanhSach";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -156,36 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // TỪ KHÓA TRÊN URL (?q=...)
-    var params = new URLSearchParams(window.location.search);
-
-    var tuKhoaURL = params.get("q");
+    // Có từ khóa trên URL (?q=...) thì điền lại vào ô tìm kiếm,
+    // để biết trang đang lọc theo từ khóa nào (việc lọc do server làm).
+    var tuKhoaURL = new URLSearchParams(window.location.search).get("q");
 
     if (tuKhoaURL && oTimKiem) {
         oTimKiem.value = tuKhoaURL;
-
-        var sanPhams = document.querySelectorAll(".product");
-
-        if (sanPhams.length > 0) {
-            var dem = 0;
-
-            sanPhams.forEach(function (sanPham) {
-                var ten = sanPham.querySelector("h3");
-
-                var phuHop = ten &&
-                    ten.textContent
-                        .toLocaleLowerCase("vi")
-                        .includes(tuKhoaURL.toLocaleLowerCase("vi"));
-
-                sanPham.style.display = phuHop ? "" : "none";
-
-                if (phuHop) dem++;
-            });
-
-            if (dem === 0) {
-                alert("Không tìm thấy bánh phù hợp!");
-            }
-        }
     }
 });
 

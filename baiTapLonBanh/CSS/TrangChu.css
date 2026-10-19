@@ -387,7 +387,7 @@ body {
 }
 
 .product-info {
-    padding: 15px 15px 17px;
+    padding: 15px 15px 20px;
 }
 
 .product h3 {
@@ -406,12 +406,19 @@ body {
     line-height: 1.6;
 }
 
+
+/* ==========================================
+   GIÁ VÀ NÚT MUA HÀNG
+   ========================================== */
+
 .product-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 5px;
 }
 
 .price {
@@ -420,25 +427,66 @@ body {
     font-weight: 800;
 }
 
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Nút icon giỏ hàng */
 .add-cart {
     width: 38px;
     height: 38px;
-    display: grid;
-    place-items: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    border: 0;
-    border-radius: 50%;
-    color: #fff;
-    background: var(--pink-dark);
-    font-size: 14px;
+    border: 1px solid #f3bdd1;
+    border-radius: 10px;
+    color: var(--pink-dark);
+    background: var(--pink-light);
+    font-size: 15px;
+    text-decoration: none;
     cursor: pointer;
-    transition: .2s;
+    transition: background .25s, color .25s, transform .25s;
 }
 
-    .add-cart:hover {
-        background: #c33369;
-        transform: scale(1.08);
+    .add-cart i {
+        color: inherit;
     }
+
+    .add-cart:hover {
+        color: #fff;
+        background: var(--pink-dark);
+        transform: translateY(-2px);
+    }
+
+/* Nút mua ngay */
+.buy-now {
+    min-height: 38px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--pink-dark);
+    border-radius: 10px;
+    color: #fff;
+    background: var(--pink-dark);
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .25s, transform .25s;
+}
+
+    .buy-now:hover {
+        color: #fff;
+        background: #c33369;
+        border-color: #c33369;
+        transform: translateY(-2px);
+    }
+
 
 /* ==========================================
    THANH LỢI ÍCH
@@ -1017,15 +1065,34 @@ body {
         font-size: 11.5px;
     }
 
+
+    .product-bottom {
+        align-items: center;
+        gap: 7px;
+    }
+
+    .product-actions {
+        gap: 5px;
+    }
+
     .price {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .add-cart {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
         font-size: 12px;
     }
+
+    .buy-now {
+        min-height: 30px;
+        padding: 0 8px;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+
 
     .benefits {
         margin: 0 12px 12px;
@@ -1150,27 +1217,96 @@ body {
 .add-cart i {
     opacity: 1;
 }
+/* ==========================================
+   THÔNG BÁO THÊM GIỎ HÀNG
+   Trong TrangChu.css: XÓA khối cũ ở cuối file
+   (từ ".thong-bao-gio-hang {" đến hết "@keyframes anThongBao {...}")
+   rồi dán khối này vào đúng chỗ đó.
+   ========================================== */
+
+/* ==========================================
+   THÔNG BÁO THÊM GIỎ HÀNG
+   Trong TrangChu.css: XÓA khối cũ ở cuối file
+   (từ ".thong-bao-gio-hang {" đến hết "@keyframes anThongBao {...}")
+   rồi dán khối này vào đúng chỗ đó.
+   ========================================== */
+
 .thong-bao-gio-hang {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
     z-index: 9999;
-    padding: 12px 20px;
-    border-radius: 8px;
-    color: white;
-    background: green;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: anThongBao 3s forwards;
+    top: 90px;
+    right: 20px;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    padding: 9px 14px;
+    border: 1px solid #a7e5bd;
+    border-radius: 10px;
+    background: #d1fae0;
+    color: #166534;
+    box-shadow: 0 4px 12px rgba(22, 101, 52, 0.15);
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes anThongBao {
-    0%, 75% {
-        opacity: 1;
-        visibility: visible;
+    .thong-bao-gio-hang.an-thong-bao {
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+
+    .thong-bao-gio-hang.vua-them {
+        animation: gh-nay 0.35s ease;
+    }
+
+    .thong-bao-gio-hang.loi {
+        border-color: #f3b4c4;
+        background: #ffe3ea;
+        color: #9f1d45;
+    }
+
+    .thong-bao-gio-hang i {
+        margin-right: 8px;
+    }
+
+@keyframes gh-nay {
+    0% {
+        transform: scale(0.9);
+    }
+
+    60% {
+        transform: scale(1.06);
     }
 
     100% {
-        opacity: 0;
-        visibility: hidden;
+        transform: scale(1);
     }
 }
+
+@media (max-width: 520px) {
+    .thong-bao-gio-hang {
+        top: 70px;
+        right: 14px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+.product-detail-link {
+    display: block;
+    width: 100%;
+}
+
+    .product-detail-link img {
+        display: block;
+        width: 100%;
+    }
+
+.ten-banh-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+    .ten-banh-link:hover {
+        color: #d9457c;
+    }

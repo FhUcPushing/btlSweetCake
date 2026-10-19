@@ -3,6 +3,13 @@
    CSS dùng chung cho MỌI trang: biến màu, reset,
    header, menu responsive, footer.
    Font: Nunito (nội dung), Pacifico (tên tiệm)
+
+   Các mức màn hình:
+   - Từ 1360px trở lên : header thoáng (khối "MÀN HÌNH RỘNG")
+   - 1241px - 1359px   : header gọn (mặc định)
+   - 1001px - 1240px   : laptop nhỏ, thu thêm một chút
+   - 601px  - 1000px   : máy tính bảng, menu xuống hàng dưới
+   - Tối đa 600px      : điện thoại, menu mở bằng nút ☰
    ========================================== */
 
 :root {
@@ -25,6 +32,9 @@
     --ink-soft: #3d3d3d;
     --border: #f6d6e3;
     --pink-grad: linear-gradient(110deg, #ffd3e3 0%, #ffe9f1 55%, #fff6f9 100%);
+    /* Kích thước chung cho các trang (dùng lại ở Default.css, SanPham.css...) */
+    --page-width: 1200px;
+    --page-pad: 20px;
 }
 
 * {
@@ -35,13 +45,14 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 80px;
 }
 
 body {
     font-family: var(--font-body);
     background-color: var(--white);
     color: var(--text);
+    font-size: 15px;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -65,17 +76,17 @@ a {
 }
 
 .container {
-    width: 1200px;
-    max-width: 90%;
+    width: var(--page-width);
+    max-width: 94%;
     margin: 0 auto;
 }
 
 main {
-    min-height: 500px;
+    min-height: 400px;
 }
 
 /* ==========================================
-   HEADER - DESKTOP
+   HEADER - DESKTOP (gọn: cao khoảng 64px, nội dung cùng bề rộng 1200px với trang)
    ========================================== */
 
 .site-header {
@@ -85,20 +96,20 @@ main {
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
     border-bottom: 2px solid var(--pink-soft);
-    box-shadow: 0 4px 16px rgba(217, 69, 124, 0.09);
+    box-shadow: 0 3px 12px rgba(217, 69, 124, 0.08);
 }
 
 .nav-container {
     width: 100%;
-    max-width: 1600px;
-    min-height: 82px;
+    max-width: var(--page-width);
+    min-height: 64px;
     margin: 0 auto;
-    padding: 10px 24px;
+    padding: 8px var(--page-pad);
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
+    gap: 12px;
 }
 
 /* Logo */
@@ -107,23 +118,23 @@ main {
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
-    gap: 11px;
+    gap: 9px;
     color: var(--pink-dark);
     white-space: nowrap;
 }
 
 .brand-icon {
-    width: 58px;
-    height: 58px;
+    width: 44px;
+    height: 44px;
     display: grid;
     place-items: center;
     flex-shrink: 0;
-    border: 3px solid #fff;
+    border: 2px solid #fff;
     border-radius: 50%;
     color: #fff;
     background: linear-gradient(135deg, #f58aae, #d9457c);
-    box-shadow: 0 0 0 2px var(--pink-soft), 0 5px 14px rgba(217, 69, 124, .30);
-    font-size: 25px;
+    box-shadow: 0 0 0 2px var(--pink-soft), 0 4px 10px rgba(217, 69, 124, .25);
+    font-size: 19px;
     transition: transform .3s;
 }
 
@@ -133,11 +144,11 @@ main {
 
 .brand-name {
     font-family: var(--font-brand);
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.3;
     color: var(--pink-dark);
-    text-shadow: 0 2px 0 #fff, 0 4px 0 #ffc4d9, 0 6px 0 #f9a6c4, 0 9px 12px rgba(176, 48, 106, .28);
-    letter-spacing: .5px;
+    text-shadow: 0 1px 0 #fff, 0 3px 6px rgba(176, 48, 106, .22);
+    letter-spacing: .3px;
     white-space: nowrap;
 }
 
@@ -156,16 +167,16 @@ main {
     justify-content: center;
     flex: 1 1 auto;
     min-width: 0;
-    gap: 3px;
+    gap: 2px;
 }
 
     .main-nav a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 7px;
-        padding: 10px 11px;
-        border-radius: 24px;
+        gap: 6px;
+        padding: 8px 11px;
+        border-radius: 22px;
         color: var(--pink-deep);
         white-space: nowrap;
         font-size: 13px;
@@ -175,7 +186,7 @@ main {
 
         .main-nav a i {
             color: var(--pink-dark);
-            font-size: 14px;
+            font-size: 13px;
             transition: color 0.2s ease;
         }
 
@@ -190,7 +201,7 @@ main {
         .main-nav a.active {
             color: #ffffff;
             background: linear-gradient(135deg, var(--pink), var(--pink-dark));
-            box-shadow: 0 4px 12px rgba(217, 69, 124, 0.26);
+            box-shadow: 0 3px 10px rgba(217, 69, 124, 0.24);
         }
 
             .main-nav a.active i {
@@ -212,12 +223,12 @@ main {
     order: 3;
     display: flex;
     align-items: center;
-    width: 170px;
-    height: 40px;
+    width: 160px;
+    height: 36px;
     flex-shrink: 0;
     overflow: hidden;
     border: 1px solid #f0cbd9;
-    border-radius: 24px;
+    border-radius: 22px;
     background: #fffafd;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -232,7 +243,7 @@ main {
         width: 100%;
         min-width: 0;
         height: 100%;
-        padding: 0 7px 0 13px;
+        padding: 0 6px 0 12px;
         border: 0;
         outline: 0;
         background: transparent;
@@ -246,8 +257,8 @@ main {
         }
 
     .header-search button {
-        width: 39px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -256,7 +267,7 @@ main {
         border-radius: 50%;
         background: var(--pink-dark);
         color: #ffffff;
-        font-size: 14px;
+        font-size: 13px;
         cursor: pointer;
         transition: background-color 0.2s ease;
     }
@@ -276,14 +287,14 @@ main {
 }
 
     .header-account a {
-        min-height: 38px;
+        min-height: 34px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 6px;
-        padding: 8px 11px;
+        padding: 6px 12px;
         border: 1px solid transparent;
-        border-radius: 24px;
+        border-radius: 22px;
         color: var(--text);
         white-space: nowrap;
         font-size: 12px;
@@ -296,14 +307,14 @@ main {
         }
 
     .header-account .cart-link {
-        width: 39px;
-        height: 39px;
-        min-height: 39px;
+        width: 36px;
+        height: 36px;
+        min-height: 36px;
         padding: 0;
         border-radius: 50%;
         background: var(--pink-light);
         color: var(--pink-dark);
-        font-size: 15px;
+        font-size: 14px;
     }
 
         .header-account .cart-link:hover {
@@ -337,14 +348,14 @@ main {
 
 /* Đã đăng nhập: icon + "Xin chào, tên" và nút đăng xuất */
 .header-account .user-greeting {
-    max-width: 230px;
-    min-height: 38px;
+    max-width: 190px;
+    min-height: 34px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
+    gap: 7px;
+    padding: 6px 12px;
     border: 1px solid #f0cbd9;
-    border-radius: 24px;
+    border-radius: 22px;
     background: #ffffff;
     color: var(--pink-deep);
     white-space: nowrap;
@@ -354,7 +365,7 @@ main {
 
     .header-account .user-greeting i {
         color: var(--pink-dark);
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .header-account .user-greeting .ten {
@@ -363,14 +374,14 @@ main {
     }
 
 .header-account .logout-link {
-    width: 39px;
-    height: 39px;
-    min-height: 39px;
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
     padding: 0;
     border-radius: 50%;
     background: var(--pink-light);
     color: var(--pink-dark);
-    font-size: 14px;
+    font-size: 13px;
 }
 
     .header-account .logout-link:hover {
@@ -392,8 +403,8 @@ main {
    ========================================== */
 
 footer.footer {
-    margin-top: 50px;
-    padding: 38px 15px;
+    margin-top: 36px;
+    padding: 28px 15px;
     border-top: 1px solid #f4e3e9;
     background: #fff5f8;
     color: #7a5a68;
@@ -401,58 +412,139 @@ footer.footer {
 }
 
     footer.footer p {
-        margin: 5px 0;
+        margin: 4px 0;
+        font-size: 13px;
     }
 
     footer.footer .footer-brand {
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         color: var(--pink-dark);
         font-family: var(--font-brand);
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 400;
         text-shadow: 0 1px 0 #ffffff, 0 2px 3px rgba(176, 48, 106, 0.15);
     }
 
 /* ==========================================
-   LAPTOP NHỎ
+   MÀN HÌNH RỘNG (từ 1360px): header gọn nhưng THOÁNG
+   Các mục không sát nhau, logo có bóng hồng nổi
    ========================================== */
 
-@media screen and (min-width: 1001px) and (max-width: 1380px) {
+@media screen and (min-width: 1360px) {
+
     .nav-container {
-        padding-right: 18px;
-        padding-left: 18px;
-        gap: 9px;
+        max-width: 1400px; /* rộng hơn 1200px để đủ chỗ giãn các mục */
+        min-height: 68px;
+        padding: 8px 24px;
+        gap: 18px;
     }
 
     .brand {
-        gap: 8px;
+        gap: 11px;
     }
 
     .brand-icon {
-        width: 49px;
-        height: 49px;
-        font-size: 21px;
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
     }
 
     .brand-name {
-        font-size: 29px;
+        font-size: 32px;
+        letter-spacing: .5px;
+        text-shadow: 0 2px 0 #fff, 0 4px 0 #ffc4d9, 0 6px 0 #f9a6c4, 0 9px 12px rgba(176, 48, 106, .28);
     }
 
     .main-nav {
-        gap: 1px;
+        gap: 6px;
     }
 
         .main-nav a {
-            padding: 9px 7px;
+            gap: 8px;
+            padding: 9px 13px;
+            font-size: 13.5px;
+            font-weight: 600; /* đổi lại 700 nếu muốn chữ đậm hơn */
+        }
+
+            .main-nav a i {
+                font-size: 14px;
+            }
+
+    .header-search {
+        width: 170px;
+        height: 38px;
+    }
+
+        .header-search button {
+            width: 36px;
+            height: 36px;
+        }
+
+    .header-account {
+        gap: 10px;
+    }
+
+        .header-account a {
+            min-height: 38px;
+            padding: 7px 15px;
+            font-size: 12.5px;
+        }
+
+        .header-account .cart-link,
+        .header-account .logout-link {
+            width: 38px;
+            height: 38px;
+            min-height: 38px;
+            padding: 0;
+        }
+
+        .header-account .user-greeting {
+            min-height: 38px;
+            padding: 7px 15px;
+            font-size: 12.5px;
+        }
+}
+
+/* ==========================================
+   LAPTOP NHỎ (chiều rộng chưa đủ 1240px: thu thêm một chút)
+   ========================================== */
+
+@media screen and (min-width: 1001px) and (max-width: 1240px) {
+    .nav-container {
+        padding-right: 14px;
+        padding-left: 14px;
+        gap: 8px;
+    }
+
+    .brand {
+        gap: 7px;
+    }
+
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .brand-name {
+        font-size: 26px;
+    }
+
+    .main-nav {
+        gap: 0;
+    }
+
+        .main-nav a {
+            padding: 7px 8px;
             font-size: 12px;
         }
 
             .main-nav a i {
-                font-size: 13px;
+                font-size: 12px;
             }
 
     .header-search {
-        width: 145px;
+        width: 130px;
     }
 
     .header-account {
@@ -460,14 +552,14 @@ footer.footer {
     }
 
         .header-account a {
-            padding-right: 8px;
-            padding-left: 8px;
+            padding-right: 9px;
+            padding-left: 9px;
             font-size: 11px;
         }
 
         .header-account .user-greeting {
-            max-width: 170px;
-            padding: 8px 10px;
+            max-width: 140px;
+            padding: 6px 9px;
             font-size: 11px;
         }
 }
@@ -480,8 +572,8 @@ footer.footer {
     .nav-container {
         min-height: auto;
         flex-wrap: wrap;
-        padding: 10px 18px;
-        gap: 10px;
+        padding: 8px 14px;
+        gap: 8px;
     }
 
     .mobile-left-controls,
@@ -495,13 +587,13 @@ footer.footer {
     }
 
     .brand-icon {
-        width: 46px;
-        height: 46px;
-        font-size: 20px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
     }
 
     .brand-name {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .header-right {
@@ -515,7 +607,7 @@ footer.footer {
 
     .header-search {
         order: 3;
-        width: 190px;
+        width: 170px;
     }
 
     .main-nav {
@@ -524,18 +616,19 @@ footer.footer {
         width: 100%;
         justify-content: flex-start;
         overflow-x: auto;
-        padding: 6px 0 2px;
+        padding: 4px 0 0;
         border-top: 1px solid #f7e9ee;
     }
 
         .main-nav a {
             flex-shrink: 0;
+            padding: 7px 12px;
         }
 }
 
 /* ==========================================
-   ĐIỆN THOẠI
-   Header: menu + tài khoản | logo | tìm kiếm + giỏ hàng
+   ĐIỆN THOẠI (vừa phải, hơi gọn)
+   Header: menu | logo | tìm kiếm + giỏ hàng
    Menu và ô tìm kiếm mở bằng class is-open
    ========================================== */
 
@@ -552,7 +645,7 @@ footer.footer {
         align-items: center;
         gap: 0;
         min-height: 62px;
-        padding: 8px 9px;
+        padding: 8px 10px;
     }
 
     .mobile-left-controls {
@@ -570,10 +663,11 @@ footer.footer {
         display: none !important;
     }
 
+    /* Các nút tròn 42px, dễ chạm bằng ngón tay */
     .menu-toggle,
     .mobile-account {
-        width: 32px;
-        height: 34px;
+        width: 42px;
+        height: 42px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -583,7 +677,7 @@ footer.footer {
         border-radius: 50%;
         background: var(--pink-light);
         color: var(--pink-dark);
-        font-size: 15px;
+        font-size: 18px;
         text-decoration: none;
         cursor: pointer;
     }
@@ -598,21 +692,24 @@ footer.footer {
         grid-column: 2;
         grid-row: 1;
         justify-self: center;
-        gap: 5px;
+        gap: 6px;
         min-width: 0;
         max-width: 100%;
     }
 
     .brand-icon {
-        width: 34px;
-        height: 34px;
-        border-width: 1.5px;
+        width: 36px;
+        height: 36px;
+        border-width: 2px;
         font-size: 15px;
     }
 
+    /* Chữ "SweetCake" to, có bóng hồng nổi */
     .brand-name {
-        font-size: 23px;
+        font-size: 25px;
         line-height: 1.4;
+        letter-spacing: .4px;
+        text-shadow: 0 1px 0 #fff, 0 2px 0 #ffc4d9, 0 4px 0 #f9a6c4, 0 6px 8px rgba(176, 48, 106, .25);
     }
 
     .header-right {
@@ -622,14 +719,14 @@ footer.footer {
         align-items: center;
         justify-self: end;
         justify-content: flex-end;
-        gap: 4px;
+        gap: 6px;
         min-width: 0;
     }
 
     .header-search {
         position: static;
-        width: 33px;
-        height: 34px;
+        width: 42px;
+        height: 42px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -650,14 +747,14 @@ footer.footer {
         }
 
         .header-search button {
-            width: 33px;
-            height: 34px;
+            width: 42px;
+            height: 42px;
             padding: 0;
             border: 0;
             border-radius: 50%;
             background: var(--pink-light);
             color: var(--pink-dark);
-            font-size: 14px;
+            font-size: 17px;
         }
 
             .header-search button:hover {
@@ -669,11 +766,11 @@ footer.footer {
         .header-search.is-open {
             position: absolute;
             z-index: 1002;
-            top: calc(100% + 5px);
-            right: 9px;
+            top: calc(100% + 6px);
+            right: 10px;
             display: flex;
-            width: min(280px, calc(100vw - 18px));
-            height: 42px;
+            width: min(300px, calc(100vw - 20px));
+            height: 44px;
             overflow: hidden;
             border: 1px solid var(--pink);
             border-radius: 24px;
@@ -686,17 +783,17 @@ footer.footer {
                 width: 100%;
                 min-width: 0;
                 height: 100%;
-                padding: 0 10px 0 14px;
+                padding: 0 10px 0 16px;
                 border: 0;
                 outline: 0;
                 background: transparent;
-                font-size: 16px;
+                font-size: 16px; /* 16px để iPhone không tự phóng to khi bấm vào ô */
                 color: var(--text);
             }
 
             .header-search.is-open button {
-                width: 40px;
-                height: 40px;
+                width: 44px;
+                height: 44px;
                 flex-shrink: 0;
                 border-radius: 0;
                 background: var(--pink-dark);
@@ -719,9 +816,9 @@ footer.footer {
         }
 
         .header-account .cart-link {
-            width: 33px;
-            height: 34px;
-            min-height: 34px;
+            width: 42px;
+            height: 42px;
+            min-height: 42px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -729,7 +826,7 @@ footer.footer {
             border-radius: 50%;
             background: var(--pink-light);
             color: var(--pink-dark);
-            font-size: 14px;
+            font-size: 17px;
         }
 
             .header-account .cart-link:hover {
@@ -737,8 +834,8 @@ footer.footer {
                 color: #ffffff;
             }
 
-    /* Menu điện thoại: danh sách phẳng, chữ lớn, có đường kẻ ngăn cách.
-       Mục đang chọn CHỈ đổi màu chữ, không tô khung.
+    /* Menu điện thoại: danh sách phẳng, chữ 16px, mỗi dòng cao khoảng 48px,
+       có đường kẻ ngăn cách. Mục đang chọn CHỈ đổi màu chữ, không tô khung.
        Dùng ".site-header .main-nav" để luôn thắng các file CSS khác. */
     .site-header .main-nav {
         grid-column: 1 / -1;
@@ -750,8 +847,8 @@ footer.footer {
         gap: 0;
         width: 100%;
         min-width: 0;
-        margin-top: 8px;
-        padding: 12px 6px 8px;
+        margin-top: 6px;
+        padding: 6px 6px 4px;
         border: 0;
         border-top: 1px solid var(--pink-soft);
         border-radius: 0;
@@ -770,14 +867,14 @@ footer.footer {
             justify-content: flex-start;
             gap: 12px;
             width: 100%;
-            padding: 15px 6px;
+            padding: 12px 8px;
             border-radius: 0;
             border-bottom: 1px solid var(--pink-soft);
             color: var(--ink-soft);
             background: transparent;
             box-shadow: none;
             transform: none;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
         }
 
@@ -818,7 +915,7 @@ footer.footer {
             margin-bottom: 4px;
             padding: 4px;
             border: 1.5px solid var(--ink);
-            border-radius: 10px;
+            border-radius: 12px;
             background: #ffffff;
         }
 
@@ -827,7 +924,7 @@ footer.footer {
                 width: auto;
                 justify-content: center;
                 gap: 8px;
-                padding: 9px 8px;
+                padding: 10px 8px;
                 border-bottom: 0;
                 border-radius: 8px;
                 color: var(--ink);
@@ -862,7 +959,7 @@ footer.footer {
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
-                padding: 9px 8px;
+                padding: 10px 8px;
                 font-size: 14px;
             }
 
@@ -878,16 +975,16 @@ footer.footer {
 
             .site-header .main-nav .nav-account a.nav-logout {
                 flex: 0 0 auto;
-                padding: 9px 14px;
+                padding: 10px 14px;
             }
 
     /* Footer trên điện thoại */
-    .footer {
+    footer.footer {
         margin-top: 28px;
         padding: 24px 12px;
     }
 
-        .footer .footer-brand {
-            font-size: 22px;
+        footer.footer .footer-brand {
+            font-size: 20px;
         }
 }

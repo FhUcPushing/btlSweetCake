@@ -11,7 +11,7 @@
     <!-- BANNER TIN TUC -->
     <section class="news-banner">
         <div class="news-banner-content">
-            <span class="news-subtitle">SWEETCAKE</span>
+            <span class="news-subtitle">GÓC NHÀ SWEETCAKE</span>
             <h1>TIN TỨC &amp; SỰ KIỆN</h1>
             <p>
                 Cùng SweetCake khám phá thế giới bánh ngọt,

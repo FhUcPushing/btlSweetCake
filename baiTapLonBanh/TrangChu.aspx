@@ -7,13 +7,15 @@
 <asp:Content ID="Content2"
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
+
+    <!-- Thông báo thêm giỏ hàng: JS hiện / ẩn (xem JS/TrangChu.js), data-url là địa chỉ xử lý thêm giỏ -->
+    <div id="thongBaoGioHang"
+         class="thong-bao-gio-hang an-thong-bao"
+         role="status"
+         aria-live="polite"
+         data-url='<%= ResolveUrl("~/ThemGioHang.ashx") %>'></div>
+
     <!-- BANNER CHINH -->
-    <asp:Label
-    ID="lblThongBaoGioHang"
-    runat="server"
-    CssClass="thong-bao-gio-hang"
-    Visible="false">
-</asp:Label>
     <section class="cake-hero">
         <img class="hero-bg" src="product-banner.png"
              alt="Bộ sưu tập bánh ngọt SweetCake" />
@@ -64,56 +66,62 @@
 
         <div class="product-list">
 
-    <asp:Repeater ID="rptSanPhamNoiBat" runat="server">
-        <ItemTemplate>
+            <asp:Repeater ID="rptSanPhamNoiBat" runat="server">
+                <ItemTemplate>
 
-            <article class="product">
+                    <article class="product">
 
-                <div class="product-image">
-                    <img src='<%# Eval("anhBanh") %>'
-                         alt='<%# Eval("tenBanh") %>' />
+                       <div class="product-image">
+  <a href='<%# ResolveUrl("~/ChiTietSanPham.aspx") + "?id=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
+    <img src='<%# Eval("anhBanh") %>' alt='<%# Eval("tenBanh") %>' />
+</a>
 
-                    <span class="product-heart">
-                        <i class="fa-solid fa-heart"></i>
-                    </span>
-                </div>
-
-                <div class="product-info">
-
-                    <h3><%# Eval("tenBanh") %></h3>
-
-                    <p class="product-desc">
-                        <%# Eval("moTa") %>
-                    </p>
-
-                    <div class="product-bottom">
-
-                        <span class="price">
-                            <%# Eval("giaBanh", "{0:N0}") %>đ
-                        </span>
-
-                        <asp:LinkButton
-    ID="btnThemVaoGio"
-    runat="server"
-    CssClass="add-cart"
-    CommandArgument='<%# Eval("maBanh") %>'
-    OnCommand="btnThemVaoGio_Command"
-    CausesValidation="false"
-    ToolTip="Thêm vào giỏ hàng">
-
-    <i class="fa-solid fa-plus"></i>
-
-</asp:LinkButton>
-
-                    </div>
-                </div>
-
-            </article>
-
-        </ItemTemplate>
-    </asp:Repeater>
-
+    <span class="product-heart">
+        <i class="fa-solid fa-heart"></i>
+    </span>
 </div>
+
+                        <div class="product-info">
+
+                <h3>
+    <a class="ten-banh-link"
+       href='<%# ResolveUrl("~/ChiTietSanPham.aspx") + "?id=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
+        <%# Eval("tenBanh") %>
+    </a>
+</h3>
+
+                            <div class="product-bottom">
+
+                                <span class="price">
+                                    <%# Eval("giaBanh", "{0:N0}") %>đ
+                                </span>
+
+                                <div class="product-actions">
+                                    <asp:HyperLink ID="lnkMuaNgay" runat="server"
+                                        CssClass="buy-now"
+                                        NavigateUrl='<%# "DatHang.aspx?maBanh=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
+                                        Mua ngay
+                                    </asp:HyperLink>
+
+                                    <!-- Thêm vào giỏ: không tải lại trang, xử lý bằng JS -->
+                                    <button type="button"
+                                            class="add-cart"
+                                            data-ma-banh='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("maBanh"))) %>'
+                                            title="Thêm vào giỏ hàng"
+                                            aria-label="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </article>
+
+                </ItemTemplate>
+            </asp:Repeater>
+
+        </div>
     </section>
 
 
@@ -166,40 +174,52 @@
 
         <div class="product-list">
 
-    <asp:Repeater ID="rptBanhTuoi" runat="server">
-        <ItemTemplate>
+            <asp:Repeater ID="rptBanhTuoi" runat="server">
+                <ItemTemplate>
 
-            <article class="product">
-    <div class="product-image">
-        <img src='<%# Eval("anhBanh") %>'
-             alt='<%# Eval("tenBanh") %>' />
-        <span class="product-heart"><i class="fa-solid fa-heart"></i></span>
-    </div>
-    <div class="product-info">
-        <h3><%#Eval("tenBanh") %></h3>
-        <p class="product-desc"><%#Eval("moTa") %></p>
-        <div class="product-bottom">
-            <span class="price"><%#Eval("giaBanh","{0:N0}") %>đ</span>
-            <asp:LinkButton
-    ID="btnThemVaoGio"
-    runat="server"
-    CssClass="add-cart"
-    CommandArgument='<%# Eval("maBanh") %>'
-    OnCommand="btnThemVaoGio_Command"
-    CausesValidation="false"
-    ToolTip="Thêm vào giỏ hàng">
+                    <article class="product">
+                        <div class="product-image">
+  <a href='<%# ResolveUrl("~/ChiTietSanPham.aspx") + "?id=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
+    <img src='<%# Eval("anhBanh") %>' alt='<%# Eval("tenBanh") %>' />
+</a>
 
-    <i class="fa-solid fa-plus"></i>
-
-</asp:LinkButton>
-        </div>
-    </div>
-</article>
-
-        </ItemTemplate>
-    </asp:Repeater>
-
+    <span class="product-heart">
+        <i class="fa-solid fa-heart"></i>
+    </span>
 </div>
+                        <div class="product-info">
+                        <h3>
+    <a class="ten-banh-link"
+       href='<%# ResolveUrl("~/ChiTietSanPham.aspx") + "?id=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
+        <%# Eval("tenBanh") %>
+    </a>
+</h3>
+                            <div class="product-bottom">
+                                <span class="price"><%# Eval("giaBanh","{0:N0}") %>đ</span>
+                                <div class="product-actions">
+                                    <asp:HyperLink ID="lnkMuaNgay" runat="server"
+                                        CssClass="buy-now"
+                                        NavigateUrl='<%# "DatHang.aspx?maBanh=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
+                                        Mua ngay
+                                    </asp:HyperLink>
+
+                                    <!-- Thêm vào giỏ: không tải lại trang, xử lý bằng JS -->
+                                    <button type="button"
+                                            class="add-cart"
+                                            data-ma-banh='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("maBanh"))) %>'
+                                            title="Thêm vào giỏ hàng"
+                                            aria-label="Thêm vào giỏ hàng">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </ItemTemplate>
+            </asp:Repeater>
+
+        </div>
     </section>
 
 
@@ -351,5 +371,6 @@
             <i class="fa-solid fa-arrow-right"></i>
         </a>
     </section>
-</asp:Content>
 
+    <script src="JS/TrangChu.js"></script>
+</asp:Content>
