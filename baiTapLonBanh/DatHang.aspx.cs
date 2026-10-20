@@ -98,6 +98,10 @@ namespace baiTapLonBanh
 
                         Session["GioHang"] = gioHang;
                     }
+                    // Xóa maBanh khỏi URL để tránh thêm bánh lần nữa khi F5
+                    Response.Redirect("DatHang.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                    return;
                 }
 
                 // Chỉ chuyển về giỏ hàng nếu thực sự không có sản phẩm

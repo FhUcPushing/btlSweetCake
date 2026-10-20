@@ -5,38 +5,76 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Text.RegularExpressions;
 namespace baiTapLonBanh
 {
     public partial class DangKy : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) return;
-
-            string fullname = Request.Form["fullname"]?.Trim();
-            string username = Request.Form["username"]?.Trim();
-            string password = Request.Form["password"]?.Trim();
-            string confirmPassword = Request.Form["confirm_password"]?.Trim();
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (!IsPostBack)
             {
-                divThongBao.InnerHtml = "<div class='message error'>Vui lòng nhập đầy đủ thông tin!</div>";
+                if (Request.QueryString["dangky"] == "thanhcong")
+                {
+                    divThongBao.InnerHtml =
+                        "<div class='message success'>Đăng ký thành công! Vui lòng đăng nhập.</div>";
+                }
+
                 return;
             }
+            loiFullname.InnerText = "";
+            loiUsername.InnerText = "";
+            loiPassword.InnerText = "";
+            loiConfirmPassword.InnerText = "";
+            string fullname = (Request.Form["fullname"] ?? "").Trim();
+            string username = (Request.Form["username"] ?? "").Trim();
+            string password = Request.Form["password"] ?? "";
+            string confirmPassword = Request.Form["confirm_password"] ?? "";
 
-            if (password != confirmPassword)
+            bool duLieuHopLe = true;
+            if (fullname == "")
             {
-                divThongBao.InnerHtml = "<div class='message error'>Mật khẩu xác nhận không khớp!</div>";
+                loiFullname.InnerText = "Vui lòng nhập họ và tên.";
+                duLieuHopLe = false;
+            }
+            else if (fullname.Length < 2 || fullname.Length > 50)
+            {
+                loiFullname.InnerText = "Họ và tên phải có từ 2 đến 50 ký tự.";
+                duLieuHopLe = false;
+            }
+            if (username == "")
+            {
+                loiUsername.InnerText = "Vui lòng nhập tên đăng nhập.";
+                duLieuHopLe = false;
+            }
+            else if (!Regex.IsMatch(username, @"^[A-Za-z0-9_]{4,20}$"))
+            {
+                loiUsername.InnerText =
+                    "Tên đăng nhập phải có 4–20 ký tự, chỉ gồm chữ không dấu, số và dấu gạch dưới.";
+                duLieuHopLe = false;
+            }
+            if (password.Length < 8)
+            {
+                loiPassword.InnerText = "Mật khẩu phải có ít nhất 8 ký tự.";
+                duLieuHopLe = false;
+            }
+            if (confirmPassword == "")
+            {
+                loiConfirmPassword.InnerText = "Vui lòng xác nhận mật khẩu.";
+                duLieuHopLe = false;
+            }
+            else if (password != confirmPassword)
+            {
+                loiConfirmPassword.InnerText = "Mật khẩu xác nhận không khớp.";
+                duLieuHopLe = false;
+            }
+            if (!duLieuHopLe)
+            {
                 return;
             }
 
             NguoiDung userMoi = null;
             string loi = null;
-
-            // Khóa Application chỉ trong lúc thêm tài khoản.
-            // Phải mở khóa TRƯỚC khi chuyển trang (Response.Redirect ném ThreadAbortException,
-            // nếu còn khóa thì cả website sẽ bị treo).
             Application.Lock();
             try
             {
@@ -71,15 +109,16 @@ namespace baiTapLonBanh
 
             if (loi != null)
             {
-                divThongBao.InnerHtml = "<div class='message error'>" + loi + "</div>";
+                loiUsername.InnerText = loi;
                 return;
             }
+            divThongBao.InnerHtml =
+                "<div class='message success'>" +
+                "Đăng ký thành công! " +
+                "<a href='DangNhap.aspx'>Đăng nhập ngay</a>" +
+                "</div>";
 
-            // Đăng ký thành công: đăng nhập luôn rồi về trang chủ
-            Session["TaiKhoan"] = userMoi;
-            Session["TenHienThi"] = userMoi.TenDangNhap;
-
-            Response.Redirect("TrangChu.aspx");
+            return;
         }
     }
 }

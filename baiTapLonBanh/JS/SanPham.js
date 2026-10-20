@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
+
     document.addEventListener("click", function (e) {
         var nut = e.target.closest(".nut-them-gio");
         if (!nut || !thongBao) return;
@@ -87,7 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(thongBao.getAttribute("data-url"), {
             method: "POST",
             credentials: "same-origin",
-            headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+            },
             body: "maBanh=" + encodeURIComponent(maBanh)
         })
             .then(function (res) {
@@ -101,4 +104,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 hienThongBao("Không thêm được bánh, bạn thử lại nhé.", true);
             });
     });
+
+    // NÚT LÊN ĐẦU TRANG
+    var btnLenDau = document.getElementById("btnLenDauTrang");
+
+    if (btnLenDau) {
+        function capNhatNutLenDau() {
+            if (window.scrollY > 300) {
+                btnLenDau.classList.add("hien");
+            } else {
+                btnLenDau.classList.remove("hien");
+            }
+        }
+
+        window.addEventListener("scroll", capNhatNutLenDau);
+
+        btnLenDau.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        capNhatNutLenDau();
+    }
 });

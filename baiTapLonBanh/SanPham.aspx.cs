@@ -23,7 +23,6 @@ namespace baiTapLonBanh
         //   trang  : số trang, bắt đầu từ 1
         // ==========================================================
 
-        private static readonly string[] CacGiaTriXem = { "1", "4", "8", "12", "all" };
 
         // Các giá trị này được dùng trực tiếp trong SanPham.aspx
         protected string LoaiHienTai = "";
@@ -49,40 +48,93 @@ namespace baiTapLonBanh
             }
 
             // 1. Lọc theo loại bánh và từ khóa
+
             string tuKhoaKhongDau = BoDau(TuKhoa);
 
-            IEnumerable<SanPhamBanh> ketQua = danhSachGoc.Where(delegate (SanPhamBanh x)
+            // 1. Lọc sản phẩm
+            List<SanPhamBanh> danhSachSauLoc =
+                new List<SanPhamBanh>();
+
+            foreach (SanPhamBanh x in danhSachGoc)
             {
-                return KhopLoai(x.loaiBanh) &&
-                       (tuKhoaKhongDau == "" || BoDau(x.tenBanh).Contains(tuKhoaKhongDau));
-            });
+                if (KhopLoai(x.loaiBanh) &&
+                    (tuKhoaKhongDau == "" ||
+                     BoDau(x.tenBanh).Contains(tuKhoaKhongDau)))
+                {
+                    danhSachSauLoc.Add(x);
+                }
+            }
 
             // 2. Sắp xếp theo ngày tạo
-            if (SapXepHienTai == "oldest")
+            List<SanPhamBanh> danhSachLoc = danhSachSauLoc;
+
+            for (int i = 0; i < danhSachLoc.Count - 1; i++)
             {
-                ketQua = ketQua.OrderBy(x => x.ngayTao);
+                for (int j = i + 1; j < danhSachLoc.Count; j++)
+                {
+                    bool canDoiCho =
+                        (SapXepHienTai == "oldest" &&
+                         danhSachLoc[i].ngayTao > danhSachLoc[j].ngayTao)
+                        ||
+                        (SapXepHienTai == "newest" &&
+                         danhSachLoc[i].ngayTao < danhSachLoc[j].ngayTao);
+
+                    if (canDoiCho)
+                    {
+                        SanPhamBanh bienTam = danhSachLoc[i];
+                        danhSachLoc[i] = danhSachLoc[j];
+                        danhSachLoc[j] = bienTam;
+                    }
+                }
+            }
+
+            // 3. Tính số bánh trên mỗi trang
+            int soMoiTrang;
+
+            if (XemHienTai == "all")
+            {
+                soMoiTrang = Math.Max(danhSachLoc.Count, 1);
             }
             else
             {
-                ketQua = ketQua.OrderByDescending(x => x.ngayTao);
+                soMoiTrang = int.Parse(XemHienTai);
             }
 
-            List<SanPhamBanh> danhSachLoc = ketQua.ToList();
+            // Tính tổng số trang
+            TongTrang = Math.Max(
+                1,
+                (int)Math.Ceiling(
+                    danhSachLoc.Count / (double)soMoiTrang
+                )
+            );
 
-            // 3. Chia trang
-            int soMoiTrang = XemHienTai == "all"
-                ? Math.Max(danhSachLoc.Count, 1)
-                : int.Parse(XemHienTai);
+            // Đảm bảo trang hiện tại hợp lệ
+            if (TrangHienTai > TongTrang)
+            {
+                TrangHienTai = TongTrang;
+            }
 
-            TongTrang = Math.Max(1, (int)Math.Ceiling(danhSachLoc.Count / (double)soMoiTrang));
+            if (TrangHienTai < 1)
+            {
+                TrangHienTai = 1;
+            }
 
-            if (TrangHienTai > TongTrang) TrangHienTai = TongTrang;
-            if (TrangHienTai < 1) TrangHienTai = 1;
+            // 4. Lấy bánh thuộc trang hiện tại
+            List<SanPhamBanh> danhSachTrang =
+                new List<SanPhamBanh>();
 
-            List<SanPhamBanh> danhSachTrang = danhSachLoc
-                .Skip((TrangHienTai - 1) * soMoiTrang)
-                .Take(soMoiTrang)
-                .ToList();
+            int viTriBatDau = (TrangHienTai - 1) * soMoiTrang;
+
+            int viTriKetThuc = Math.Min(
+                viTriBatDau + soMoiTrang,
+                danhSachLoc.Count
+            );
+
+            for (int i = viTriBatDau; i < viTriKetThuc; i++)
+            {
+                danhSachTrang.Add(danhSachLoc[i]);
+            }
+
 
             // 4. Hiển thị
             danhSachBanh.Attributes["class"] =
@@ -98,35 +150,55 @@ namespace baiTapLonBanh
 
         // ---------- ĐỌC THAM SỐ TRÊN URL ----------
 
+
         private void DocThamSo()
         {
+            // 1. Đọc loại bánh
             string loai = Request.QueryString["loai"];
-            if (loai == "banh_kem" || loai == "banh_tuoi" || loai == "banh_mi")
+
+            if (loai == "banh_kem" ||
+                loai == "banh_tuoi" ||
+                loai == "banh_mi")
             {
                 LoaiHienTai = loai;
             }
 
+            // 2. Đọc từ khóa tìm kiếm
             string q = (Request.QueryString["q"] ?? "").Trim();
-            if (q.Length > 100) q = q.Substring(0, 100);
+
+            if (q.Length > 100)
+            {
+                q = q.Substring(0, 100);
+            }
+
             TuKhoa = q;
 
+            // 3. Đọc số lượng bánh mỗi trang
             string xem = Request.QueryString["xem"];
-            if (Array.IndexOf(CacGiaTriXem, xem) >= 0)
+
+            if (xem == "1" || xem == "4" ||
+                xem == "8" || xem == "12" ||
+                xem == "all")
             {
                 XemHienTai = xem;
             }
 
+            // 4. Đọc cách sắp xếp
             if (Request.QueryString["sapxep"] == "oldest")
             {
                 SapXepHienTai = "oldest";
             }
 
+            // 5. Đọc số trang
             int trang;
-            if (int.TryParse(Request.QueryString["trang"], out trang) && trang >= 1)
+
+            if (int.TryParse(Request.QueryString["trang"], out trang)
+                && trang >= 1)
             {
                 TrangHienTai = trang;
             }
         }
+
 
         private bool KhopLoai(string loaiBanh)
         {
@@ -271,42 +343,29 @@ namespace baiTapLonBanh
                    (dangChon ? " class=\"active\" aria-current=\"page\"" : "") +
                    " aria-label=\"" + nhanAria + "\">" + nhan + "</a>";
         }
-
-        // ---------- CLASS CHO TỪNG THẺ BÁNH ----------
-
         protected string LayClassSanPham(string loaiBanh)
         {
-            string loaiBanhClass = "";
-            string nhomClass = "";
-
             switch (loaiBanh)
             {
                 case "Bánh Mousse":
-                    loaiBanhClass = "banh_mousse";
-                    nhomClass = "banh_kem";
-                    break;
+                    return "banh_mousse banh_kem";
 
                 case "Bánh Sinh Nhật":
-                    loaiBanhClass = "banh_sinh_nhat";
-                    nhomClass = "banh_kem";
-                    break;
+                    return "banh_sinh_nhat banh_kem";
 
                 case "Bánh Kem":
-                    nhomClass = "banh_kem";
-                    break;
+                    return "banh_kem";
 
                 case "Bánh Tươi":
-                    nhomClass = "banh_tuoi";
-                    break;
+                    return "banh_tuoi";
 
                 case "Bánh Mì":
-                    nhomClass = "banh_mi";
-                    break;
-            }
+                    return "banh_mi";
 
-            return (loaiBanhClass + " " + nhomClass)
-                .Replace("  ", " ")
-                .Trim();
+                default:
+                    return "";
+            }
         }
+
     }
 }

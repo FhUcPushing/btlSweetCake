@@ -161,5 +161,13 @@
          aria-live="polite"
          data-url='<%= ResolveUrl("~/ThemGioHang.ashx") %>'></div>
     </div>
+    <!-- NÚT LÊN ĐẦU TRANG -->
+<button type="button"
+        id="btnLenDauTrang"
+        class="btn-len-dau"
+        title="Lên đầu trang"
+        aria-label="Lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
     <script src="JS/SanPham.js"></script>
 </asp:Content>
