@@ -52,6 +52,11 @@ namespace baiTapLonBanh
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["TaiKhoan"] as NguoiDung == null)
+            {
+                Response.Redirect("DangNhap.aspx");
+                return;
+            }
             // Không cho chọn ngày nhận trong quá khứ
             ngayNhan.Attributes["min"] = DateTime.Today.ToString("yyyy-MM-dd");
 
@@ -359,7 +364,38 @@ namespace baiTapLonBanh
             litThoiGian.Text = ngay.ToString("dd/MM/yyyy") + ", " + ddlGio.SelectedItem.Text;
             litThanhToan.Text = tenThanhToan;
             litTongThanhToan.Text = Tien(t.TongCong);
+            // Lưu đơn vào danh sách để trang Tài khoản đọc ra
+            DonHang don = new DonHang
+            {
+                MaDon = maDon,
+                TenDangNhap = ((NguoiDung)Session["TaiKhoan"]).TenDangNhap,
+                NgayDat = DateTime.Now,
+                NguoiNhan = hoTen,
+                SoDienThoai = sdt,
+                DiaChi = diaChi,
+                ThoiGianNhan = ngay.ToString("dd/MM/yyyy") + ", " + ddlGio.SelectedItem.Text,
+                ThanhToan = tenThanhToan,
+                GhiChu = ghiChu,
+                TamTinh = t.TamTinh,
+                PhiShip = t.PhiShip,
+                GiamGia = t.GiamGia,
+                TongCong = t.TongCong,
+                TrangThai = "Chờ xác nhận",
+                Dong = dong.Select(d => new ChiTietDon
+                {
+                    maBanh = d.maBanh,
+                    tenBanh = d.tenBanh,
+                    anhBanh = d.anhBanh,
+                    donGia = d.giaBanh,
+                    soLuong = d.soLuong,
+                    thanhTien = d.thanhTien
+                }).ToList()
+            };
 
+            Application.Lock();
+            List<DonHang> dsDon = (List<DonHang>)Application["DanhSachDonHang"];
+            dsDon.Add(don);
+            Application.UnLock();
             // Giữ mã đơn gần nhất như bản cũ
             Session["DonHangGanNhat"] = maDon;
 

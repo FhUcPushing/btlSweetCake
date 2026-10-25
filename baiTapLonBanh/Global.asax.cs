@@ -63,6 +63,7 @@ namespace baiTapLonBanh
             ThemSanPham(ds, "28", "Bánh Mì Que Pate", 15000m, "image/SanPham/banhmique_SP.jpg", "Bánh Mì", new DateTime(2025, 8, 28));
 
             Application["DanhSachSanPham"] = ds;
+            Application["DanhSachDonHang"] = new List<DonHang>();
         }
 
         protected void Session_Start(object sender, EventArgs e)
