@@ -984,3 +984,7 @@
         height: 42px;
     }
 }
+/* Nút Mua ngay: hình chữ nhật bo góc nhẹ (giống trang chủ); nút giỏ hàng giữ nguyên */
+.product-page .nhom-nut-mua .nut-mua-ngay {
+    border-radius: 10px;
+}

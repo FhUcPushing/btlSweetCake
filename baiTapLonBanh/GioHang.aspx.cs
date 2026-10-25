@@ -1,10 +1,11 @@
-﻿using System;
+﻿using baiTapLonBanh;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using baiTapLonBanh;
+using static baiTapLonBanh.SanPham;
 namespace baiTapLonBanh
 {
     public partial class GioHang : System.Web.UI.Page
@@ -35,18 +36,25 @@ namespace baiTapLonBanh
             }
 
             // Lấy thông tin bánh và số lượng trong giỏ
-            var sanPhamTrongGio = danhSachSanPham
-                .Where(b => gioHang.ContainsKey(b.maBanh))
-                .Select(b => new
-                {
-                    maBanh = b.maBanh,
-                    tenBanh = b.tenBanh,
-                    anhBanh = b.anhBanh,
-                    giaBanh = b.giaBanh,
-                    soLuong = gioHang[b.maBanh],
-                    thanhTien = b.giaBanh * gioHang[b.maBanh]
-                })
-                .ToList();
+            var sanPhamTrongGio = gioHang
+    .Select(kv =>
+    {
+        string ma, size;
+        GioHangKey.Tach(kv.Key, out ma, out size);
+        SanPhamBanh b = danhSachSanPham.FirstOrDefault(x => x.maBanh == ma);
+        return new { kv, b, size };
+    })
+    .Where(x => x.b != null)
+    .Select(x => new
+    {
+        khoa = x.kv.Key,
+        tenBanh = x.b.tenBanh + (x.size != null ? " (" + GioHangKey.TenSize(x.size) + ")" : ""),
+        anhBanh = x.b.anhBanh,
+        giaBanh = GioHangKey.DonGia(x.b, x.size),
+        soLuong = x.kv.Value,
+        thanhTien = GioHangKey.DonGia(x.b, x.size) * x.kv.Value
+    })
+    .ToList();
 
             if (sanPhamTrongGio.Count == 0)
             {
@@ -103,7 +111,7 @@ namespace baiTapLonBanh
             }
             else if (e.CommandName == "xoa")
             {
-                gioHang.Remove(maBanh);
+                gioHang.Remove(maBanh);   // maBanh ở đây chính là khóa "mã|size"
             }
 
             Session["GioHang"] = gioHang;

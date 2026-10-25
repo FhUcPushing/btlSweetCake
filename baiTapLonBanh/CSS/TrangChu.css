@@ -1310,3 +1310,95 @@ body {
     .ten-banh-link:hover {
         color: #d9457c;
     }
+/* ===== ĐIỆN THOẠI: banner + thẻ sản phẩm gọn đẹp hơn ===== */
+@media (max-width: 600px) {
+
+    /* --- 3 ý nhỏ ở banner: xếp 3 cột đều nhau, icon trên chữ dưới --- */
+    .hero-points {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        width: 100%;
+        margin-top: 12px;
+        padding: 10px 8px;
+        border-radius: 18px;
+    }
+
+        .hero-points > div {
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 6px;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.35;
+        }
+
+        .hero-points i {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+        }
+
+    /* --- Thẻ sản phẩm: các thẻ cùng hàng cao bằng nhau --- */
+    .product {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 11px 10px 12px;
+    }
+
+    .product h3 {
+        min-height: 0; /* bỏ phần chừa sẵn 2 dòng */
+        margin-bottom: 6px;
+    }
+
+    /* Giá nằm trên, hai nút nằm dưới và rộng bằng ảnh bánh */
+    .product-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin-top: auto; /* luôn dính đáy thẻ, các thẻ thẳng hàng */
+        padding-top: 0;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .product-actions {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .buy-now {
+        flex: 1; /* "Mua ngay" kéo dài hết phần còn lại */
+        min-height: 40px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .add-cart {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}
+/* Điện thoại: tên bánh và giá sát nhau hơn ở phần "Có lẽ bạn cũng sẽ thích" */
+@media (max-width: 768px) {
+    .product-page .goi_y_ten {
+        min-height: 0; /* bỏ phần chừa sẵn 2 dòng */
+        margin-bottom: 8px;
+    }
+
+    .product-page .goi_y_hang_duoi {
+        margin-top: auto; /* hàng giá + nút luôn dính đáy thẻ */
+        padding-top: 0;
+    }
+}

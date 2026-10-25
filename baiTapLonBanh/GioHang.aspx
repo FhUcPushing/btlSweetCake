@@ -61,7 +61,7 @@
                                                 Text="−"
                                                 CssClass="nut-sl"
                                                 CommandName="giam"
-                                                CommandArgument='<%# Eval("maBanh") %>' />
+                                                CommandArgument='<%# Eval("khoa") %>' />
 
                                             <span class="so-luong-so"><%# Eval("soLuong") %></span>
 
@@ -71,7 +71,7 @@
                                                 Text="+"
                                                 CssClass="nut-sl"
                                                 CommandName="tang"
-                                                CommandArgument='<%# Eval("maBanh") %>' />
+                                                CommandArgument='<%# Eval("khoa") %>' />
                                         </div>
                                     </td>
 
@@ -85,8 +85,7 @@
                                             runat="server"
                                             CssClass="nut-xoa"
                                             CommandName="xoa"
-                                            CommandArgument='<%# Eval("maBanh") %>'
-                                            OnClientClick="return confirm('Xóa bánh này khỏi giỏ hàng?');">
+                                            CommandArgument='<%# Eval("khoa") %>'>
                                             <i class="fa-solid fa-trash-can"></i> Xóa
                                         </asp:LinkButton>
                                     </td>

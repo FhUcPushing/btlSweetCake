@@ -366,6 +366,46 @@ namespace baiTapLonBanh
                     return "";
             }
         }
+        // Tính đơn giá và tên hiển thị theo size đã chọn (dùng chung cho Giỏ hàng + Đặt hàng)
+        public static class GiaTheoSize
+        {
+            public static bool LaBanhKem(SanPhamBanh b)
+            {
+                return b.loaiBanh == "Bánh Mousse"
+                    || b.loaiBanh == "Bánh Sinh Nhật"
+                    || b.loaiBanh == "Bánh Kem";
+            }
+
+            // Size đã chọn của bánh; chưa chọn thì mặc định 16cm. Bánh không có size trả về ""
+            public static string TenSize(SanPhamBanh b, Dictionary<string, string> tuyChon)
+            {
+                if (!LaBanhKem(b)) return "";
+
+                string size;
+                if (tuyChon != null && tuyChon.TryGetValue(b.maBanh, out size)) return size;
+                return "16cm";
+            }
+
+            // Đơn giá theo size (cùng công thức với trang chi tiết: 16cm x1, 20cm x1.5, 24cm x2)
+            public static decimal DonGia(SanPhamBanh b, Dictionary<string, string> tuyChon)
+            {
+                if (!LaBanhKem(b)) return b.giaBanh;
+
+                decimal heSo = 1m;
+                string size = TenSize(b, tuyChon);
+                if (size == "20cm") heSo = 1.5m;
+                else if (size == "24cm") heSo = 2m;
+
+                return Math.Round(b.giaBanh * heSo / 1000m, 0) * 1000m;
+            }
+
+            // Tên hiện trong giỏ: "Bánh Mousse Hawaii (20cm)"
+            public static string TenHienThi(SanPhamBanh b, Dictionary<string, string> tuyChon)
+            {
+                string size = TenSize(b, tuyChon);
+                return size == "" ? b.tenBanh : b.tenBanh + " (" + size + ")";
+            }
+        }
 
     }
 }

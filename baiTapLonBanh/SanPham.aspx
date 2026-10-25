@@ -128,7 +128,6 @@
                                 <!-- Mua ngay: chuyển đến trang đặt hàng -->
                                 <a class="nut-mua-ngay"
                                    href='DatHang.aspx?maBanh=<%# HttpUtility.UrlEncode(Eval("maBanh").ToString()) %>'>
-                                    <i class="fa-solid fa-bag-shopping"></i>
                                     <span>Mua ngay</span>
                                 </a>
 

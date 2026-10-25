@@ -1,4 +1,5 @@
-﻿using System;
+﻿using baiTapLonBanh;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using baiTapLonBanh;
+using static baiTapLonBanh.SanPham;
 
 namespace baiTapLonBanh
 {
@@ -85,15 +86,16 @@ namespace baiTapLonBanh
                         {
                             gioHang = new Dictionary<string, int>();
                         }
+                        // Thêm bánh đã chọn vào giỏ hàng (bánh kem mặc định size 16)
+                        string khoa = GioHangKey.Tao(maBanh, GioHangKey.LaBanhKem(banhDuocChon) ? "16" : null);
 
-                        // Thêm bánh đã chọn vào giỏ hàng
-                        if (gioHang.ContainsKey(maBanh))
+                        if (gioHang.ContainsKey(khoa))
                         {
-                            gioHang[maBanh] += 1;
+                            gioHang[khoa] += 1;
                         }
                         else
                         {
-                            gioHang.Add(maBanh, 1);
+                            gioHang.Add(khoa, 1);
                         }
 
                         Session["GioHang"] = gioHang;
@@ -138,20 +140,25 @@ namespace baiTapLonBanh
                 return ketQua;
             }
 
-            foreach (SanPhamBanh b in danhSachSanPham)
+            foreach (KeyValuePair<string, int> kv in gioHang)
             {
-                if (gioHang.ContainsKey(b.maBanh))
+                string ma, size;
+                GioHangKey.Tach(kv.Key, out ma, out size);
+
+                SanPhamBanh b = danhSachSanPham.FirstOrDefault(x => x.maBanh == ma);
+                if (b == null) continue;
+
+                decimal donGia = GioHangKey.DonGia(b, size);
+
+                ketQua.Add(new DongGioHang
                 {
-                    ketQua.Add(new DongGioHang
-                    {
-                        maBanh = b.maBanh,
-                        tenBanh = b.tenBanh,
-                        anhBanh = b.anhBanh,
-                        giaBanh = b.giaBanh,
-                        soLuong = gioHang[b.maBanh],
-                        thanhTien = b.giaBanh * gioHang[b.maBanh]
-                    });
-                }
+                    maBanh = kv.Key,
+                    tenBanh = b.tenBanh + (size != null ? " (" + GioHangKey.TenSize(size) + ")" : ""),
+                    anhBanh = b.anhBanh,
+                    giaBanh = donGia,
+                    soLuong = kv.Value,
+                    thanhTien = donGia * kv.Value
+                });
             }
             return ketQua;
         }
@@ -358,7 +365,7 @@ namespace baiTapLonBanh
 
             // Đặt xong thì làm trống giỏ hàng
             Session.Remove("GioHang");
-
+            Session.Remove("TuyChonBanh");
             pnlDatHang.Visible = false;
             pnlThanhCong.Visible = true;
         }

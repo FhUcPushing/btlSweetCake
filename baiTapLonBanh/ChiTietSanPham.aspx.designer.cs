@@ -51,6 +51,15 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl tenBanh;
 
         /// <summary>
+        /// giaBanh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl giaBanh;
+
+        /// <summary>
         /// moTa control.
         /// </summary>
         /// <remarks>
@@ -60,13 +69,31 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl moTa;
 
         /// <summary>
-        /// giaBanh control.
+        /// thongTinChiTiet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl giaBanh;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl thongTinChiTiet;
+
+        /// <summary>
+        /// khuVucSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl khuVucSize;
+
+        /// <summary>
+        /// rptSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptSize;
 
         /// <summary>
         /// soLuongBanh control.
@@ -78,6 +105,15 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl soLuongBanh;
 
         /// <summary>
+        /// btnMuaNgay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnMuaNgay;
+
+        /// <summary>
         /// btnThemVaoGio control.
         /// </summary>
         /// <remarks>
@@ -85,15 +121,6 @@ namespace baiTapLonBanh
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnThemVaoGio;
-
-        /// <summary>
-        /// btnMuaNgay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnMuaNgay;
 
         /// <summary>
         /// thongBaoGioHang control.
@@ -121,6 +148,15 @@ namespace baiTapLonBanh
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl khuVucGoiY;
+
+        /// <summary>
+        /// thongBaoGoiY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl thongBaoGoiY;
 
         /// <summary>
         /// rptDanhSachGoiY control.
