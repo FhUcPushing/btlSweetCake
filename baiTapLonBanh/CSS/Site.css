@@ -81,8 +81,15 @@ a {
     margin: 0 auto;
 }
 
+/* Footer luôn nằm dưới cùng màn hình khi nội dung ngắn */
+form#form1 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
-    min-height: 400px;
+    flex: 1 0 auto;
 }
 
 /* ==========================================
@@ -372,7 +379,10 @@ main {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
+.header-account a.user-greeting:hover {
+    background: var(--pink-light);
+    color: var(--pink-deep);
+}
 .header-account .logout-link {
     width: 36px;
     height: 36px;
@@ -399,31 +409,148 @@ main {
 }
 
 /* ==========================================
-   FOOTER
+   FOOTER (hồng nhạt, 3 cột cùng hàng)
    ========================================== */
 
 footer.footer {
     margin-top: 36px;
-    padding: 28px 15px;
-    border-top: 1px solid #f4e3e9;
+    border-top: 3px solid var(--pink-soft);
     background: #fff5f8;
     color: #7a5a68;
+    font-size: 14px;
+}
+
+.footer-ba-cot {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: start;
+    padding-top: 32px;
+    padding-bottom: 28px;
+}
+
+.fc h4 {
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    position: relative;
+    color: var(--pink-deep);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+    .fc h4::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 34px;
+        height: 3px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--pink-dark), var(--pink-soft));
+    }
+
+/* Trái: liên hệ */
+.fc-trai p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 9px;
+}
+
+.fc-trai i {
+    width: 18px;
+    color: var(--pink-dark);
     text-align: center;
 }
 
-    footer.footer p {
-        margin: 4px 0;
-        font-size: 13px;
+/* Giữa: tên tiệm + mạng xã hội */
+.fc-giua {
+    text-align: center;
+}
+
+.footer-brand {
+    margin: 0 0 6px;
+    color: var(--pink-dark);
+    font-family: var(--font-brand);
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-shadow: 0 1px 0 #ffffff, 0 2px 3px rgba(176, 48, 106, 0.18);
+}
+
+    .footer-brand i {
+        margin-right: 4px;
+        font-size: 26px;
     }
 
-    footer.footer .footer-brand {
-        margin-bottom: 6px;
-        color: var(--pink-dark);
-        font-family: var(--font-brand);
-        font-size: 22px;
-        font-weight: 400;
-        text-shadow: 0 1px 0 #ffffff, 0 2px 3px rgba(176, 48, 106, 0.15);
+.footer-khau-hieu {
+    margin: 0 0 14px;
+    color: #9a7888;
+    font-size: 13px;
+}
+
+.footer-mxh {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+    .footer-mxh a {
+        font-size: 30px;
+        line-height: 1;
+        transition: transform 0.2s ease, opacity 0.2s ease;
     }
+
+        .footer-mxh a:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+    /* Màu thật của từng mạng xã hội */
+    .footer-mxh .fa-facebook {
+        color: #1877f2;
+    }
+
+    .footer-mxh .fa-instagram {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    .footer-mxh .fa-tiktok {
+        color: #000000;
+        text-shadow: -1.5px -1.5px 0 #25f4ee, 1.5px 1.5px 0 #fe2c55;
+    }
+
+/* Phải: liên kết */
+.fc-phai {
+    justify-self: end;
+}
+
+    .fc-phai a {
+        display: block;
+        padding: 3px 0;
+        color: #7a5a68;
+        font-weight: 700;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+        .fc-phai a:hover {
+            padding-left: 5px;
+            color: var(--pink-deep);
+        }
+
+.footer-ban-quyen {
+    padding: 11px 15px;
+    border-top: 1px solid #f4e3e9;
+    background: #ffeef4;
+    color: #9a7888;
+    font-size: 12.5px;
+    text-align: center;
+}
 
 /* ==========================================
    MÀN HÌNH RỘNG (từ 1360px): header gọn nhưng THOÁNG
@@ -978,13 +1105,41 @@ footer.footer {
                 padding: 10px 14px;
             }
 
-    /* Footer trên điện thoại */
+    /* Footer trên điện thoại: tên tiệm lên đầu, 2 cột còn lại nằm cạnh nhau */
     footer.footer {
-        margin-top: 28px;
-        padding: 24px 12px;
+        margin-top: 26px;
     }
 
-        footer.footer .footer-brand {
-            font-size: 20px;
-        }
+    .footer-ba-cot {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 14px;
+        padding-top: 22px;
+        padding-bottom: 18px;
+    }
+
+    .fc-giua {
+        grid-column: 1 / -1;
+        order: -1;
+    }
+
+    .fc-phai {
+        justify-self: start;
+    }
+
+    .footer-brand {
+        font-size: 28px;
+    }
+
+    .footer-khau-hieu {
+        margin-bottom: 10px;
+    }
+
+    .fc h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .fc-trai p {
+        font-size: 13px;
+    }
 }

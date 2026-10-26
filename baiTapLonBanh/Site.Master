@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="baiTapLonBanh.Site" %>
-
+<%@ Import Namespace="baiTapLonBanh" %>
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -23,13 +23,17 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" enctype="multipart/form-data">
         <%
-            // Tên người dùng được lưu vào Session sau khi đăng nhập/đăng ký thành công.
-            string tenNguoiDung = Session["TenHienThi"] as string;
-            bool daDangNhap = !string.IsNullOrEmpty(tenNguoiDung);
-            string tenAnToan = daDangNhap ? Server.HtmlEncode(tenNguoiDung) : "";
-        %>
+    // Lấy thông tin người dùng đang đăng nhập
+    string tenNguoiDung = Session["TenHienThi"] as string;
+    bool daDangNhap = !string.IsNullOrEmpty(tenNguoiDung);
+    string tenAnToan = daDangNhap ? Server.HtmlEncode(tenNguoiDung) : "";
+
+    // Kiểm tra quyền quản trị
+    NguoiDung taiKhoan = Session["TaiKhoan"] as NguoiDung;
+    bool laAdmin = taiKhoan != null && taiKhoan.VaiTro == "Admin";
+%>
 
         <!-- HEADER DÙNG CHUNG -->
         <header class="site-header">
@@ -60,10 +64,10 @@
                     <!-- Tài khoản trong menu điện thoại -->
                     <% if (daDangNhap) { %>
                         <div class="nav-account">
-                            <span class="nav-greeting">
-                                <i class="fa-solid fa-circle-user"></i>
-                                <span class="ten">Xin chào, <%= tenAnToan %></span>
-                            </span>
+                            <a href="<%= ResolveUrl("~/TaiKhoan.aspx") %>" class="nav-greeting">
+    <i class="fa-solid fa-circle-user"></i>
+    <span class="ten">Xin chào, <%= tenAnToan %></span>
+</a>
                             <a href="<%= ResolveUrl("~/DangNhap.aspx?dangxuat=1") %>"
                                class="nav-logout"
                                title="Đăng xuất"
@@ -105,6 +109,12 @@
                         <i class="fa-solid fa-headset"></i>
                         <span>Tư vấn</span>
                     </a>
+                    <% if (laAdmin) { %>
+    <a href="<%= ResolveUrl("~/QuanTri.aspx") %>">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Quản trị</span>
+    </a>
+<% } %>
                 </nav>
 
                 <!-- Giỏ hàng và tài khoản -->
@@ -132,10 +142,10 @@
                         </a>
 
                         <% if (daDangNhap) { %>
-                            <span class="user-greeting" title="<%= tenAnToan %>">
-                                <i class="fa-solid fa-circle-user"></i>
-                                <span class="ten">Xin chào, <%= tenAnToan %></span>
-                            </span>
+                            <a href="<%= ResolveUrl("~/TaiKhoan.aspx") %>" class="user-greeting" title="Tài khoản của <%= tenAnToan %>">
+    <i class="fa-solid fa-circle-user"></i>
+    <span class="ten">Xin chào, <%= tenAnToan %></span>
+</a>
                             <a href="<%= ResolveUrl("~/DangNhap.aspx?dangxuat=1") %>"
                                class="logout-link"
                                title="Đăng xuất"
@@ -167,16 +177,44 @@
         </main>
 
         <!-- FOOTER DÙNG CHUNG -->
-        <footer class="footer">
-            <div class="container">
-                <p class="footer-brand">
-                    <i class="fa-solid fa-cake-candles"></i>
-                    SweetCake
-                </p>
-                <p>© 2026 SweetCake</p>
-                <p>Ngọt ngào trong từng chiếc bánh.</p>
+    <footer class="footer">
+    <div class="container footer-ba-cot">
+
+        <!-- Trái: thông tin liên hệ -->
+        <div class="fc fc-trai">
+            <h4>Thông tin liên hệ</h4>
+            <p>Hotline tư vấn: 0901 234 567</p>
+            <p>Địa chỉ: 123 Đường ABC, Bắc Ninh</p>
+            <p>Email: hello@sweetcake.vn</p>
+            <p>Giờ mở cửa: 8:00 – 21:00 mỗi ngày</p>
+        </div>
+
+<!-- Giữa: thương hiệu + bản đồ -->
+<div class="fc fc-giua">
+    <p class="footer-brand">
+        <i class="fa-solid fa-cake-candles"></i> SweetCake
+    </p>
+    <p class="footer-khau-hieu">Ngọt ngào trong từng chiếc bánh.</p>
+
+</div>
+        <!-- Phải: liên kết -->
+        <div class="fc fc-phai">
+            <h4>Liên kết</h4>
+            <div class="footer-mxh">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             </div>
-        </footer>
+            <div class="footer-menu">
+                <a href="<%= ResolveUrl("~/SanPham.aspx") %>">Sản phẩm</a>
+                <a href="<%= ResolveUrl("~/TinTuc.aspx") %>">Tin tức</a>
+                <a href="<%= ResolveUrl("~/TuVan.aspx") %>">Tư vấn</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-ban-quyen">© 2026 SweetCake. Bảo lưu mọi quyền.</div>
+</footer>
     </form>
 
     <!-- JavaScript dùng chung: menu mobile và menu active -->

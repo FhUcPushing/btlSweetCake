@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChiTietDonHang.aspx" />
     <Content Include="ChiTietSanPham.aspx" />
     <Content Include="ChiTietTinTuc.aspx" />
     <Content Include="CSS\ChiTietSanPham.css" />
@@ -72,8 +73,10 @@
     <Content Include="CSS\DatHang.css" />
     <Content Include="CSS\GioHang.css" />
     <Content Include="CSS\GioiThieu.css" />
+    <Content Include="CSS\QuanTri.css" />
     <Content Include="CSS\SanPham.css" />
     <Content Include="CSS\Site.css" />
+    <Content Include="CSS\TaiKhoan.css" />
     <Content Include="CSS\TinTuc.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="CSS\TuVan.css" />
@@ -191,13 +194,25 @@
     <Content Include="JS\SanPham.js" />
     <Content Include="JS\Site.js" />
     <Content Include="JS\TrangChu.js" />
+    <Content Include="QuanLySanPham.aspx" />
+    <Content Include="QuanTri.aspx" />
     <Content Include="SanPham.aspx" />
+    <Content Include="SuaSanPham.aspx" />
+    <Content Include="TaiKhoan.aspx" />
+    <Content Include="ThemSanPham.aspx" />
     <Content Include="TinTuc.aspx" />
     <Content Include="TrangChu.aspx" />
     <Content Include="TuVan.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDonHang.aspx.cs">
+      <DependentUpon>ChiTietDonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietDonHang.aspx.designer.cs">
+      <DependentUpon>ChiTietDonHang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietSanPham.aspx.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
     </Compile>
@@ -232,6 +247,7 @@
     <Compile Include="DatHang.aspx.designer.cs">
       <DependentUpon>DatHang.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DonHang.cs" />
     <Compile Include="GioHang.aspx.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,6 +268,20 @@
     </Compile>
     <Compile Include="NguoiDung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLySanPham.aspx.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham.aspx.designer.cs">
+      <DependentUpon>QuanLySanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanTri.aspx.cs">
+      <DependentUpon>QuanTri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanTri.aspx.designer.cs">
+      <DependentUpon>QuanTri.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,6 +296,27 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SuaSanPham.aspx.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuaSanPham.aspx.designer.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.aspx.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan.aspx.designer.cs">
+      <DependentUpon>TaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThemSanPham.aspx.cs">
+      <DependentUpon>ThemSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThemSanPham.aspx.designer.cs">
+      <DependentUpon>ThemSanPham.aspx</DependentUpon>
     </Compile>
     <Compile Include="TinTuc.aspx.cs">
       <DependentUpon>TinTuc.aspx</DependentUpon>
