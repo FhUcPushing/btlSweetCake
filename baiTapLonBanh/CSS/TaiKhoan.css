@@ -615,3 +615,52 @@
                     padding-top: 6px;
                 }
 }
+/* Khu vực nút hủy đơn */
+.ct-hanh-dong {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+/* Nút hủy đơn hàng */
+.ct-nut-huy {
+    padding: 10px 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    .ct-nut-huy:hover {
+        background-color: #bb2d3b;
+    }
+
+/* Thông báo kết quả */
+.ct-thong-bao {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+    .ct-thong-bao:empty {
+        display: none;
+    }
+
+    .ct-thong-bao.thanh-cong {
+        color: #155724;
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+    }
+
+    .ct-thong-bao.that-bai {
+        color: #721c24;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+    }

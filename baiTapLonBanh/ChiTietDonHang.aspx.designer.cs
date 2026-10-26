@@ -33,6 +33,24 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.WebControls.Panel pnlChiTiet;
 
         /// <summary>
+        /// lnkQuayLai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkQuayLai;
+
+        /// <summary>
+        /// litQuayLai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litQuayLai;
+
+        /// <summary>
         /// litMaDon control.
         /// </summary>
         /// <remarks>
@@ -148,5 +166,23 @@ namespace baiTapLonBanh
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litTongCong;
+
+        /// <summary>
+        /// lblThongBaoHuy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblThongBaoHuy;
+
+        /// <summary>
+        /// btnHuyDon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHuyDon;
     }
 }

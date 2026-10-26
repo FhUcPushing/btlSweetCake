@@ -14,14 +14,16 @@
 
             <!-- Dòng đầu: quay lại + mã đơn + trạng thái -->
             <div class="ct-dau">
-                <a href="TaiKhoan.aspx?tab=donhang" class="ct-quay-lai">
-                    <i class="fa-solid fa-arrow-left"></i> Đơn hàng của tôi
-                </a>
+                <a id="lnkQuayLai" runat="server" class="ct-quay-lai">
+    <i class="fa-solid fa-arrow-left"></i>
+    <asp:Literal ID="litQuayLai" runat="server" />
+</a>
                 <div class="ct-tieu-de">
                     Đơn <asp:Literal ID="litMaDon" runat="server" />
                     <span class="tk-trang-thai"><asp:Literal ID="litTrangThai" runat="server" /></span>
                 </div>
             </div>
+            <!-- Nút hủy đơn hàng và thông báo -->
 
             <div class="ct-luoi">
 
@@ -75,6 +77,23 @@
                         <div><span>Giảm giá</span><span><asp:Literal ID="litGiamGia" runat="server" /></span></div>
                         <div class="tk-tong-cong"><span>Tổng cộng</span><span><asp:Literal ID="litTongCong" runat="server" /></span></div>
                     </div>
+                    <div class="ct-hanh-dong">
+
+    <asp:Label ID="lblThongBaoHuy"
+        runat="server"
+        CssClass="ct-thong-bao">
+    </asp:Label>
+
+    <asp:Button ID="btnHuyDon"
+        runat="server"
+        Text="Hủy đơn hàng"
+        CssClass="ct-nut-huy"
+        OnClick="btnHuyDon_Click"
+        OnClientClick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này không?');"
+        CausesValidation="false"
+        Visible="false" />
+
+</div>
                 </section>
 
             </div>

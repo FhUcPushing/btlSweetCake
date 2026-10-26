@@ -1,5 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="baiTapLonBanh.Site" %>
-
+<%@ Import Namespace="baiTapLonBanh" %>
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -23,13 +23,17 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" enctype="multipart/form-data">
         <%
-            // Tên người dùng được lưu vào Session sau khi đăng nhập/đăng ký thành công.
-            string tenNguoiDung = Session["TenHienThi"] as string;
-            bool daDangNhap = !string.IsNullOrEmpty(tenNguoiDung);
-            string tenAnToan = daDangNhap ? Server.HtmlEncode(tenNguoiDung) : "";
-        %>
+    // Lấy thông tin người dùng đang đăng nhập
+    string tenNguoiDung = Session["TenHienThi"] as string;
+    bool daDangNhap = !string.IsNullOrEmpty(tenNguoiDung);
+    string tenAnToan = daDangNhap ? Server.HtmlEncode(tenNguoiDung) : "";
+
+    // Kiểm tra quyền quản trị
+    NguoiDung taiKhoan = Session["TaiKhoan"] as NguoiDung;
+    bool laAdmin = taiKhoan != null && taiKhoan.VaiTro == "Admin";
+%>
 
         <!-- HEADER DÙNG CHUNG -->
         <header class="site-header">
@@ -105,6 +109,12 @@
                         <i class="fa-solid fa-headset"></i>
                         <span>Tư vấn</span>
                     </a>
+                    <% if (laAdmin) { %>
+    <a href="<%= ResolveUrl("~/QuanTri.aspx") %>">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Quản trị</span>
+    </a>
+<% } %>
                 </nav>
 
                 <!-- Giỏ hàng và tài khoản -->

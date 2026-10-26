@@ -1,0 +1,225 @@
+﻿.admin-orders {
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+    .admin-orders h2 {
+        color: #d63384;
+        margin-bottom: 18px;
+    }
+
+.admin-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-order-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+    .admin-order-table th,
+    .admin-order-table td {
+        padding: 12px;
+        border-bottom: 1px solid #f2dce5;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .admin-order-table th {
+        background: #fff0f5;
+        color: #a61e62;
+    }
+
+.admin-select {
+    padding: 7px;
+    border: 1px solid #e8b5cc;
+    border-radius: 6px;
+    max-width: 150px;
+}
+
+.admin-btn {
+    padding: 8px 12px;
+    background: #e83e8c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .admin-btn:hover {
+        background: #c72b73;
+    }
+
+.admin-message {
+    display: block;
+    margin-bottom: 15px;
+}
+
+    .admin-message.thanh-cong {
+        color: #198754;
+    }
+
+    .admin-message.that-bai {
+        color: #dc3545;
+    }
+/* Đơn hàng đã hủy */
+.admin-order-table tr.don-da-huy > td {
+    background-color: #f8d7da !important;
+    color: #721c24;
+}
+
+/* Khi rê chuột vào đơn đã hủy */
+.admin-order-table tr.don-da-huy:hover > td {
+    background-color: #f1c1c7 !important;
+}
+
+/* Ô trạng thái của đơn đã hủy */
+.admin-order-table tr.don-da-huy .admin-select {
+    border-color: #dc3545;
+    color: #721c24;
+}
+.admin-detail-link {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #c72b73;
+    background-color: #fff0f5;
+    border: 1px solid #f3b8d1;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+    .admin-detail-link:hover {
+        color: #fff;
+        background-color: #e83e8c;
+        border-color: #e83e8c;
+    }
+.admin-product-image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.admin-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.admin-add-product {
+    max-width: 760px;
+    margin: 30px auto;
+}
+
+.admin-product-form {
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 6px 22px rgba(214, 51, 132, 0.1);
+}
+
+.admin-form-group {
+    margin-bottom: 20px;
+}
+
+    .admin-form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #495057;
+        font-weight: 600;
+    }
+
+    .admin-form-group input[type="text"],
+    .admin-form-group input[type="number"],
+    .admin-form-group textarea,
+    .admin-form-group select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 11px 12px;
+        border: 1px solid #e8b5cc;
+        border-radius: 8px;
+        font: inherit;
+    }
+
+        .admin-form-group input:focus,
+        .admin-form-group textarea:focus,
+        .admin-form-group select:focus {
+            outline: none;
+            border-color: #e83e8c;
+            box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.12);
+        }
+
+    .admin-form-group small {
+        display: block;
+        margin-top: 7px;
+        color: #6c757d;
+        font-size: 12px;
+    }
+
+.admin-field-error:empty {
+    display: none;
+}
+
+.admin-field-error:not(:empty) {
+    display: block;
+    margin-top: 6px;
+    color: #dc3545;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.admin-product-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.admin-message.thanh-cong {
+    display: block;
+    margin-bottom: 15px;
+    color: #198754;
+}
+
+.admin-message.that-bai {
+    display: block;
+    margin-bottom: 15px;
+    color: #dc3545;
+}
+
+@media (max-width: 600px) {
+    .admin-product-form {
+        padding: 18px;
+    }
+}
+.admin-current-image {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #f3d5e2;
+    background: #fff;
+}
+.admin-delete-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-left: 6px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .admin-delete-btn:hover {
+        background-color: #bb2d3b;
+    }

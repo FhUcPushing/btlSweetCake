@@ -95,7 +95,8 @@ namespace baiTapLonBanh
                     {
                         HoTen = fullname,
                         TenDangNhap = username,
-                        MatKhau = password
+                        MatKhau = password,
+                        VaiTro = "KhachHang"
                     };
 
                     dsTaiKhoan.Add(userMoi);

@@ -64,6 +64,19 @@ namespace baiTapLonBanh
 
             Application["DanhSachSanPham"] = ds;
             Application["DanhSachDonHang"] = new List<DonHang>();
+            // Khởi tạo danh sách tài khoản
+            List<NguoiDung> dsTaiKhoan = new List<NguoiDung>();
+
+            // Tạo tài khoản quản trị mặc định để thử nghiệm
+            dsTaiKhoan.Add(new NguoiDung
+            {
+                HoTen = "Quản trị viên",
+                TenDangNhap = "admin",
+                MatKhau = "SweetCake@123",
+                VaiTro = "Admin"
+            });
+
+            Application["DanhSachNguoiDung"] = dsTaiKhoan;
         }
 
         protected void Session_Start(object sender, EventArgs e)
