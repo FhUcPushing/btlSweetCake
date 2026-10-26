@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChiTietSanPham.aspx" />
+    <Content Include="ChiTietTinTuc.aspx" />
     <Content Include="CSS\ChiTietSanPham.css" />
+    <Content Include="CSS\ChiTietTinTuc.css" />
     <Content Include="CSS\DangNhapvaDangKy.css" />
     <Content Include="CSS\DatHang.css" />
     <Content Include="CSS\GioHang.css" />
@@ -80,7 +82,25 @@
     <Content Include="DatHang.aspx" />
     <Content Include="GioHang.aspx" />
     <Content Include="GioiThieu.aspx" />
+    <Content Include="gio_TV.png" />
     <Content Include="Global.asax" />
+    <Content Include="image\CTTT\13_CTTT.jpg" />
+    <Content Include="image\CTTT\14_CTTT.jpg" />
+    <Content Include="image\CTTT\15_CTTT.jpg" />
+    <Content Include="image\CTTT\16_CTTT.jpg" />
+    <Content Include="image\CTTT\anh1_CTTT.jpg" />
+    <Content Include="image\CTTT\banh10_CTTT.jpg" />
+    <Content Include="image\CTTT\banh11_CTTT.jpg" />
+    <Content Include="image\CTTT\banh12_CTTT.jpg" />
+    <Content Include="image\CTTT\banh1_CTTT.jpg" />
+    <Content Include="image\CTTT\banh2_CTTT.jpg" />
+    <Content Include="image\CTTT\banh3_CTTT.jpg" />
+    <Content Include="image\CTTT\banh4_CTTT.jpg" />
+    <Content Include="image\CTTT\banh5_CTTT.jpg" />
+    <Content Include="image\CTTT\banh6_CTTT.jpg" />
+    <Content Include="image\CTTT\banh7_CTTT.jpg" />
+    <Content Include="image\CTTT\banh8_CTTT.jpg" />
+    <Content Include="image\CTTT\banh9_CTTT.jpg" />
     <Content Include="image\GioiThieu\anh1_GT.jpg" />
     <Content Include="image\GioiThieu\anh3_GT.jpg" />
     <Content Include="image\GioiThieu\anh4_GT.jpg" />
@@ -157,6 +177,14 @@
     <Content Include="image\TrangChu\pizza_TC.jpg" />
     <Content Include="image\TrangChu\tinmoinhat_TC.jpg" />
     <Content Include="image\TrangChu\xucxich_TC.jpg" />
+    <Content Include="image\TuVan\btgGioHang_TV.jpg" />
+    <Content Include="image\TuVan\giohang_TV.png" />
+    <Content Include="image\TuVan\gio_TV.png" />
+    <Content Include="image\TuVan\SP_TV.png" />
+    <Content Include="image\TuVan\themSP_TV.png" />
+    <Content Include="image\TuVan\thongtinSP_TV.png" />
+    <Content Include="image\TuVan\thongtin_TV.png" />
+    <Content Include="image\TuVan\xacnhan_TV.png" />
     <Content Include="JS\ChiTietSanPham.js" />
     <Content Include="JS\DangKy.js" />
     <Content Include="JS\DangNhap.js" />
@@ -175,6 +203,13 @@
     </Compile>
     <Compile Include="ChiTietSanPham.aspx.designer.cs">
       <DependentUpon>ChiTietSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietTinTuc.aspx.cs">
+      <DependentUpon>ChiTietTinTuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietTinTuc.aspx.designer.cs">
+      <DependentUpon>ChiTietTinTuc.aspx</DependentUpon>
     </Compile>
     <Compile Include="DangKy.aspx.cs">
       <DependentUpon>DangKy.aspx</DependentUpon>
@@ -261,6 +296,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

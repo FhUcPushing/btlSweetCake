@@ -7,8 +7,8 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 50px 20px 80px;
+    box-sizing: border-box;
 }
-
 
 /* =========================
    TIÊU ĐỀ
@@ -16,22 +16,22 @@
 
 .huong-dan-tieu-de {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 35px;
 }
 
     .huong-dan-tieu-de h1 {
-        margin: 0 0 15px 0;
+        margin: 0 0 15px;
         font-size: 32px;
         font-weight: bold;
-        color: #333;
+        color: #d65f83;
     }
 
     .huong-dan-tieu-de p {
         margin: 0;
         font-size: 17px;
         color: #777;
+        line-height: 1.6;
     }
-
 
 /* =========================
    TỪNG BƯỚC
@@ -39,17 +39,29 @@
 
 .buoc {
     display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    padding: 35px 0;
-    border-bottom: 1px solid #eeeeee;
+    flex-direction: column;
+    padding: 30px;
+    margin-bottom: 20px;
+    background-color: #fff9fb;
+    border: 1px solid #ffe0e9;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-sizing: border-box;
 }
 
+    .buoc:hover {
+        border-color: #f3a6c0;
+        box-shadow: 0 5px 15px rgba(220, 70, 130, 0.08);
+    }
+
+/* =========================
+   PHẦN SỐ BƯỚC VÀ NỘI DUNG
+   ========================= */
 
 .so-buoc {
     width: 65px;
     height: 65px;
-    min-width: 65px;
+    flex-shrink: 0;
     border-radius: 50%;
     background-color: #d65f83;
     color: white;
@@ -58,21 +70,24 @@
     justify-content: center;
     font-size: 19px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
+/* NỘI DUNG */
 
 .noi-dung-buoc {
-    flex: 1;
+    width: 100%;
+    min-width: 0;
 }
 
     .noi-dung-buoc h2 {
-        margin: 0 0 15px 0;
+        margin: 0 0 15px;
         font-size: 24px;
         color: #333;
     }
 
     .noi-dung-buoc p {
-        margin: 0 0 10px 0;
+        margin: 0 0 10px;
         font-size: 16px;
         line-height: 1.8;
         color: #666;
@@ -82,22 +97,54 @@
         color: #d65f83;
     }
 
+/* =========================
+   ẢNH BÊN DƯỚI MỖI BƯỚC
+   ========================= */
+
+.anh-buoc {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    margin: 15px auto 0;
+    overflow: hidden;
+    border-radius: 13px;
+    border: 1px solid #ffd0df;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(220, 70, 130, 0.08);
+    box-sizing: border-box;
+}
+
+    .anh-buoc img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 380px;
+        object-fit: contain;
+        transition: 0.3s;
+    }
+
+        .anh-buoc img:hover {
+            transform: scale(1.02);
+        }
 
 /* =========================
    LƯU Ý
    ========================= */
 
 .luu-y {
-    margin-top: 60px;
+    margin-top: 45px;
     padding: 30px;
-    background-color: #fff7f9;
-    border-left: 4px solid #d65f83;
+    background-color: #fff1f5;
+    border: 1px solid #ffd0df;
+    border-left: 5px solid #d65f83;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
     .luu-y h2 {
-        margin: 0 0 20px 0;
+        margin: 0 0 20px;
         font-size: 24px;
-        color: #333;
+        color: #d65f83;
     }
 
     .luu-y p {
@@ -106,7 +153,6 @@
         line-height: 1.7;
         color: #555;
     }
-
 
 /* =========================
    TABLET
@@ -122,27 +168,28 @@
         font-size: 27px;
     }
 
-    .huong-dan-tieu-de p {
-        font-size: 16px;
-    }
-
     .buoc {
-        gap: 20px;
-        padding: 30px 0;
+        padding: 25px 20px;
     }
 
     .so-buoc {
         width: 55px;
         height: 55px;
-        min-width: 55px;
         font-size: 16px;
     }
 
     .noi-dung-buoc h2 {
         font-size: 21px;
     }
-}
 
+    .noi-dung-buoc p {
+        font-size: 15px;
+    }
+
+    .anh-buoc {
+        max-width: 100%;
+    }
+}
 
 /* =========================
    ĐIỆN THOẠI
@@ -155,7 +202,7 @@
     }
 
     .huong-dan-tieu-de {
-        margin-bottom: 35px;
+        margin-bottom: 25px;
     }
 
         .huong-dan-tieu-de h1 {
@@ -169,14 +216,13 @@
         }
 
     .buoc {
-        gap: 15px;
-        padding: 25px 0;
+        padding: 20px 15px;
+        margin-bottom: 15px;
     }
 
     .so-buoc {
         width: 45px;
         height: 45px;
-        min-width: 45px;
         font-size: 14px;
     }
 
@@ -190,8 +236,17 @@
         line-height: 1.7;
     }
 
+    .anh-buoc {
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+        .anh-buoc img {
+            max-height: 250px;
+        }
+
     .luu-y {
-        margin-top: 40px;
+        margin-top: 30px;
         padding: 20px;
     }
 

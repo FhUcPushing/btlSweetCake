@@ -286,75 +286,150 @@
 
         <div class="news-list">
 
-            <article class="news-item">
-                <div class="news-image">
-                    <img src="image/TrangChu/baiviet4_TC.jpg" alt="Ngọt ngào gửi trao" />
-                </div>
-                <div class="news-content">
-                    <span class="news-category"><i class="fa-solid fa-heart"></i> Câu chuyện ngọt ngào</span>
-                    <h3>NGỌT NGÀO GỬI TRAO BÁNH KEM CHO NGÀY ĐẶC BIỆT</h3>
-                    <p>Một chiếc bánh kem có thể trở thành món quà yêu thương dành cho những người thân yêu.</p>
-                </div>
-            </article>
+            <!-- BÀI VIẾT 1 -->
+<article class="news-item">
+    <div class="news-image">
+        <a href="ChiTietTinTuc.aspx?id=7">
+            <img src="image/TrangChu/baiviet4_TC.jpg" alt="Ngọt ngào gửi trao" />
+        </a>
+    </div>
 
-            <article class="news-item">
-                <div class="news-image">
-                    <img src="image/TrangChu/banhtrungthu_TC.jpg" alt="Mua 1 tặng 1 bánh Trung Thu" />
-                </div>
-                <div class="news-content">
-                    <span class="news-category"><i class="fa-solid fa-gift"></i> Ưu đãi</span>
-                    <h3>MUA 1 TẶNG 1 BÁNH TRUNG THU SWEETCAKE</h3>
-                    <p>Chương trình từ 25/09 đến 10/10/2026 theo nội dung ưu đãi của cửa hàng.</p>
-                </div>
-            </article>
+    <div class="news-content">
+        <span class="news-category">
+            <i class="fa-solid fa-heart"></i> Câu chuyện ngọt ngào
+        </span>
 
-            <article class="news-item">
-                <div class="news-image">
-                    <img src="image/TrangChu/banhtrungthu2_TC.jpg" alt="Bánh Trung Thu ưu đãi 15%" />
-                </div>
-                <div class="news-content">
-                    <span class="news-category"><i class="fa-solid fa-tag"></i> Khuyến mãi</span>
-                    <h3>BÁNH TRUNG THU SWEETCAKE 2026 - ƯU ĐÃI 15%</h3>
-                    <p>Khám phá bộ sưu tập bánh Trung Thu với chương trình ưu đãi đặc biệt.</p>
-                </div>
-            </article>
+        <h3>
+            <a href="ChiTietTinTuc.aspx?id=7" class="news-title-link">
+                NGỌT NGÀO GỬI TRAO BÁNH KEM CHO NGÀY ĐẶC BIỆT
+            </a>
+        </h3>
 
-            <article class="news-item">
-                <div class="news-image">
-                    <img src="image/TrangChu/hop_TC.jpg" alt="Ưu đãi hộp quà Trung Thu" />
-                </div>
-                <div class="news-content">
-                    <span class="news-category"><i class="fa-solid fa-gift"></i> Quà tặng</span>
-                    <h3>ƯU ĐÃI 20% HỘP QUÀ TRUNG THU</h3>
-                    <p>Hộp quà đẹp mắt và sang trọng để gửi trao lời chúc đến gia đình, bạn bè.</p>
-                </div>
-            </article>
+        <p>Một chiếc bánh kem có thể trở thành món quà yêu thương dành cho những người thân yêu.</p>
+    </div>
+</article>
 
-            <article class="news-item">
-                <div class="news-image">
-                    <img src="image/TrangChu/baiviet5_TC.jpg" alt="Mua 3 tính tiền 2" />
-                </div>
-                <div class="news-content">
-                    <span class="news-category"><i class="fa-solid fa-percent"></i> Ưu đãi đặc biệt</span>
-                    <h3>MUA 3 TÍNH TIỀN 2</h3>
-                    <p>Thêm niềm vui với chương trình ưu đãi dành cho khách hàng.</p>
-                </div>
-            </article>
+            <!-- BÀI VIẾT 2 -->
+           <!-- BÀI VIẾT 2 -->
+<article class="news-item">
+    <div class="news-image">
+        <a href="ChiTietTinTuc.aspx?id=8">
+            <img src="image/TrangChu/banhtrungthu_TC.jpg"
+                 alt="Mua 1 tặng 1 bánh Trung Thu" />
+        </a>
+    </div>
 
-            <article class="news-item">
-                <div class="news-image">
-                    <img src="image/TrangChu/banhtrungthu3_TC.jpg" alt="12 hương vị cao cấp" />
-                </div>
-                <div class="news-content">
-                    <span class="news-category"><i class="fa-solid fa-moon"></i> Bộ sưu tập</span>
-                    <h3>12 HƯƠNG VỊ CAO CẤP TUYỂN CHỌN</h3>
-                    <p>Khám phá những hương vị bánh Trung Thu đặc biệt dành cho mùa trăng.</p>
-                </div>
-            </article>
+    <div class="news-content">
+        <span class="news-category">
+            <i class="fa-solid fa-gift"></i> Ưu đãi
+        </span>
 
-        </div>
-    </section>
+        <h3>
+            <a href="ChiTietTinTuc.aspx?id=8" class="news-title-link">
+                MUA 1 TẶNG 1 BÁNH TRUNG THU SWEETCAKE
+            </a>
+        </h3>
 
+        <p>Chương trình từ 25/09 đến 10/10/2026 theo nội dung ưu đãi của cửa hàng.</p>
+    </div>
+</article>
+
+           <!-- BÀI VIẾT 3 -->
+<article class="news-item">
+    <div class="news-image">
+        <a href="ChiTietTinTuc.aspx?id=9">
+            <img src="image/TrangChu/banhtrungthu2_TC.jpg"
+                 alt="Bánh Trung Thu ưu đãi 15%" />
+        </a>
+    </div>
+
+    <div class="news-content">
+        <span class="news-category">
+            <i class="fa-solid fa-tag"></i> Khuyến mãi
+        </span>
+
+        <h3>
+            <a href="ChiTietTinTuc.aspx?id=9" class="news-title-link">
+                BÁNH TRUNG THU SWEETCAKE 2026 - ƯU ĐÃI 15%
+            </a>
+        </h3>
+
+        <p>Khám phá bộ sưu tập bánh Trung Thu với chương trình ưu đãi đặc biệt.</p>
+    </div>
+</article>
+            <!-- BÀI VIẾT 4 -->
+          <!-- BÀI VIẾT 4 -->
+<article class="news-item">
+    <div class="news-image">
+        <a href="ChiTietTinTuc.aspx?id=10">
+            <img src="image/TrangChu/hop_TC.jpg"
+                 alt="Ưu đãi hộp quà Trung Thu" />
+        </a>
+    </div>
+
+    <div class="news-content">
+        <span class="news-category">
+            <i class="fa-solid fa-gift"></i> Quà tặng
+        </span>
+
+        <h3>
+            <a href="ChiTietTinTuc.aspx?id=10" class="news-title-link">
+                ƯU ĐÃI 20% HỘP QUÀ TRUNG THU
+            </a>
+        </h3>
+
+        <p>Hộp quà đẹp mắt và sang trọng để gửi trao lời chúc đến gia đình, bạn bè.</p>
+    </div>
+</article>
+
+            <!-- BÀI VIẾT 5 -->
+<article class="news-item">
+    <div class="news-image">
+        <a href="ChiTietTinTuc.aspx?id=11">
+            <img src="image/TrangChu/baiviet5_TC.jpg"
+                 alt="Mua 3 tính tiền 2" />
+        </a>
+    </div>
+
+    <div class="news-content">
+        <span class="news-category">
+            <i class="fa-solid fa-percent"></i> Ưu đãi đặc biệt
+        </span>
+
+        <h3>
+            <a href="ChiTietTinTuc.aspx?id=11" class="news-title-link">
+                MUA 3 TÍNH TIỀN 2
+            </a>
+        </h3>
+
+        <p>Thêm niềm vui với chương trình ưu đãi dành cho khách hàng.</p>
+    </div>
+</article>
+
+           
+           <!-- BÀI VIẾT 6 -->
+<article class="news-item">
+    <div class="news-image">
+        <a href="ChiTietTinTuc.aspx?id=12">
+            <img src="image/TrangChu/banhtrungthu3_TC.jpg"
+                 alt="12 hương vị cao cấp" />
+        </a>
+    </div>
+
+    <div class="news-content">
+        <span class="news-category">
+            <i class="fa-solid fa-moon"></i> Bộ sưu tập
+        </span>
+
+        <h3>
+            <a href="ChiTietTinTuc.aspx?id=12" class="news-title-link">
+                12 HƯƠNG VỊ CAO CẤP TUYỂN CHỌN
+            </a>
+        </h3>
+
+        <p>Khám phá những hương vị bánh Trung Thu đặc biệt dành cho mùa trăng.</p>
+    </div>
+</article>
 
     <!-- UU DAI THANH VIEN -->
     <section class="member-banner">
