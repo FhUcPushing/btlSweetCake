@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Trang chủ" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TrangChu.aspx.cs" Inherits="baiTapLonBanh.TrangChu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/TrangChu.css" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/CSS/TrangChu.css") %>"
+      rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="Content2"
@@ -73,7 +74,8 @@
 
                        <div class="product-image">
   <a href='<%# ResolveUrl("~/ChiTietSanPham.aspx") + "?id=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
-    <img src='<%# Eval("anhBanh") %>' alt='<%# Eval("tenBanh") %>' />
+    <img src='<%# ResolveUrl("~/" + Convert.ToString(Eval("anhBanh"))) %>'
+     alt='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("tenBanh"))) %>' />
 </a>
 
     <span class="product-heart">
@@ -180,7 +182,8 @@
                     <article class="product">
                         <div class="product-image">
   <a href='<%# ResolveUrl("~/ChiTietSanPham.aspx") + "?id=" + Server.UrlEncode(Convert.ToString(Eval("maBanh"))) %>'>
-    <img src='<%# Eval("anhBanh") %>' alt='<%# Eval("tenBanh") %>' />
+    <img src='<%# ResolveUrl("~/" + Convert.ToString(Eval("anhBanh"))) %>'
+     alt='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("tenBanh"))) %>' />
 </a>
 
     <span class="product-heart">
@@ -428,11 +431,14 @@
         </h3>
 
         <p>Khám phá những hương vị bánh Trung Thu đặc biệt dành cho mùa trăng.</p>
-    </div>
+        </div>
 </article>
 
-    <!-- UU DAI THANH VIEN -->
-    <section class="member-banner">
+</div> <!-- Đóng news-list -->
+</section> <!-- Đóng khu vực tin tức -->
+
+<!-- UU DAI THANH VIEN -->
+<section class="member-banner">
         <div class="member-icon">
             <i class="fa-solid fa-gift"></i>
         </div>
@@ -447,5 +453,5 @@
         </a>
     </section>
 
-    <script src="JS/TrangChu.js"></script>
+    <script src="<%= ResolveUrl("~/JS/TrangChu.js") %>"></script>
 </asp:Content>

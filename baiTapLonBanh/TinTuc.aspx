@@ -1,13 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TinTuc.aspx.cs" Inherits="baiTapLonBanh.TinTuc" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2"
-    ContentPlaceHolderID="ContentPlaceHolder1"
+﻿<%@ Page Title="Tin tức"
+    Language="C#"
+    MasterPageFile="~/Site.Master"
+    AutoEventWireup="true"
+    CodeBehind="TinTuc.aspx.cs"
+    Inherits="baiTapLonBanh.TinTuc" %>
+
+<asp:Content ID="Content1"
+    ContentPlaceHolderID="head"
     runat="server">
 
     <link href="<%= ResolveUrl("~/CSS/TinTuc.css") %>"
-          rel="stylesheet" />
+          rel="stylesheet" type="text/css" />
 
+</asp:Content>
+
+<asp:Content ID="Content2"
+    ContentPlaceHolderID="ContentPlaceHolder1"
+    runat="server">
     <!-- BANNER TIN TUC -->
     <section class="news-banner">
         <div class="news-banner-content">

@@ -1,10 +1,15 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TuVan.aspx.cs" Inherits="baiTapLonBanh.TuVan" %>
+<asp:Content ID="ContentHead"
+    ContentPlaceHolderID="head"
+    runat="server">
 
+    <link href="<%= ResolveUrl("~/CSS/TuVan.css") %>"
+          rel="stylesheet" type="text/css" />
+
+</asp:Content>
 <asp:Content ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
-
-<link href="CSS/TuVan.css" rel="stylesheet" type="text/css" />
 
 <div class="huong-dan">
 

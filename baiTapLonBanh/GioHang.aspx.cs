@@ -1,13 +1,18 @@
-﻿using baiTapLonBanh;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static baiTapLonBanh.SanPham;
 namespace baiTapLonBanh
 {
+    public class SanPhamTrongGio
+    {
+        public string khoa { get; set; }
+        public string tenBanh { get; set; }
+        public string anhBanh { get; set; }
+        public decimal giaBanh { get; set; }
+        public int soLuong { get; set; }
+        public decimal thanhTien { get; set; }
+    }
     public partial class GioHang : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -20,13 +25,35 @@ namespace baiTapLonBanh
 
         private void HienThiGioHang()
         {
+            // Lấy danh sách sản phẩm
             List<SanPhamBanh> danhSachSanPham =
-                Application["DanhSachSanPham"] as List<SanPhamBanh>;
+                new List<SanPhamBanh>();
 
+            Application.Lock();
+
+            try
+            {
+                List<SanPhamBanh> ds =
+                    Application["DanhSachSanPham"] as List<SanPhamBanh>;
+
+                if (ds != null)
+                {
+                    foreach (SanPhamBanh banh in ds)
+                    {
+                        danhSachSanPham.Add(banh);
+                    }
+                }
+            }
+            finally
+            {
+                Application.UnLock();
+            }
+
+            // Lấy giỏ hàng của người dùng hiện tại
             Dictionary<string, int> gioHang =
                 Session["GioHang"] as Dictionary<string, int>;
 
-            if (danhSachSanPham == null ||
+            if (danhSachSanPham.Count == 0 ||
                 gioHang == null ||
                 gioHang.Count == 0)
             {
@@ -35,27 +62,70 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Lấy thông tin bánh và số lượng trong giỏ
-            var sanPhamTrongGio = gioHang
-    .Select(kv =>
-    {
-        string ma, size;
-        GioHangKey.Tach(kv.Key, out ma, out size);
-        SanPhamBanh b = danhSachSanPham.FirstOrDefault(x => x.maBanh == ma);
-        return new { kv, b, size };
-    })
-    .Where(x => x.b != null)
-    .Select(x => new
-    {
-        khoa = x.kv.Key,
-        tenBanh = x.b.tenBanh + (x.size != null ? " (" + GioHangKey.TenSize(x.size) + ")" : ""),
-        anhBanh = x.b.anhBanh,
-        giaBanh = GioHangKey.DonGia(x.b, x.size),
-        soLuong = x.kv.Value,
-        thanhTien = GioHangKey.DonGia(x.b, x.size) * x.kv.Value
-    })
-    .ToList();
+            // Tạo danh sách sản phẩm để hiển thị
+            List<SanPhamTrongGio> sanPhamTrongGio =
+                new List<SanPhamTrongGio>();
 
+            decimal tongTien = 0;
+
+            foreach (KeyValuePair<string, int> item in gioHang)
+            {
+                // Tách mã bánh và size
+                string maBanh;
+                string maSize;
+
+                GioHangKey.Tach(
+                    item.Key, out maBanh, out maSize);
+
+                // Tìm bánh trong danh sách sản phẩm
+                SanPhamBanh banhTimThay = null;
+
+                foreach (SanPhamBanh banh in danhSachSanPham)
+                {
+                    if (banh.maBanh == maBanh)
+                    {
+                        banhTimThay = banh;
+                        break;
+                    }
+                }
+
+                // Bỏ qua nếu không tìm thấy bánh
+                if (banhTimThay == null)
+                {
+                    continue;
+                }
+
+                // Tạo tên bánh, kèm size nếu có
+                string tenBanh = banhTimThay.tenBanh;
+
+                if (!string.IsNullOrEmpty(maSize))
+                {
+                    tenBanh += " (" + GioHangKey.TenSize(maSize) + ")";
+                }
+
+                // Tính giá và thành tiền
+                decimal giaBanh =
+                    GioHangKey.DonGia(banhTimThay, maSize);
+
+                decimal thanhTien = giaBanh * item.Value;
+
+                // Tạo dòng sản phẩm trong giỏ
+                SanPhamTrongGio dong = new SanPhamTrongGio();
+
+                dong.khoa = item.Key;
+                dong.tenBanh = tenBanh;
+                dong.anhBanh = banhTimThay.anhBanh;
+                dong.giaBanh = giaBanh;
+                dong.soLuong = item.Value;
+                dong.thanhTien = thanhTien;
+
+                sanPhamTrongGio.Add(dong);
+
+                // Cộng vào tổng tiền
+                tongTien += thanhTien;
+            }
+
+            // Kiểm tra sau khi tìm bánh
             if (sanPhamTrongGio.Count == 0)
             {
                 panelGioHang.Visible = false;
@@ -63,14 +133,11 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Đưa danh sách lên Repeater
+            // Hiển thị danh sách sản phẩm
             rptGioHang.DataSource = sanPhamTrongGio;
             rptGioHang.DataBind();
 
-            // Tính tổng tiền
-            decimal tongTien = sanPhamTrongGio
-                .Sum(b => b.thanhTien);
-
+            // Hiển thị tổng tiền
             litTongTien.Text = tongTien.ToString("N0") + "đ";
 
             panelGioHang.Visible = true;

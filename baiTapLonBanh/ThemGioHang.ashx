@@ -4,40 +4,99 @@ using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.SessionState;
+using baiTapLonBanh;
 
-// Thêm 1 bánh vào giỏ hàng (Session["GioHang"]) mà không cần tải lại trang.
-// SanPham.js gọi bằng fetch (POST, tham số maBanh).
 public class ThemGioHang : IHttpHandler, IRequiresSessionState
 {
     public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "application/json";
 
-        string maBanh = (context.Request.Form["maBanh"] ?? "").Trim();
+        // Chỉ chấp nhận POST
+        if (context.Request.HttpMethod != "POST")
+        {
+            context.Response.StatusCode = 405;
+            context.Response.Write("{\"ok\":false}");
+            return;
+        }
 
-        if (context.Request.HttpMethod != "POST" || maBanh == "" || maBanh.Length > 50)
+        string maBanh =
+            (context.Request.Form["maBanh"] ?? "").Trim();
+
+        if (maBanh == "" || maBanh.Length > 50)
         {
             context.Response.StatusCode = 400;
             context.Response.Write("{\"ok\":false}");
             return;
         }
 
+        // Tìm bánh trong danh sách sản phẩm
+        SanPhamBanh banh = null;
+
+        context.Application.Lock();
+
+        try
+        {
+            List<SanPhamBanh> ds =
+                context.Application["DanhSachSanPham"]
+                as List<SanPhamBanh>;
+
+            if (ds != null)
+            {
+                foreach (SanPhamBanh x in ds)
+                {
+                    if (x.maBanh == maBanh)
+                    {
+                        banh = x;
+                        break;
+                    }
+                }
+            }
+        }
+        finally
+        {
+            context.Application.UnLock();
+        }
+
+        // Không cho thêm mã bánh không tồn tại
+        if (banh == null)
+        {
+            context.Response.StatusCode = 404;
+            context.Response.Write("{\"ok\":false}");
+            return;
+        }
+
+        // Bánh kem, mousse, sinh nhật mặc định size 16 cm
+        string maSize = GioHangKey.LaBanhKem(banh)
+            ? "16"
+            : null;
+
+        // Dùng chung cách tạo khóa với các trang khác
+        string khoa = GioHangKey.Tao(banh.maBanh, maSize);
+
         Dictionary<string, int> gioHang =
-            context.Session["GioHang"] as Dictionary<string, int>;
+            context.Session["GioHang"]
+            as Dictionary<string, int>;
 
         if (gioHang == null)
         {
             gioHang = new Dictionary<string, int>();
         }
 
-        if (gioHang.ContainsKey(maBanh))
-            gioHang[maBanh]++;
+        // Tăng số lượng nếu bánh đã có trong giỏ
+        if (gioHang.ContainsKey(khoa))
+        {
+            gioHang[khoa]++;
+        }
         else
-            gioHang.Add(maBanh, 1);
+        {
+            gioHang.Add(khoa, 1);
+        }
 
         context.Session["GioHang"] = gioHang;
 
-        context.Response.Write("{\"ok\":true,\"soLuong\":" + gioHang[maBanh] + "}");
+        context.Response.Write(
+            "{\"ok\":true,\"soLuong\":" + gioHang[khoa] + "}");
     }
 
     public bool IsReusable

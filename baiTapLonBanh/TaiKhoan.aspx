@@ -20,6 +20,30 @@
                 <a href="TaiKhoan.aspx?tab=donhang" class='<%= tab == "donhang" ? "dang-chon" : "" %>'>
                     <i class="fa-solid fa-receipt"></i> Đơn hàng của tôi
                 </a>
+                <!-- Menu dành riêng cho Admin -->
+<asp:Panel ID="pnlMenuQuanTri"
+    runat="server"
+    Visible="false">
+
+    <asp:HyperLink ID="lnkMenuQuanLySanPham"
+        runat="server"
+        NavigateUrl="~/QuanLySanPham.aspx">
+
+        <i class="fa-solid fa-cake-candles"></i>
+        Quản lý sản phẩm
+
+    </asp:HyperLink>
+
+    <asp:HyperLink ID="lnkMenuQuanLyDonHang"
+        runat="server"
+        NavigateUrl="~/QuanTri.aspx">
+
+        <i class="fa-solid fa-clipboard-list"></i>
+        Quản lý đơn hàng
+
+    </asp:HyperLink>
+
+</asp:Panel>
                 <a href="DangNhap.aspx?dangxuat=1" class="tk-dang-xuat">
                     <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                 </a>
@@ -70,18 +94,6 @@
     </section>
 </asp:Panel>
 
-<script>
-    // Gõ lại vào ô nào thì dòng đỏ và viền đỏ của ô đó mất đi
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".tk-truong .tk-o").forEach(function (o) {
-            o.addEventListener("input", function () {
-                var loi = o.parentNode.querySelector(".tk-loi");
-                if (loi) loi.textContent = "";
-                o.classList.remove("tk-o-loi");
-            });
-        });
-    });
-</script>
 
                 <!-- TAB: ĐƠN HÀNG -->
                 <asp:Panel ID="pnlDonHang" runat="server">
@@ -120,4 +132,6 @@
             </div>
         </div>
     </div>
+    <script src="<%= ResolveUrl("~/JS/TaiKhoan.js") %>"
+        defer="defer"></script>
 </asp:Content>

@@ -1,7 +1,6 @@
 ﻿using System;
 using baiTapLonBanh;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -34,7 +33,6 @@ namespace baiTapLonBanh
             // Hiển thị tên quản trị viên
             if (!IsPostBack)
             {
-                tenAdmin.InnerText = taiKhoan.HoTen;
                 HienThiDonHang();
             }
         }
@@ -52,9 +50,10 @@ namespace baiTapLonBanh
 
                 if (danhSachGoc != null)
                 {
-                    dsDon = danhSachGoc
-                        .OrderByDescending(d => d.NgayDat)
-                        .ToList();
+                    foreach (DonHang don in danhSachGoc)
+                    {
+                        dsDon.Add(don);
+                    }
                 }
             }
             finally
@@ -62,7 +61,22 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Hiển thị đơn hàng mới nhất trước
+            // Sắp xếp đơn hàng mới nhất lên đầu
+            for (int i = 0; i < dsDon.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dsDon.Count; j++)
+                {
+                    if (dsDon[i].NgayDat < dsDon[j].NgayDat)
+                    {
+                        DonHang tam = dsDon[i];
+
+                        dsDon[i] = dsDon[j];
+                        dsDon[j] = tam;
+                    }
+                }
+            }
+
+            // Hiển thị danh sách đơn hàng
             gvDonHang.DataSource = dsDon;
             gvDonHang.DataBind();
 

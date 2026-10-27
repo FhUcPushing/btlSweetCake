@@ -816,6 +816,8 @@ body {
     border-radius: 18px;
     color: var(--text);
     background: var(--pink-grad);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .member-icon {
@@ -1217,19 +1219,6 @@ body {
 .add-cart i {
     opacity: 1;
 }
-/* ==========================================
-   THÔNG BÁO THÊM GIỎ HÀNG
-   Trong TrangChu.css: XÓA khối cũ ở cuối file
-   (từ ".thong-bao-gio-hang {" đến hết "@keyframes anThongBao {...}")
-   rồi dán khối này vào đúng chỗ đó.
-   ========================================== */
-
-/* ==========================================
-   THÔNG BÁO THÊM GIỎ HÀNG
-   Trong TrangChu.css: XÓA khối cũ ở cuối file
-   (từ ".thong-bao-gio-hang {" đến hết "@keyframes anThongBao {...}")
-   rồi dán khối này vào đúng chỗ đó.
-   ========================================== */
 
 .thong-bao-gio-hang {
     position: fixed;
@@ -1402,3 +1391,16 @@ body {
         padding-top: 0;
     }
 }
+/* Màu hồng cho tiêu đề bài viết trên trang chủ */
+.news-content h3 a.news-title-link,
+.news-content h3 a.news-title-link:visited {
+    color: #d63384;
+    text-decoration: none;
+}
+
+    /* Hiệu ứng khi rê chuột */
+    .news-content h3 a.news-title-link:hover {
+        color: #b5246b;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }

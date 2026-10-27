@@ -45,7 +45,7 @@
                                                         <img src='<%# ResolveUrl("~/" + Eval("anhBanh")) %>' alt=''
                                                              onerror="this.parentNode.classList.add('khong-anh');" />
                                                     </span>
-                                                    <strong><%# Eval("tenBanh") %></strong>
+                                                    <strong><%# HttpUtility.HtmlEncode(Convert.ToString(Eval("tenBanh"))) %>></strong>
                                                 </div>
                                             </td>
                                             <td data-label="Đơn giá"><%# string.Format("{0:N0}đ", Eval("donGia")) %></td>

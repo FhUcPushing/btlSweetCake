@@ -1,9 +1,17 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GioiThieu.aspx.cs" Inherits="baiTapLonBanh.GioiThieu" %>
 
+<asp:Content ID="ContentHead"
+    ContentPlaceHolderID="head"
+    runat="server">
+
+    <link href="<%= ResolveUrl("~/CSS/GioiThieu.css") %>"
+          rel="stylesheet"
+          type="text/css" />
+
+</asp:Content>
 <asp:Content ID="Content1"
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
-<link href="CSS/GioiThieu.css" rel="stylesheet" type="text/css" />
     <div class="gioi-thieu">
 
         <!-- TIÊU ĐỀ -->

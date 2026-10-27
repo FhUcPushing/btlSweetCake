@@ -16,6 +16,7 @@
     <input type="text"
            id="username"
            name="username"
+        value="<%= Server.HtmlEncode(savedUser) %>"
            placeholder="Nhập tên đăng nhập"
            required="required"
            aria-describedby="loiUsername" />
@@ -47,8 +48,13 @@
 
         <div class="form-group remember-me">
     <label>
-        <input type="checkbox" id="chkRemember" name="remember" value="true" />
-        <span>Ghi nhớ mật khẩu</span>
+        <input type="checkbox"
+               id="chkRemember"
+               name="remember"
+               value="true"
+               <%= isRemembered ? "checked=\"checked\"" : "" %> />
+
+        <span>Ghi nhớ tên đăng nhập</span>
     </label>
 </div>
 

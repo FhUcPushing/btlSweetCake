@@ -33,6 +33,33 @@ namespace baiTapLonBanh
         protected global::System.Web.UI.WebControls.Literal litTenDN;
 
         /// <summary>
+        /// pnlMenuQuanTri control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlMenuQuanTri;
+
+        /// <summary>
+        /// lnkMenuQuanLySanPham control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkMenuQuanLySanPham;
+
+        /// <summary>
+        /// lnkMenuQuanLyDonHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkMenuQuanLyDonHang;
+
+        /// <summary>
         /// pnlThongTin control.
         /// </summary>
         /// <remarks>

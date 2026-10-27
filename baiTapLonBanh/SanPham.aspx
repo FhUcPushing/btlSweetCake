@@ -3,7 +3,8 @@
     ContentPlaceHolderID="head"
     runat="server">
 
-   <link href="CSS/SanPham.css" rel="stylesheet" type="text/css" />
+  <link href="<%= ResolveUrl("~/CSS/SanPham.css") %>"
+      rel="stylesheet" type="text/css" />
 
 </asp:Content>
 <asp:Content ID="Content1"
@@ -110,14 +111,14 @@
                             <a class="lien-ket-anh"
                                href='ChiTietSanPham.aspx?id=<%# HttpUtility.UrlEncode(Eval("maBanh").ToString()) %>'>
                                 <img src='<%# ResolveUrl("~/" + Eval("anhBanh")) %>'
-                                     alt='<%# Eval("tenBanh") %>'
+                                     alt='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("tenBanh"))) %>'
                                      onerror="this.closest('.the_san_pham').classList.add('khong-anh');" />
                             </a>
 
                             <!-- Bấm tên bánh để xem chi tiết bánh -->
                             <a class="lien-ket-ten"
                                href='ChiTietSanPham.aspx?id=<%# HttpUtility.UrlEncode(Eval("maBanh").ToString()) %>'>
-                                <span class="ten_banh"><%# Eval("tenBanh") %></span>
+                                <span class="ten_banh"><%# HttpUtility.HtmlEncode(Convert.ToString(Eval("tenBanh"))) %></span>
                             </a>
 
                             <p class="gia_banh">
@@ -168,5 +169,5 @@
         aria-label="Lên đầu trang">
     <i class="fa-solid fa-arrow-up"></i>
 </button>
-    <script src="JS/SanPham.js"></script>
+    <script src="<%= ResolveUrl("~/JS/SanPham.js") %>"></script>
 </asp:Content>

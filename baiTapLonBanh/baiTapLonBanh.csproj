@@ -193,6 +193,8 @@
     <Content Include="JS\DangNhap.js" />
     <Content Include="JS\SanPham.js" />
     <Content Include="JS\Site.js" />
+    <Content Include="JS\TaiKhoan.js" />
+    <Content Include="JS\ThemSanPham.js" />
     <Content Include="JS\TrangChu.js" />
     <Content Include="QuanLySanPham.aspx" />
     <Content Include="QuanTri.aspx" />
@@ -250,7 +252,6 @@
     <Compile Include="DonHang.cs" />
     <Compile Include="GioHang.aspx.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GioHang.aspx.designer.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>

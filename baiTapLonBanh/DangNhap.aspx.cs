@@ -40,6 +40,9 @@ namespace baiTapLonBanh
 
                 return;
             }
+            // Giữ lại dữ liệu khi đăng nhập thất bại
+            savedUser = (Request.Form["username"] ?? "").Trim();
+            isRemembered = Request.Form["remember"] == "true";
             loiUsername.InnerText = "";
             loiPassword.InnerText = "";
             divThongBao.InnerHtml = "";

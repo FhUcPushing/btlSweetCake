@@ -163,7 +163,15 @@ namespace baiTapLonBanh
                                 {
                                     foreach (ChiTietDon chiTiet in don.Dong)
                                     {
-                                        if (chiTiet.maBanh == maBanh)
+                                        string maBanhTrongDon;
+                                        string maSize;
+
+                                        GioHangKey.Tach(
+                                            chiTiet.maBanh ?? "",
+                                            out maBanhTrongDon,
+                                            out maSize);
+
+                                        if (maBanhTrongDon == maBanh)
                                         {
                                             daDuocDat = true;
                                             break;

@@ -17,25 +17,9 @@
     runat="server">
 
     <div class="container">
-        <h1>Khu vực quản trị SweetCake</h1>
-
-        <p>
-            Xin chào quản trị viên:
-            <span id="tenAdmin" runat="server"></span>
-        </p>
-        <div class="admin-actions">
-    <a href="<%= ResolveUrl("~/QuanLySanPham.aspx") %>"
-       class="admin-detail-link">
-
-        <i class="fa-solid fa-cake-candles"></i>
-        Quản lý sản phẩm
-
-    </a>
-</div>
-
-        <p>Đăng nhập với quyền quản trị thành công!</p>
+        
         <div class="admin-orders">
-    <h2>Quản lý đơn hàng</h2>
+    <h2 id="khuQuanLyDonHang">Quản lý đơn hàng</h2>
 
     <asp:Label ID="lblThongBao"
         runat="server"
@@ -90,7 +74,7 @@
             ID="lnkXemChiTiet"
             runat="server"
             NavigateUrl='<%# "~/ChiTietDonHang.aspx?ma=" + Server.UrlEncode(Convert.ToString(Eval("MaDon"))) %>'
-            CssClass="admin-detail-link">
+            CssClass="admin-order-detail-link">
             Xem chi tiết
         </asp:HyperLink>
     </ItemTemplate>

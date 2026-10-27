@@ -182,17 +182,7 @@
     margin-top: 24px;
 }
 
-.admin-message.thanh-cong {
-    display: block;
-    margin-bottom: 15px;
-    color: #198754;
-}
 
-.admin-message.that-bai {
-    display: block;
-    margin-bottom: 15px;
-    color: #dc3545;
-}
 
 @media (max-width: 600px) {
     .admin-product-form {
@@ -222,4 +212,22 @@
 
     .admin-delete-btn:hover {
         background-color: #bb2d3b;
+    }
+/* Liên kết xem chi tiết đơn hàng */
+.admin-order-detail-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #d63384;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+    .admin-order-detail-link:hover {
+        color: #a61e62;
+        text-decoration: underline;
     }

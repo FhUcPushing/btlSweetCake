@@ -16,16 +16,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    align-items: stretch; /* hai cột cao bằng nhau */
+    align-items: start; /* hai cột cao bằng nhau */
 }
 
 .khung_anh_banh {
-    position: relative;
+    position: sticky;
+    top: 90px;
+    aspect-ratio: 5 / 4;
     border-radius: 20px;
     overflow: hidden;
     background: #f4f4f4;
-    min-height: 380px;
-    max-height: 560px;
+    min-height: 0;
+    max-height: none;
     box-shadow: 0 8px 24px rgba(214, 69, 127, .12);
 }
 
@@ -48,8 +50,8 @@
 }
 
 .noi_dung_banh {
-    max-height: 560px;
-    overflow: auto;
+    max-height: none;
+    overflow: visible;
     padding-right: 4px;
 }
 
@@ -81,16 +83,7 @@
     line-height: 1.5;
 }
 
-.thong_tin_chi_tiet {
-    font-size: 14px;
-    line-height: 1.5;
-    padding-left: 18px;
-    margin: 8px 0;
-}
 
-    .thong_tin_chi_tiet li {
-        margin-bottom: 4px;
-    }
 
 /* ===== Chọn size ===== */
 .chon_size {
@@ -456,18 +449,8 @@
     align-items: start;
 }
 
-.khung_anh_banh {
-    position: sticky; /* ảnh trượt theo khi kéo xuống xem size, nút mua */
-    top: 90px;
-    aspect-ratio: 5 / 4;
-    min-height: 0;
-    max-height: none;
-}
 
-.noi_dung_banh {
-    max-height: none;
-    overflow: visible;
-}
+
 
     .noi_dung_banh .chon_size {
         margin: 16px 0;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 namespace baiTapLonBanh
@@ -28,9 +27,15 @@ namespace baiTapLonBanh
                 try
                 {
 
-                    don = dsDon.FirstOrDefault(
-                        d => d.MaDon == ma &&
-                             (laAdmin || d.TenDangNhap == nd.TenDangNhap));
+                    foreach (DonHang d in dsDon)
+                    {
+                        if (d.MaDon == ma &&
+                            (laAdmin || d.TenDangNhap == nd.TenDangNhap))
+                        {
+                            don = d;
+                            break;
+                        }
+                    }
                     if (laAdmin)
                     {
                         lnkQuayLai.HRef = ResolveUrl("~/QuanTri.aspx");

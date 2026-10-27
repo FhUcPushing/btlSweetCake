@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI.HtmlControls;
@@ -9,6 +8,14 @@ namespace baiTapLonBanh
 {
     public partial class TaiKhoan : System.Web.UI.Page
     {
+        public class DonHangTaiKhoanHienThi
+        {
+            public string MaDon { get; set; }
+            public string NgayDat { get; set; }
+            public int SoMon { get; set; }
+            public decimal TongCong { get; set; }
+            public string TrangThai { get; set; }
+        }
         protected string tab = "thongtin";
 
         private NguoiDung NguoiHienTai
@@ -24,7 +31,14 @@ namespace baiTapLonBanh
                 return;
             }
 
-            tab = Request.QueryString["tab"] == "donhang" ? "donhang" : "thongtin";
+            // Hiển thị menu quản lý nếu là Admin
+            pnlMenuQuanTri.Visible =
+                NguoiHienTai.VaiTro == "Admin";
+
+            tab = Request.QueryString["tab"] == "donhang"
+                ? "donhang"
+                : "thongtin";
+
             pnlThongTin.Visible = (tab == "thongtin");
             pnlDonHang.Visible = (tab == "donhang");
 
@@ -52,30 +66,78 @@ namespace baiTapLonBanh
 
         private void HienThiDonHang(string tenDangNhap)
         {
-            List<DonHang> tatCa = Application["DanhSachDonHang"] as List<DonHang>;
             List<DonHang> cuaToi = new List<DonHang>();
 
-            if (tatCa != null)
+            // Lấy các đơn hàng của người dùng hiện tại
+            Application.Lock();
+
+            try
             {
-                Application.Lock();
-                try { cuaToi = tatCa.Where(d => d.TenDangNhap == tenDangNhap).ToList(); }
-                finally { Application.UnLock(); }
+                List<DonHang> tatCa =
+                    Application["DanhSachDonHang"] as List<DonHang>;
+
+                if (tatCa != null)
+                {
+                    foreach (DonHang don in tatCa)
+                    {
+                        if (don.TenDangNhap == tenDangNhap)
+                        {
+                            cuaToi.Add(don);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                Application.UnLock();
             }
 
-            var ds = cuaToi
-                .OrderByDescending(d => d.NgayDat)
-                .Select(d => new
+            // Sắp xếp đơn mới nhất lên đầu
+            for (int i = 0; i < cuaToi.Count - 1; i++)
+            {
+                for (int j = i + 1; j < cuaToi.Count; j++)
                 {
-                    d.MaDon,
-                    NgayDat = d.NgayDat.ToString("dd/MM/yyyy HH:mm"),
-                    SoMon = d.Dong.Sum(x => x.soLuong),
-                    d.TongCong,
-                    d.TrangThai
-                })
-                .ToList();
+                    if (cuaToi[i].NgayDat < cuaToi[j].NgayDat)
+                    {
+                        DonHang tam = cuaToi[i];
+                        cuaToi[i] = cuaToi[j];
+                        cuaToi[j] = tam;
+                    }
+                }
+            }
 
+            // Tạo danh sách dữ liệu để hiển thị
+            List<DonHangTaiKhoanHienThi> ds =
+                new List<DonHangTaiKhoanHienThi>();
+
+            foreach (DonHang don in cuaToi)
+            {
+                int soMon = 0;
+
+                if (don.Dong != null)
+                {
+                    foreach (ChiTietDon chiTiet in don.Dong)
+                    {
+                        soMon += chiTiet.soLuong;
+                    }
+                }
+
+                DonHangTaiKhoanHienThi dong =
+                    new DonHangTaiKhoanHienThi();
+
+                dong.MaDon = don.MaDon;
+                dong.NgayDat = don.NgayDat.ToString("dd/MM/yyyy HH:mm");
+                dong.SoMon = soMon;
+                dong.TongCong = don.TongCong;
+                dong.TrangThai = don.TrangThai;
+
+                ds.Add(dong);
+            }
+
+            // Hiển thị kết quả
             pnlDonRong.Visible = ds.Count == 0;
             pnlCoDon.Visible = ds.Count > 0;
+
             rptDon.DataSource = ds;
             rptDon.DataBind();
         }
@@ -202,9 +264,12 @@ namespace baiTapLonBanh
                         List<DonHang> dsDon = Application["DanhSachDonHang"] as List<DonHang>;
                         if (dsDon != null)
                         {
-                            foreach (DonHang d in dsDon.Where(x => x.TenDangNhap == tenCu))
+                            foreach (DonHang d in dsDon)
                             {
-                                d.TenDangNhap = tenMoi;
+                                if (d.TenDangNhap == tenCu)
+                                {
+                                    d.TenDangNhap = tenMoi;
+                                }
                             }
                         }
                     }

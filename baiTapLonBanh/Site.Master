@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="baiTapLonBanh.Site" %>
-<%@ Import Namespace="baiTapLonBanh" %>
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -9,17 +8,14 @@
 
     <title>SweetCake</title>
 
-    <link href="CSS/Site.css" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/CSS/Site.css") %>"
+      rel="stylesheet" type="text/css" />
 
-    <link href="<%= ResolveUrl("~/CSS/TrangChu.css") %>"
-      rel="stylesheet" />
-<link href="<%= ResolveUrl( "~/CSS/DangNhapvaDangKy.css") %>" rel="stylesheet" />
- <link href="<%= ResolveUrl("~/CSS/TinTuc.css") %>" rel="stylesheet" />
- <link href="<%= ResolveUrl("~/CSS/TuVan.css") %>" rel="stylesheet" />
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
 </head>
 
 <body>
@@ -29,10 +25,6 @@
     string tenNguoiDung = Session["TenHienThi"] as string;
     bool daDangNhap = !string.IsNullOrEmpty(tenNguoiDung);
     string tenAnToan = daDangNhap ? Server.HtmlEncode(tenNguoiDung) : "";
-
-    // Kiểm tra quyền quản trị
-    NguoiDung taiKhoan = Session["TaiKhoan"] as NguoiDung;
-    bool laAdmin = taiKhoan != null && taiKhoan.VaiTro == "Admin";
 %>
 
         <!-- HEADER DÙNG CHUNG -->
@@ -109,12 +101,7 @@
                         <i class="fa-solid fa-headset"></i>
                         <span>Tư vấn</span>
                     </a>
-                    <% if (laAdmin) { %>
-    <a href="<%= ResolveUrl("~/QuanTri.aspx") %>">
-        <i class="fa-solid fa-user-shield"></i>
-        <span>Quản trị</span>
-    </a>
-<% } %>
+                   
                 </nav>
 
                 <!-- Giỏ hàng và tài khoản -->

@@ -2,13 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static baiTapLonBanh.SanPham;
 
 namespace baiTapLonBanh
 {
@@ -150,8 +148,22 @@ namespace baiTapLonBanh
                 string ma, size;
                 GioHangKey.Tach(kv.Key, out ma, out size);
 
-                SanPhamBanh b = danhSachSanPham.FirstOrDefault(x => x.maBanh == ma);
-                if (b == null) continue;
+                SanPhamBanh b = null;
+
+                // Tìm bánh theo mã
+                foreach (SanPhamBanh sanPham in danhSachSanPham)
+                {
+                    if (sanPham.maBanh == ma)
+                    {
+                        b = sanPham;
+                        break;
+                    }
+                }
+
+                if (b == null)
+                {
+                    continue;
+                }
 
                 decimal donGia = GioHangKey.DonGia(b, size);
 
@@ -169,13 +181,44 @@ namespace baiTapLonBanh
         }
 
         // ---------- Tính tiền ----------
-        private TienDonHang TinhTien(List<DongGioHang> dong, string maGiamGia)
+        private TienDonHang TinhTien(
+    List<DongGioHang> dong, string maGiamGia)
         {
             TienDonHang t = new TienDonHang();
-            t.TamTinh = dong.Sum(d => d.thanhTien);
-            t.PhiShip = t.TamTinh >= MienPhiShipTu ? 0m : PhiShipMacDinh;
-            t.GiamGia = TinhGiamGia(maGiamGia, t.TamTinh, t.PhiShip);
-            t.TongCong = Math.Max(0m, t.TamTinh + t.PhiShip - t.GiamGia);
+
+            // Tính tổng tiền bánh
+            decimal tamTinh = 0;
+
+            foreach (DongGioHang sanPham in dong)
+            {
+                tamTinh += sanPham.thanhTien;
+            }
+
+            t.TamTinh = tamTinh;
+
+            // Tính phí vận chuyển
+            if (t.TamTinh >= MienPhiShipTu)
+            {
+                t.PhiShip = 0;
+            }
+            else
+            {
+                t.PhiShip = PhiShipMacDinh;
+            }
+
+            // Tính giảm giá
+            t.GiamGia = TinhGiamGia(
+                maGiamGia, t.TamTinh, t.PhiShip);
+
+            // Tính tổng tiền khách phải trả
+            t.TongCong =
+                t.TamTinh + t.PhiShip - t.GiamGia;
+
+            if (t.TongCong < 0)
+            {
+                t.TongCong = 0;
+            }
+
             return t;
         }
 
@@ -356,7 +399,9 @@ namespace baiTapLonBanh
 
             // Hợp lệ -> xác nhận đơn
             TienDonHang t = TinhTien(dong, MaDangDung);
-            string maDon = "DH" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            string maDon = "DH"
+    + DateTime.Now.ToString("yyyyMMddHHmmss")
+    + Guid.NewGuid().ToString("N").Substring(0, 8).ToUpperInvariant();
 
             litMaDon.Text = maDon;
             litNguoiNhan.Text = HttpUtility.HtmlEncode(hoTen) + " - " + HttpUtility.HtmlEncode(sdt);
@@ -365,6 +410,22 @@ namespace baiTapLonBanh
             litThanhToan.Text = tenThanhToan;
             litTongThanhToan.Text = Tien(t.TongCong);
             // Lưu đơn vào danh sách để trang Tài khoản đọc ra
+            // Tạo danh sách chi tiết đơn hàng
+            List<ChiTietDon> dsChiTiet = new List<ChiTietDon>();
+
+            foreach (DongGioHang sanPham in dong)
+            {
+                ChiTietDon chiTiet = new ChiTietDon();
+
+                chiTiet.maBanh = sanPham.maBanh;
+                chiTiet.tenBanh = sanPham.tenBanh;
+                chiTiet.anhBanh = sanPham.anhBanh;
+                chiTiet.donGia = sanPham.giaBanh;
+                chiTiet.soLuong = sanPham.soLuong;
+                chiTiet.thanhTien = sanPham.thanhTien;
+
+                dsChiTiet.Add(chiTiet);
+            }
             DonHang don = new DonHang
             {
                 MaDon = maDon,
@@ -381,21 +442,28 @@ namespace baiTapLonBanh
                 GiamGia = t.GiamGia,
                 TongCong = t.TongCong,
                 TrangThai = "Chờ xác nhận",
-                Dong = dong.Select(d => new ChiTietDon
-                {
-                    maBanh = d.maBanh,
-                    tenBanh = d.tenBanh,
-                    anhBanh = d.anhBanh,
-                    donGia = d.giaBanh,
-                    soLuong = d.soLuong,
-                    thanhTien = d.thanhTien
-                }).ToList()
+                Dong = dsChiTiet
             };
 
             Application.Lock();
-            List<DonHang> dsDon = (List<DonHang>)Application["DanhSachDonHang"];
-            dsDon.Add(don);
-            Application.UnLock();
+
+            try
+            {
+                List<DonHang> dsDon =
+                    Application["DanhSachDonHang"] as List<DonHang>;
+
+                if (dsDon == null)
+                {
+                    dsDon = new List<DonHang>();
+                    Application["DanhSachDonHang"] = dsDon;
+                }
+
+                dsDon.Add(don);
+            }
+            finally
+            {
+                Application.UnLock();
+            }
             // Giữ mã đơn gần nhất như bản cũ
             Session["DonHangGanNhat"] = maDon;
 
