@@ -61,7 +61,7 @@ namespace baiTapLonBanh
 
             litMaDon.Text = HttpUtility.HtmlEncode(don.MaDon);
             litTrangThai.Text = HttpUtility.HtmlEncode(don.TrangThai);
-            // Chỉ cho hủy đơn khi còn chờ xác nhận
+           
             btnHuyDon.Visible =
     !laAdmin &&
     don.TrangThai == "Chờ xác nhận";
@@ -82,7 +82,7 @@ namespace baiTapLonBanh
         }
         protected void btnHuyDon_Click(object sender, EventArgs e)
         {
-            // Kiểm tra người dùng đã đăng nhập
+           
             NguoiDung nd = Session["TaiKhoan"] as NguoiDung;
 
             if (nd == null)
@@ -93,7 +93,7 @@ namespace baiTapLonBanh
                 Context.ApplicationInstance.CompleteRequest();
                 return;
             }
-            // Admin không sử dụng chức năng hủy đơn dành cho khách hàng
+           
             if (nd.VaiTro == "Admin")
             {
                 btnHuyDon.Visible = false;
@@ -123,7 +123,7 @@ namespace baiTapLonBanh
             bool daHuy = false;
             bool saiTrangThai = false;
 
-            // Tìm và cập nhật đơn hàng
+         
             Application.Lock();
 
             try
@@ -135,13 +135,13 @@ namespace baiTapLonBanh
                 {
                     foreach (DonHang don in dsDon)
                     {
-                        // Chỉ chủ đơn mới được hủy
+                       
                         if (don.MaDon == ma &&
                             don.TenDangNhap == nd.TenDangNhap)
                         {
                             timThay = true;
 
-                            // Chỉ hủy khi còn chờ xác nhận
+                       
                             if (don.TrangThai == "Chờ xác nhận")
                             {
                                 don.TrangThai = "Đã hủy";
@@ -162,7 +162,7 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Hiển thị kết quả
+            
             if (daHuy)
             {
                 litTrangThai.Text = "Đã hủy";

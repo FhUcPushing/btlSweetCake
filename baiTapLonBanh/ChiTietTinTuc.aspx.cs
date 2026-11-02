@@ -16,7 +16,7 @@ namespace baiTapLonBanh
             }
         }
 
-        // Hiển thị chi tiết bài viết
+        
         private void HienThiTinTuc()
         {
             int id = 1;
@@ -45,7 +45,7 @@ namespace baiTapLonBanh
                 }
             }
 
-            // Không tìm thấy bài viết
+            
             if (baiViet == null)
             {
                 thongTinTinTuc.Visible = false;
@@ -54,7 +54,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Hiển thị thông tin bài viết
+            
             thongTinTinTuc.Visible = true;
             thongBaoLoi.Visible = false;
 
@@ -67,12 +67,12 @@ namespace baiTapLonBanh
             thoiGianDoc.InnerText = baiViet.ThoiGianDoc;
             moTaTinTuc.InnerText = baiViet.MoTa;
 
-            // Nội dung bài viết có chứa thẻ HTML
+            
             noiDungTinTuc.InnerHtml = baiViet.NoiDung;
 
             Page.Title = baiViet.TieuDe + " - SweetCake";
 
-            // Hiển thị 4 bài viết tiếp theo (bài 6 đến bài 9)
+            
             List<BaiVietTinTuc> baiVietLienQuan = new List<BaiVietTinTuc>();
 
             foreach (BaiVietTinTuc item in danhSach)
@@ -97,7 +97,7 @@ namespace baiTapLonBanh
             }
         }
 
-        // Danh sách bài viết mẫu
+    
 
         private List<BaiVietTinTuc> LayDanhSachTinTuc()
         {

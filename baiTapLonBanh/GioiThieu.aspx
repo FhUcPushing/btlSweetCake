@@ -14,13 +14,13 @@
     runat="server">
     <div class="gioi-thieu">
 
-        <!-- TIÊU ĐỀ -->
+       
         <div class="tieu-de">
             VỀ SWEETCAKE
         </div>
 
 
-        <!-- GIỚI THIỆU -->
+       
         <div class="mo-dau">
 
             <p class="doan-dam">
@@ -44,14 +44,14 @@
         </div>
 
 
-        <!-- BANNER -->
+     
         <div class="banner-gioi-thieu">
             <img src="image/GioiThieu/thanh_lap.jpg"
                  alt="SweetCake" />
         </div>
 
 
-        <!-- THÀNH LẬP -->
+        
         <section class="noi-dung">
 
             <h2>THÀNH LẬP</h2>
@@ -73,7 +73,7 @@
         </section>
 
 
-        <!-- NHIỆM VỤ -->
+    
         <section class="noi-dung">
 
             <h2>NHIỆM VỤ</h2>
@@ -87,9 +87,9 @@
         </section>
               
 
-        <!-- CAM KẾT KINH DOANH -->
         
-    <!-- CAM KẾT KINH DOANH -->
+        
+   
     <section class="noi-dung">
         <h2>CAM KẾT KINH DOANH</h2>
 
@@ -135,7 +135,7 @@
 
 
         
-    <!-- ĐOẠN KẾT -->
+ 
     <section class="ket-thuc">
         <h2>CÙNG SWEETCAKE TẠO NÊN NHỮNG KỶ NIỆM NGỌT NGÀO!</h2>
         <img src="image/GioiThieu/anh5_GT.png"

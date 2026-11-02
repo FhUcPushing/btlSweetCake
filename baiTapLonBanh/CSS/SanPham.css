@@ -1,23 +1,4 @@
-﻿/* ==========================================
-   SWEETCAKE - TRANG SẢN PHẨM
-   Màu chủ đạo: Hồng nhạt - Trắng - Kem
-
-   Mục lục:
-   1. Biến màu và bố cục chung
-   2. Tiêu đề các mục
-   3. Banner
-   4. Danh mục bánh
-   5. Hàng tìm kiếm + Xem + Sắp xếp
-   6. Danh sách sản phẩm (4 sản phẩm / hàng)
-   7. Chế độ Xem 1 sản phẩm
-   8. Phân trang
-   9. Thông báo giỏ hàng
-   10. Máy tính bảng
-   11. Điện thoại
-   ========================================== */
-
-/* ---------- 1. BIẾN MÀU VÀ BỐ CỤC CHUNG ---------- */
-
+﻿
 .product-page {
     --sp-pink: #d9457c;
     --sp-pink-deep: #b0306a;
@@ -49,7 +30,7 @@
         margin-top: 0;
     }
 
-    /* ---------- 2. TIÊU ĐỀ CÁC MỤC ---------- */
+    
 
     .product-page h2 {
         position: relative;
@@ -74,7 +55,7 @@
             transform: translateX(-50%);
         }
 
-    /* ---------- 3. BANNER ---------- */
+   
 
     .product-page .product-hero {
         position: relative;
@@ -136,7 +117,6 @@
             line-height: 1.75;
         }
 
-    /* ---------- 4. DANH MỤC BÁNH ---------- */
 
     .product-page .product-category-section {
         margin-bottom: 30px;
@@ -187,7 +167,7 @@
             transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
         }
 
-        /* Rê chuột và mục đang chọn: vòng tròn hồng đậm, icon trắng */
+        
         .product-page .category-list li:hover .category-icon,
         .product-page .category-list li.active .category-icon {
             border-color: var(--sp-pink);
@@ -213,9 +193,7 @@
             outline-offset: 3px;
         }
 
-    /* ---------- 5. HÀNG TÌM KIẾM VÀ BỘ LỌC ---------- */
-
-    /* Thanh đầu danh sách: tiêu đề + số sản phẩm (trái), Xem / Sắp xếp (phải) */
+    
 
     .product-page .list-head {
         display: flex;
@@ -255,7 +233,7 @@
         white-space: nowrap;
     }
 
-    /* Chip từ khóa đang tìm (bấm ✕ để xóa) */
+  
     .product-page .loc-dang-chon {
         margin: 0 0 18px;
     }
@@ -292,7 +270,7 @@
                 background: var(--sp-pink-deep);
             }
 
-    /* Thanh chọn số lượng và sắp xếp */
+  
 
     .product-page .product-toolbar {
         display: flex;
@@ -329,16 +307,11 @@
                 outline: none;
             }
 
-/* ---------- 6. DANH SÁCH SẢN PHẨM ---------- */
 
-/* Bấm icon loại bánh (#khuLoaiBanh) hoặc số trang (#khuDanhSach):
-   trang tự cuộn tới đó và chừa chỗ cho thanh header dính ở trên */
 #khuLoaiBanh,
 #khuDanhSach {
     scroll-margin-top: 90px;
 }
-
-/* Máy tính: 4 sản phẩm trên một hàng */
 .product-page .danh-sach-banh,
 .product-page #danhSachBanh {
     display: grid;
@@ -347,7 +320,7 @@
     align-items: stretch;
 }
 
-/* Thẻ bánh */
+
 .product-page .the_san_pham {
     display: flex;
     flex-direction: column;
@@ -366,7 +339,7 @@
         box-shadow: 0 12px 26px rgba(217, 69, 124, 0.15);
     }
 
-    /* Ảnh bánh */
+
     .product-page .the_san_pham img {
         display: block;
         width: 100%;
@@ -377,7 +350,6 @@
         object-fit: cover;
     }
 
-    /* Ảnh thay thế khi đường dẫn ảnh lỗi (class "khong-anh" do onerror thêm vào) */
     .product-page .the_san_pham.khong-anh img {
         display: none;
     }
@@ -393,7 +365,6 @@
         font-size: 58px;
     }
 
-    /* Liên kết bọc ảnh bánh */
     .product-page .the_san_pham > a.lien-ket-anh {
         display: block;
         width: 100%;
@@ -408,7 +379,6 @@
             margin: 0;
         }
 
-    /* Liên kết bọc tên bánh */
     .product-page .the_san_pham > a.lien-ket-ten {
         display: block;
         width: 100%;
@@ -425,7 +395,7 @@
             color: var(--sp-pink);
         }
 
-    /* Tên bánh: tối đa 2 dòng */
+  
     .product-page .the_san_pham .ten_banh {
         display: -webkit-box;
         margin: 0;
@@ -438,7 +408,7 @@
         -webkit-line-clamp: 2;
     }
 
-    /* Giá bánh: đẩy xuống sát nút nên các thẻ luôn đều nhau */
+    
     .product-page .the_san_pham .gia_banh {
         margin-top: auto;
         margin-bottom: 12px;
@@ -447,7 +417,7 @@
         font-weight: 800;
     }
 
-/* Hai nút Mua ngay + giỏ hàng nằm cạnh nhau */
+
 .product-page .nhom-nut-mua {
     display: flex;
     flex-direction: row;
@@ -505,7 +475,6 @@
         color: #fff;
     }
 
-/* Thông báo khi không tìm thấy bánh */
 .product-page .khong-co-banh {
     margin: 0 0 18px;
     padding: 22px 16px;
@@ -517,9 +486,7 @@
     text-align: center;
 }
 
-/* ---------- 7. CHẾ ĐỘ XEM 1 SẢN PHẨM ---------- */
 
-/* Một cột, mỗi thẻ bánh nằm ngang: ảnh bên trái, thông tin bên phải */
 .product-page #danhSachBanh.xem-1 {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
@@ -539,7 +506,6 @@
         padding: 20px;
     }
 
-        /* Ảnh bánh: cột trái */
         .product-page #danhSachBanh.xem-1 .the_san_pham > a.lien-ket-anh {
             grid-column: 1;
             grid-row: 1 / span 3;
@@ -551,7 +517,7 @@
                 height: 240px;
             }
 
-        /* Ảnh lỗi: vẫn nằm đúng cột trái */
+      
         .product-page #danhSachBanh.xem-1 .the_san_pham.khong-anh::before {
             grid-column: 1;
             grid-row: 1 / span 3;
@@ -561,7 +527,7 @@
             margin: 0;
         }
 
-        /* Tên bánh: cột phải, hàng 1 */
+     
         .product-page #danhSachBanh.xem-1 .the_san_pham > a.lien-ket-ten {
             grid-column: 2;
             grid-row: 1;
@@ -574,7 +540,6 @@
                 line-height: 1.45;
             }
 
-        /* Giá bánh: cột phải, hàng 2 */
         .product-page #danhSachBanh.xem-1 .the_san_pham > .gia_banh {
             grid-column: 2;
             grid-row: 2;
@@ -583,7 +548,7 @@
             font-size: 20px;
         }
 
-        /* Hai nút: cột phải, hàng 3 */
+
         .product-page #danhSachBanh.xem-1 .the_san_pham > .nhom-nut-mua {
             grid-column: 2;
             grid-row: 3;
@@ -604,8 +569,7 @@
         min-height: 44px;
     }
 
-/* ---------- 8. PHÂN TRANG ----------
-   Các số trang là thẻ <a> (GET: ?trang=2...), nút < > khi bị khóa là <span class="khoa"> */
+
 
 .product-page .product-pagination-section {
     margin-top: 32px;
@@ -645,7 +609,7 @@
             color: #fff;
         }
 
-    /* Nút < hoặc > khi không thể bấm (trang đầu / trang cuối) */
+  
     .product-page .phan_trang .khoa {
         opacity: 0.4;
         cursor: not-allowed;
@@ -659,7 +623,6 @@
         color: var(--sp-text);
     }
 
-/* ---------- 9. THÔNG BÁO GIỎ HÀNG ---------- */
 
 .product-page .thong-bao-gio-hang {
     position: fixed;
@@ -692,9 +655,7 @@
         pointer-events: none;
     }
 
-/* ---------- 10. MÁY TÍNH BẢNG ---------- */
 
-/* Laptop nhỏ / tablet ngang: 3 sản phẩm / hàng */
 @media (max-width: 1100px) {
     .product-page .danh-sach-banh,
     .product-page #danhSachBanh {
@@ -703,7 +664,7 @@
     }
 }
 
-/* Tablet dọc: ô tìm kiếm và bộ lọc xếp 2 dòng */
+
 @media (max-width: 1000px) {
 
     .product-page .product-hero {
@@ -712,7 +673,7 @@
     }
 }
 
-/* 2 sản phẩm / hàng */
+
 @media (max-width: 800px) {
     .product-page .danh-sach-banh,
     .product-page #danhSachBanh {
@@ -720,7 +681,6 @@
     }
 }
 
-/* Điện thoại / màn hình hẹp: 4 icon loại bánh luôn nằm trên 1 dòng */
 @media (max-width: 768px) {
     .product-page .category-list {
         flex-wrap: nowrap;
@@ -747,7 +707,7 @@
         }
 }
 
-/* ---------- 11. ĐIỆN THOẠI ---------- */
+
 
 @media (max-width: 520px) {
     .product-page {
@@ -777,7 +737,6 @@
                 font-size: 15px;
             }
 
-        /* Danh mục: 4 mục chia đều trên 1 hàng */
         .product-page .category-list {
             flex-wrap: nowrap;
             gap: 10px;
@@ -802,7 +761,6 @@
                 font-size: 22px;
             }
 
-        /* Hai cột sản phẩm trên điện thoại */
         .product-page .danh-sach-banh,
         .product-page #danhSachBanh {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -826,7 +784,7 @@
                 font-size: 15px;
             }
 
-        /* Thu gọn thanh bộ lọc */
+   
         .product-page .list-head h2 {
             font-size: 20px;
         }
@@ -848,7 +806,7 @@
                 font-size: 13px;
             }
 
-        /* Phân trang gọn hơn */
+
         .product-page .phan_trang a,
         .product-page .phan_trang .khoa {
             min-width: 36px;
@@ -856,7 +814,7 @@
             padding: 0 10px;
         }
 
-        /* Thông báo giỏ hàng nhỏ gọn */
+
         .product-page .thong-bao-gio-hang {
             top: 70px;
             right: 14px;
@@ -865,7 +823,6 @@
             font-size: 12px;
         }
 
-        /* Chế độ xem 1 trên điện thoại: ảnh trái, thông tin phải */
         .product-page #danhSachBanh.xem-1 .the_san_pham {
             grid-template-columns: minmax(0, 110px) minmax(0, 1fr);
             column-gap: 12px;
@@ -909,14 +866,13 @@
         }
 }
 
-/* ---------- THÔNG BÁO GIỎ HÀNG: trạng thái lỗi ---------- */
 .product-page .thong-bao-gio-hang.loi {
     border-color: #f3b4c4;
     background: #ffe3ea;
     color: #9f1d45;
 }
 
-/* Thông báo "nảy" mỗi lần bấm thêm giỏ hàng */
+
 .product-page .thong-bao-gio-hang.vua-them {
     animation: gh-nay 0.35s ease;
 }
@@ -935,11 +891,11 @@
     }
 }
 
-/* Icon trong thông báo giỏ hàng */
+
 .product-page .thong-bao-gio-hang i {
     margin-right: 8px;
 }
-/* NÚT LÊN ĐẦU TRANG */
+
 .btn-len-dau {
     position: fixed;
     right: 24px;
@@ -961,7 +917,6 @@
     transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
 }
 
-    /* Khi nút được hiển thị */
     .btn-len-dau.hien {
         opacity: 1;
         visibility: visible;
@@ -969,13 +924,12 @@
         transform: translateY(0);
     }
 
-    /* Hiệu ứng khi rê chuột */
+    
     .btn-len-dau:hover {
         background: #bd2f65;
         transform: translateY(-3px);
     }
 
-/* Điều chỉnh trên điện thoại */
 @media (max-width: 600px) {
     .btn-len-dau {
         right: 14px;
@@ -984,7 +938,6 @@
         height: 42px;
     }
 }
-/* Nút Mua ngay: hình chữ nhật bo góc nhẹ (giống trang chủ); nút giỏ hàng giữ nguyên */
 .product-page .nhom-nut-mua .nut-mua-ngay {
     border-radius: 10px;
 }

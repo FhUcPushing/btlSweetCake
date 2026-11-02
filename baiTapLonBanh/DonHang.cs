@@ -6,7 +6,7 @@ namespace baiTapLonBanh
     public class ChiTietDon
     {
         public string maBanh { get; set; }
-        public string tenBanh { get; set; }   // đã gồm size, ví dụ "Bánh X (20cm)"
+        public string tenBanh { get; set; }   
         public string anhBanh { get; set; }
         public decimal donGia { get; set; }
         public int soLuong { get; set; }
@@ -16,7 +16,7 @@ namespace baiTapLonBanh
     public class DonHang
     {
         public string MaDon { get; set; }
-        public string TenDangNhap { get; set; }   // chủ đơn
+        public string TenDangNhap { get; set; }  
         public DateTime NgayDat { get; set; }
         public string NguoiNhan { get; set; }
         public string SoDienThoai { get; set; }

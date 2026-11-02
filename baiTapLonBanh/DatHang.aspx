@@ -7,17 +7,17 @@
 
         <h1>Đặt hàng</h1>
 
-        <!-- ================= FORM ĐẶT HÀNG ================= -->
+        
         <asp:Panel ID="pnlDatHang" runat="server">
 
             <div id="khungLoi" runat="server" visible="false" class="dat-hang-loi"></div>
 
             <div class="dat-hang-luoi">
 
-                <!-- ===== CỘT TRÁI: THÔNG TIN ===== -->
+                
                 <div class="dat-hang-trai">
 
-                    <!-- 1. Thông tin người nhận -->
+            
                     <section class="khoi-dat-hang">
                         <h2><span class="so-buoc">1</span> Thông tin người nhận</h2>
 
@@ -43,7 +43,7 @@
                         </div>
                     </section>
 
-                    <!-- 2. Thời gian nhận hàng -->
+                  
                     <section class="khoi-dat-hang">
                         <h2><span class="so-buoc">2</span> Thời gian nhận hàng</h2>
 
@@ -67,7 +67,7 @@
                         </div>
                     </section>
 
-                    <!-- 3. Lưu ý về đơn hàng -->
+                
                     <section class="khoi-dat-hang">
                         <h2><span class="so-buoc">3</span> Lưu ý về đơn hàng</h2>
 
@@ -77,7 +77,7 @@
                         </div>
                     </section>
 
-                    <!-- 4. Phương thức thanh toán -->
+                   
                     <section class="khoi-dat-hang">
                         <h2><span class="so-buoc">4</span> Phương thức thanh toán</h2>
 
@@ -113,7 +113,7 @@
 
                 </div>
 
-                <!-- ===== CỘT PHẢI: TÓM TẮT ĐƠN HÀNG ===== -->
+             
                 <aside class="dat-hang-phai">
                     <div class="tom-tat">
                         <h2>Đơn hàng của bạn</h2>
@@ -137,7 +137,7 @@
                             </asp:Repeater>
                         </div>
 
-                        <!-- Mã giảm giá -->
+                    
                         <asp:Panel ID="pnlMaGiamGia" runat="server" DefaultButton="btnApDungMa" CssClass="khung-ma">
                             <label class="nhan-o" for="<%= txtMaGiamGia.ClientID %>">Mã giảm giá</label>
                             <div class="hang-ma">
@@ -148,7 +148,7 @@
                             <p id="thongBaoMa" runat="server" visible="false"></p>
                         </asp:Panel>
 
-                        <!-- Các khoản tiền -->
+                    
                         <div class="tt-hang">
                             <span>Tạm tính</span>
                             <span><asp:Literal ID="litTamTinh" runat="server" /></span>
@@ -181,7 +181,7 @@
             </div>
         </asp:Panel>
 
-        <!-- ================= ĐẶT HÀNG THÀNH CÔNG ================= -->
+        
         <asp:Panel ID="pnlThanhCong" runat="server" Visible="false" CssClass="dat-hang-thanh-cong">
             <div class="tc-icon"><i class="fa-solid fa-circle-check"></i></div>
             <h2>Đặt hàng thành công!</h2>

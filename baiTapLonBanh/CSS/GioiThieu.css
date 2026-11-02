@@ -1,14 +1,10 @@
-﻿/* ==========================================
-   TRANG GIỚI THIỆU SWEETCAKE
-   Màu lấy từ biến của site.css (hồng · trắng · kem) nên luôn hài hòa
-   với header và footer. Phía sau mỗi biến có màu dự phòng.
-   ========================================== */
+﻿
 
 .gioi-thieu {
-    /* PHÔNG CHỮ: muốn đổi chỉ cần sửa 2 dòng này */
+    
     --gt-font-heading: "Be Vietnam Pro", "Nunito", "Segoe UI", Arial, sans-serif;
     --gt-font-body: "Nunito", "Segoe UI", Arial, sans-serif;
-    /* MÀU (dùng biến của site.css, có màu dự phòng) */
+  
     --gt-pink: var(--pink, #f27ba3);
     --gt-pink-dark: var(--pink-dark, #d9457c);
     --gt-pink-deep: var(--pink-deep, #b0306a);
@@ -26,9 +22,7 @@
 }
 
 
-/* ==============================
-   TIÊU ĐỀ
-   ============================== */
+
 
 .tieu-de {
     margin-bottom: 30px;
@@ -46,9 +40,7 @@
 }
 
 
-/* ==============================
-   PHẦN GIỚI THIỆU
-   ============================== */
+
 
 .mo-dau {
     padding: 26px 30px;
@@ -79,9 +71,7 @@
     }
 
 
-/* ==============================
-   BANNER
-   ============================== */
+
 
 .banner-gioi-thieu {
     width: 100%;
@@ -100,9 +90,7 @@
     }
 
 
-/* ==============================
-   NỘI DUNG
-   ============================== */
+
 
 .noi-dung {
     margin-bottom: 45px;
@@ -119,7 +107,7 @@
         line-height: 1.35;
     }
 
-        /* gạch hồng nhỏ dưới tiêu đề */
+       
         .noi-dung h2::after {
             content: "";
             position: absolute;
@@ -139,9 +127,7 @@
     }
 
 
-/* ==============================
-   ẢNH MINH HỌA
-   ============================== */
+
 
 .anh-gioi-thieu {
     display: block;
@@ -155,9 +141,7 @@
 }
 
 
-/* ==============================
-   TABLET
-   ============================== */
+
 
 @media (max-width: 768px) {
 
@@ -189,9 +173,7 @@
 }
 
 
-/* ==============================
-   ĐIỆN THOẠI
-   ============================== */
+
 
 @media (max-width: 480px) {
 

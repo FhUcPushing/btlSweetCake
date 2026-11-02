@@ -31,7 +31,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Hiển thị menu quản lý nếu là Admin
+          
             pnlMenuQuanTri.Visible =
                 NguoiHienTai.VaiTro == "Admin";
 
@@ -49,7 +49,7 @@ namespace baiTapLonBanh
             }
         }
 
-        // Chạy sau các nút bấm nên tên hiển thị luôn là tên mới nhất
+      
         protected void Page_PreRender(object sender, EventArgs e)
         {
             NguoiDung nd = NguoiHienTai;
@@ -68,7 +68,7 @@ namespace baiTapLonBanh
         {
             List<DonHang> cuaToi = new List<DonHang>();
 
-            // Lấy các đơn hàng của người dùng hiện tại
+           
             Application.Lock();
 
             try
@@ -92,7 +92,7 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Sắp xếp đơn mới nhất lên đầu
+           
             for (int i = 0; i < cuaToi.Count - 1; i++)
             {
                 for (int j = i + 1; j < cuaToi.Count; j++)
@@ -106,7 +106,7 @@ namespace baiTapLonBanh
                 }
             }
 
-            // Tạo danh sách dữ liệu để hiển thị
+         
             List<DonHangTaiKhoanHienThi> ds =
                 new List<DonHangTaiKhoanHienThi>();
 
@@ -134,7 +134,7 @@ namespace baiTapLonBanh
                 ds.Add(dong);
             }
 
-            // Hiển thị kết quả
+           
             pnlDonRong.Visible = ds.Count == 0;
             pnlCoDon.Visible = ds.Count > 0;
 
@@ -149,14 +149,13 @@ namespace baiTapLonBanh
             khung.Visible = true;
         }
 
-        // Đánh dấu 1 ô bị lỗi: hiện dòng đỏ bên dưới và viền đỏ
         private void DanhDauLoi(TextBox o, HtmlGenericControl dongLoi, string noiDung)
         {
             dongLoi.InnerText = noiDung;
             o.CssClass = "tk-o tk-o-loi";
         }
 
-        // ---------- Nút Cập nhật (họ tên + tên đăng nhập + mật khẩu) ----------
+     
         protected void btnCapNhat_Click(object sender, EventArgs e)
         {
             NguoiDung nd = NguoiHienTai;
@@ -171,14 +170,14 @@ namespace baiTapLonBanh
             bool doiHoTen = hoTenMoi != nd.HoTen;
             bool doiTen = tenMoi != tenCu;
 
-            // Xóa lỗi cũ
+           
             loiHoTen.InnerText = ""; loiTenDN.InnerText = "";
             loiMkCu.InnerText = ""; loiMkMoi.InnerText = ""; loiMkLai.InnerText = "";
             txtHoTen.CssClass = txtTenMoi.CssClass = "tk-o";
             txtMkCu.CssClass = txtMkMoi.CssClass = txtMkLai.CssClass = "tk-o";
             msgCapNhat.Visible = false;
 
-            // ----- Kiểm tra dữ liệu (báo tất cả lỗi cùng lúc) -----
+            
             bool coLoi = false;
 
             if (hoTenMoi.Length < 2 || hoTenMoi.Length > 50)
@@ -236,7 +235,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // ----- Lưu -----
+          
             bool biTrung = false;
             Application.Lock();
             try
@@ -260,7 +259,7 @@ namespace baiTapLonBanh
                     {
                         nd.TenDangNhap = tenMoi;
 
-                        // Đơn hàng cũ đi theo tên đăng nhập mới
+                    
                         List<DonHang> dsDon = Application["DanhSachDonHang"] as List<DonHang>;
                         if (dsDon != null)
                         {
@@ -295,7 +294,7 @@ namespace baiTapLonBanh
             {
                 Session["TenHienThi"] = tenMoi;
 
-                // Đang "ghi nhớ đăng nhập" thì cập nhật cookie theo tên mới
+               
                 if (Request.Cookies["SweetCakeUser"] != null)
                 {
                     Response.Cookies["SweetCakeUser"].Value = tenMoi;

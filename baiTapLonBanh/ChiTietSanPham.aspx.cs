@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace baiTapLonBanh
 {
-    // Một lựa chọn size bánh (dùng để bind ra giao diện)
+    
     public class SizeBanh
     {
         public string Ma { get; set; }
@@ -26,13 +26,13 @@ namespace baiTapLonBanh
 
         private const int SoLuongToiDa = 99;
 
-        // Size bánh kem: mã, tên, số người ăn, hệ số giá (so với giá gốc trong Global.asax.cs)
+        
         private static readonly string[] MaSize = { "16", "20", "24" };
         private static readonly string[] TenSize = { "16cm", "20cm", "24cm" };
         private static readonly string[] SoNguoiSize = { "3–4 người", "6–8 người", "10–12 người" };
         private static readonly decimal[] HeSoGia = { 1m, 1.5m, 2m };
 
-        // ================== PAGE LOAD ==================
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,8 +52,7 @@ namespace baiTapLonBanh
 
             loaiBanh.InnerText = banh.loaiBanh;
             tenBanh.InnerText = banh.tenBanh;
-            // Mô tả không còn nằm trong Global.asax.cs nên tự tạo câu giới thiệu;
-            // nếu sau này sản phẩm có moTa riêng thì vẫn ưu tiên dùng moTa đó
+            
             moTa.InnerText = string.IsNullOrWhiteSpace(banh.moTa)
                 ? banh.tenBanh + " được SweetCake làm mới mỗi ngày từ nguyên liệu chọn lọc, giữ trọn hương vị thơm ngon và an toàn cho cả gia đình."
                 : banh.moTa;
@@ -74,10 +73,10 @@ namespace baiTapLonBanh
             }
 
             giaBanh.InnerText = DinhDangGia(giaHienTai);
-            // Giá gốc, JS dùng khi bánh không có size
+            
             giaBanh.Attributes["data-gia"] = ((long)banh.giaBanh).ToString(CultureInfo.InvariantCulture);
 
-            // Sản phẩm gợi ý: ưu tiên cùng loại, thiếu thì lấy loại khác, đủ 4 sản phẩm
+            
             List<SanPhamBanh> goiY = danhSachSanPham
                 .Where(x => x.maBanh != banh.maBanh && x.loaiBanh == banh.loaiBanh)
                 .Take(4).ToList();
@@ -94,8 +93,7 @@ namespace baiTapLonBanh
             khuVucGoiY.Visible = goiY.Count > 0;
         }
 
-        // ================== HÀM DÙNG CHUNG ==================
-
+       
         private List<SanPhamBanh> LayDanhSach()
         {
             List<SanPhamBanh> ds = Application["DanhSachSanPham"] as List<SanPhamBanh>;
@@ -115,14 +113,14 @@ namespace baiTapLonBanh
             return LayDanhSach().FirstOrDefault(x => x.maBanh == ma);
         }
 
-        // Dùng được ngay trong file .aspx: <%# DinhDangGia(Eval("giaBanh")) %>
+        
         protected string DinhDangGia(object gia)
         {
             decimal so = Convert.ToDecimal(gia);
             return so.ToString("N0", ViVN) + "đ";
         }
 
-        // Chỉ các loại bánh kem mới có size và tặng dao dĩa
+     
         private static bool LaBanhKem(SanPhamBanh banh)
         {
             return banh.loaiBanh == "Bánh Mousse"
@@ -151,7 +149,7 @@ namespace baiTapLonBanh
             return ds;
         }
 
-        // Mô tả chi tiết theo loại bánh
+     
         private static string TaoThongTinChiTiet(SanPhamBanh banh)
         {
             string thanhPhan, huongVi, baoQuan, phuHop;
@@ -214,7 +212,7 @@ namespace baiTapLonBanh
             khung.InnerHtml = icon + HttpUtility.HtmlEncode(noiDung);
             khung.Attributes["class"] = "thong-bao-gio-hang vua-them" + (thanhCong ? "" : " loi");
 
-            // Tự ẩn sau 2 giây: script này chạy ngay khi trang tải lại sau khi bấm nút
+           
             ClientScript.RegisterStartupScript(GetType(), "an_" + khung.ID,
                 "setTimeout(function(){var e=document.getElementById('" + khung.ClientID +
                 "');if(e)e.classList.add('an-thong-bao');},2000);", true);
@@ -222,9 +220,7 @@ namespace baiTapLonBanh
             khung.Visible = true;
         }
 
-        // ================== GIỎ HÀNG ==================
-
-        // Giữ nguyên cấu trúc Session["GioHang"] (mã bánh -> số lượng) để trang Giỏ hàng cũ vẫn chạy
+        
         private bool ThemBanhVaoGio(string maBanh, string maSize, int soLuong)
         {
             if (TimBanh(maBanh) == null)
@@ -248,7 +244,7 @@ namespace baiTapLonBanh
             return true;
         }
 
-        // Dùng chung cho "Thêm vào giỏ hàng" và "Mua ngay" ở khung chi tiết
+       
         private bool XuLyThemTuTrangChiTiet()
         {
             int soLuong;
@@ -295,7 +291,7 @@ namespace baiTapLonBanh
             }
         }
 
-        // Nút "Mua ngay" / giỏ hàng ở các thẻ sản phẩm gợi ý
+       
         protected void rptDanhSachGoiY_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             string maBanh = Convert.ToString(e.CommandArgument);

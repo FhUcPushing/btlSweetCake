@@ -12,11 +12,11 @@
 
     <div class="news-detail-page">
 
-        <!-- CHI TIẾT BÀI VIẾT -->
+        
         <section id="thongTinTinTuc" runat="server"
             visible="false" class="chi_tiet_tin_tuc">
 
-            <!-- Ảnh bài viết -->
+            
             <div class="khung_anh_tin_tuc">
                 <img id="anhTinTuc"
                      runat="server"
@@ -26,7 +26,7 @@
                      onerror="this.parentNode.classList.add('khong-anh');" />
             </div>
 
-            <!-- Nội dung bài viết -->
+         
             <div class="noi_dung_tin_tuc">
 
                 <p id="loaiTinTuc" runat="server" class="loai_tin_tuc"></p>
@@ -50,13 +50,13 @@
 
         </section>
 
-        <!-- THÔNG BÁO KHÔNG TÌM THẤY -->
+     
         <p id="thongBaoLoi" runat="server"
             visible="false" class="thong_bao_loi">
             Không tìm thấy bài viết
         </p>
 
-        <!-- BÀI VIẾT LIÊN QUAN -->
+     
         <section id="khuVucBaiVietLienQuan" runat="server"
             class="bai-viet-lien-quan">
 

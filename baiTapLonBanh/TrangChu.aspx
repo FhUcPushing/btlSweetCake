@@ -9,14 +9,14 @@
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
 
-    <!-- Thông báo thêm giỏ hàng: JS hiện / ẩn (xem JS/TrangChu.js), data-url là địa chỉ xử lý thêm giỏ -->
+    
     <div id="thongBaoGioHang"
          class="thong-bao-gio-hang an-thong-bao"
          role="status"
          aria-live="polite"
          data-url='<%= ResolveUrl("~/ThemGioHang.ashx") %>'></div>
 
-    <!-- BANNER CHINH -->
+ 
     <section class="cake-hero">
         <img class="hero-bg" src="product-banner.png"
              alt="Bộ sưu tập bánh ngọt SweetCake" />
@@ -105,7 +105,7 @@
                                         Mua ngay
                                     </asp:HyperLink>
 
-                                    <!-- Thêm vào giỏ: không tải lại trang, xử lý bằng JS -->
+                                   
                                     <button type="button"
                                             class="add-cart"
                                             data-ma-banh='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("maBanh"))) %>'
@@ -127,7 +127,7 @@
     </section>
 
 
-    <!-- THANH LOI ICH -->
+   
     <section class="benefits">
         <div class="benefits-intro">
             <span class="section-kicker">DỊCH VỤ CỦA CHÚNG TÔI</span>
@@ -161,7 +161,7 @@
     </section>
 
 
-    <!-- BANH TUOI -->
+
     <section class="products fresh-section section-wrap" id="banh-tuoi">
         <div class="section-title">
             <div>
@@ -206,7 +206,7 @@
                                         Mua ngay
                                     </asp:HyperLink>
 
-                                    <!-- Thêm vào giỏ: không tải lại trang, xử lý bằng JS -->
+                                    
                                     <button type="button"
                                             class="add-cart"
                                             data-ma-banh='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("maBanh"))) %>'
@@ -226,7 +226,7 @@
     </section>
 
 
-    <!-- GIOI THIEU VA CAM NHAN -->
+  
     <section class="story-section">
         <div class="story-card">
             <div class="story-photo">
@@ -289,7 +289,7 @@
 
         <div class="news-list">
 
-            <!-- BÀI VIẾT 1 -->
+          
 <article class="news-item">
     <div class="news-image">
         <a href="ChiTietTinTuc.aspx?id=7">
@@ -312,8 +312,8 @@
     </div>
 </article>
 
-            <!-- BÀI VIẾT 2 -->
-           <!-- BÀI VIẾT 2 -->
+           
+       
 <article class="news-item">
     <div class="news-image">
         <a href="ChiTietTinTuc.aspx?id=8">
@@ -337,7 +337,7 @@
     </div>
 </article>
 
-           <!-- BÀI VIẾT 3 -->
+          
 <article class="news-item">
     <div class="news-image">
         <a href="ChiTietTinTuc.aspx?id=9">
@@ -360,8 +360,8 @@
         <p>Khám phá bộ sưu tập bánh Trung Thu với chương trình ưu đãi đặc biệt.</p>
     </div>
 </article>
-            <!-- BÀI VIẾT 4 -->
-          <!-- BÀI VIẾT 4 -->
+           
+         
 <article class="news-item">
     <div class="news-image">
         <a href="ChiTietTinTuc.aspx?id=10">
@@ -385,7 +385,7 @@
     </div>
 </article>
 
-            <!-- BÀI VIẾT 5 -->
+       
 <article class="news-item">
     <div class="news-image">
         <a href="ChiTietTinTuc.aspx?id=11">
@@ -410,7 +410,7 @@
 </article>
 
            
-           <!-- BÀI VIẾT 6 -->
+       
 <article class="news-item">
     <div class="news-image">
         <a href="ChiTietTinTuc.aspx?id=12">
@@ -434,10 +434,10 @@
         </div>
 </article>
 
-</div> <!-- Đóng news-list -->
-</section> <!-- Đóng khu vực tin tức -->
+</div>
+</section> 
 
-<!-- UU DAI THANH VIEN -->
+
 <section class="member-banner">
         <div class="member-icon">
             <i class="fa-solid fa-gift"></i>

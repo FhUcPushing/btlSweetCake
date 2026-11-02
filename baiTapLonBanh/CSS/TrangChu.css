@@ -11,7 +11,7 @@ body {
     font-size: 15px;
 }
 
-/* Header trên trang chủ: giữ đúng màu cũ */
+
 .header-search {
     border: 1.5px solid #f3bdd1;
 }
@@ -32,7 +32,7 @@ body {
     color: var(--pink-dark);
 }
 
-/* Footer trên trang chủ: giữ đúng màu cũ, sát với khối phía trên */
+
 .footer {
     margin-top: 0;
     border-top: 2px solid var(--pink-soft);
@@ -50,9 +50,7 @@ body {
         text-shadow: 0 2px 0 #fff, 0 4px 0 #ffc4d9;
     }
 
-/* ==========================================
-   BANNER TRANG CHỦ
-   ========================================== */
+
 
 .cake-hero {
     position: relative;
@@ -213,9 +211,7 @@ body {
         font-size: 12px;
     }
 
-/* ==========================================
-   CÁC KHU VỰC CHUNG
-   ========================================== */
+
 
 .section-wrap {
     max-width: 1400px;
@@ -263,7 +259,7 @@ body {
 
     .section-title h2 i {
         margin-left: 6px;
-        color: inherit; /* cùng màu với chữ tiêu đề */
+        color: inherit; 
         font-size: 24px;
     }
 
@@ -317,9 +313,7 @@ body {
         color: var(--pink-deep);
     }
 
-/* ==========================================
-   SẢN PHẨM
-   ========================================== */
+
 
 .product-list {
     display: grid;
@@ -407,9 +401,6 @@ body {
 }
 
 
-/* ==========================================
-   GIÁ VÀ NÚT MUA HÀNG
-   ========================================== */
 
 .product-bottom {
     display: flex;
@@ -433,7 +424,7 @@ body {
     gap: 8px;
 }
 
-/* Nút icon giỏ hàng */
+
 .add-cart {
     width: 38px;
     height: 38px;
@@ -461,7 +452,7 @@ body {
         transform: translateY(-2px);
     }
 
-/* Nút mua ngay */
+
 .buy-now {
     min-height: 38px;
     padding: 0 13px;
@@ -488,9 +479,7 @@ body {
     }
 
 
-/* ==========================================
-   THANH LỢI ÍCH
-   ========================================== */
+
 
 .benefits {
     max-width: 1320px;
@@ -552,9 +541,6 @@ body {
         line-height: 1.7;
     }
 
-/* ==========================================
-   KHU VỰC BÁNH TƯƠI
-   ========================================== */
 
 .fresh-section {
     max-width: none;
@@ -574,9 +560,6 @@ body {
         height: 230px;
     }
 
-/* ==========================================
-   GIỚI THIỆU VÀ CẢM NHẬN
-   ========================================== */
 
 .story-section {
     max-width: 1400px;
@@ -698,9 +681,6 @@ body {
     font-size: 12px;
 }
 
-/* ==========================================
-   TIN TỨC
-   ========================================== */
 
 .news {
     padding: 46px 40px;
@@ -796,9 +776,6 @@ body {
     line-height: 1.75;
 }
 
-/* ==========================================
-   BANNER THÀNH VIÊN
-   ========================================== */
 
 .member-wrap {
     padding: 46px 40px;
@@ -879,9 +856,7 @@ body {
         transform: translateY(-2px);
     }
 
-/* ==========================================
-   RESPONSIVE - TABLET / LAPTOP NHỎ
-   ========================================== */
+
 
 @media (max-width: 1250px) {
     .benefits {
@@ -929,13 +904,10 @@ body {
         }
 }
 
-/* ==========================================
-   RESPONSIVE - ĐIỆN THOẠI
-   ========================================== */
+
 
 @media (max-width: 600px) {
-    /* Banner điện thoại: ảnh phủ kín cả khung (kể cả phần nút và các ý nhỏ).
-       Khung thấp hơn trước nên ảnh ít bị phóng to/cắt hơn. */
+    
     .cake-hero {
         min-height: 340px;
     }
@@ -992,8 +964,7 @@ body {
         padding: 30px 13px 36px;
     }
 
-    /* Sản phẩm nổi bật / Bánh tươi trên điện thoại:
-       tiêu đề + mô tả ra giữa, nút "Xem tất cả" xuống dưới danh sách bánh */
+    
     .section-wrap {
         display: flex;
         flex-direction: column;
@@ -1019,7 +990,7 @@ body {
             margin-top: 22px;
         }
 
-    /* Dịch vụ của chúng tôi: chữ ra giữa */
+ 
     .benefits-intro {
         padding-right: 0;
         text-align: center;
@@ -1208,7 +1179,7 @@ body {
     }
 }
 
-/* Icon trái tim và nút giỏ hàng luôn đậm màu, không bị mờ */
+
 .product-heart,
 .product-heart i {
     color: #d9457c;
@@ -1299,10 +1270,10 @@ body {
     .ten-banh-link:hover {
         color: #d9457c;
     }
-/* ===== ĐIỆN THOẠI: banner + thẻ sản phẩm gọn đẹp hơn ===== */
+
 @media (max-width: 600px) {
 
-    /* --- 3 ý nhỏ ở banner: xếp 3 cột đều nhau, icon trên chữ dưới --- */
+
     .hero-points {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1328,7 +1299,7 @@ body {
             font-size: 12px;
         }
 
-    /* --- Thẻ sản phẩm: các thẻ cùng hàng cao bằng nhau --- */
+
     .product {
         display: flex;
         flex-direction: column;
@@ -1342,17 +1313,17 @@ body {
     }
 
     .product h3 {
-        min-height: 0; /* bỏ phần chừa sẵn 2 dòng */
+        min-height: 0; 
         margin-bottom: 6px;
     }
 
-    /* Giá nằm trên, hai nút nằm dưới và rộng bằng ảnh bánh */
+    
     .product-bottom {
         flex-direction: column;
         align-items: stretch;
         flex-wrap: nowrap;
         gap: 8px;
-        margin-top: auto; /* luôn dính đáy thẻ, các thẻ thẳng hàng */
+        margin-top: auto; 
         padding-top: 0;
     }
 
@@ -1366,7 +1337,7 @@ body {
     }
 
     .buy-now {
-        flex: 1; /* "Mua ngay" kéo dài hết phần còn lại */
+        flex: 1; 
         min-height: 40px;
         font-size: 13px;
         border-radius: 10px;
@@ -1379,26 +1350,26 @@ body {
         font-size: 14px;
     }
 }
-/* Điện thoại: tên bánh và giá sát nhau hơn ở phần "Có lẽ bạn cũng sẽ thích" */
+
 @media (max-width: 768px) {
     .product-page .goi_y_ten {
-        min-height: 0; /* bỏ phần chừa sẵn 2 dòng */
+        min-height: 0; 
         margin-bottom: 8px;
     }
 
     .product-page .goi_y_hang_duoi {
-        margin-top: auto; /* hàng giá + nút luôn dính đáy thẻ */
+        margin-top: auto; 
         padding-top: 0;
     }
 }
-/* Màu hồng cho tiêu đề bài viết trên trang chủ */
+
 .news-content h3 a.news-title-link,
 .news-content h3 a.news-title-link:visited {
     color: #d63384;
     text-decoration: none;
 }
 
-    /* Hiệu ứng khi rê chuột */
+   
     .news-content h3 a.news-title-link:hover {
         color: #b5246b;
         text-decoration: underline;

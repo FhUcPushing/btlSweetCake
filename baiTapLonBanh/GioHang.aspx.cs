@@ -25,7 +25,7 @@ namespace baiTapLonBanh
 
         private void HienThiGioHang()
         {
-            // Lấy danh sách sản phẩm
+          
             List<SanPhamBanh> danhSachSanPham =
                 new List<SanPhamBanh>();
 
@@ -49,7 +49,7 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Lấy giỏ hàng của người dùng hiện tại
+          
             Dictionary<string, int> gioHang =
                 Session["GioHang"] as Dictionary<string, int>;
 
@@ -62,7 +62,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Tạo danh sách sản phẩm để hiển thị
+           
             List<SanPhamTrongGio> sanPhamTrongGio =
                 new List<SanPhamTrongGio>();
 
@@ -77,7 +77,7 @@ namespace baiTapLonBanh
                 GioHangKey.Tach(
                     item.Key, out maBanh, out maSize);
 
-                // Tìm bánh trong danh sách sản phẩm
+              
                 SanPhamBanh banhTimThay = null;
 
                 foreach (SanPhamBanh banh in danhSachSanPham)
@@ -89,13 +89,13 @@ namespace baiTapLonBanh
                     }
                 }
 
-                // Bỏ qua nếu không tìm thấy bánh
+        
                 if (banhTimThay == null)
                 {
                     continue;
                 }
 
-                // Tạo tên bánh, kèm size nếu có
+                
                 string tenBanh = banhTimThay.tenBanh;
 
                 if (!string.IsNullOrEmpty(maSize))
@@ -103,13 +103,13 @@ namespace baiTapLonBanh
                     tenBanh += " (" + GioHangKey.TenSize(maSize) + ")";
                 }
 
-                // Tính giá và thành tiền
+              
                 decimal giaBanh =
                     GioHangKey.DonGia(banhTimThay, maSize);
 
                 decimal thanhTien = giaBanh * item.Value;
 
-                // Tạo dòng sản phẩm trong giỏ
+          
                 SanPhamTrongGio dong = new SanPhamTrongGio();
 
                 dong.khoa = item.Key;
@@ -121,11 +121,11 @@ namespace baiTapLonBanh
 
                 sanPhamTrongGio.Add(dong);
 
-                // Cộng vào tổng tiền
+              
                 tongTien += thanhTien;
             }
 
-            // Kiểm tra sau khi tìm bánh
+         
             if (sanPhamTrongGio.Count == 0)
             {
                 panelGioHang.Visible = false;
@@ -133,11 +133,11 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Hiển thị danh sách sản phẩm
+         
             rptGioHang.DataSource = sanPhamTrongGio;
             rptGioHang.DataBind();
 
-            // Hiển thị tổng tiền
+       
             litTongTien.Text = tongTien.ToString("N0") + "đ";
 
             panelGioHang.Visible = true;
@@ -178,12 +178,12 @@ namespace baiTapLonBanh
             }
             else if (e.CommandName == "xoa")
             {
-                gioHang.Remove(maBanh);   // maBanh ở đây chính là khóa "mã|size"
+                gioHang.Remove(maBanh); 
             }
 
             Session["GioHang"] = gioHang;
 
-            // Cập nhật lại số lượng và tổng tiền
+            
             HienThiGioHang();
         }
     }

@@ -10,7 +10,7 @@ namespace baiTapLonBanh
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Mỗi lần tải trang đều phải kiểm tra quyền Admin
+          
             if (!LaAdmin())
             {
                 if (Session["TaiKhoan"] == null)
@@ -77,8 +77,7 @@ namespace baiTapLonBanh
 
         protected void btnThem_Click(object sender, EventArgs e)
         {
-            // Không chỉ kiểm tra ở Page_Load:
-            // sự kiện thêm cũng tự kiểm tra quyền.
+            
             if (!LaAdmin())
             {
                 return;
@@ -94,7 +93,7 @@ namespace baiTapLonBanh
 
             bool hopLe = true;
 
-            // 1. Kiểm tra tên bánh
+     
             if (tenBanh.Length < 2 || tenBanh.Length > 100)
             {
                 loiTenBanh.Text =
@@ -102,7 +101,7 @@ namespace baiTapLonBanh
                 hopLe = false;
             }
 
-            // 2. Kiểm tra giá
+
             if (!decimal.TryParse(
                     txtGiaBanh.Text.Trim(),
                     NumberStyles.AllowDecimalPoint,
@@ -116,7 +115,7 @@ namespace baiTapLonBanh
                 hopLe = false;
             }
 
-            // 3. Kiểm tra loại bánh
+          
             if (!LoaiBanhHopLe(loaiBanh))
             {
                 loiLoaiBanh.Text =
@@ -124,7 +123,7 @@ namespace baiTapLonBanh
                 hopLe = false;
             }
 
-            // 4. Kiểm tra mô tả
+            
             if (moTa.Length < 5 || moTa.Length > 500)
             {
                 loiMoTa.Text =
@@ -132,7 +131,7 @@ namespace baiTapLonBanh
                 hopLe = false;
             }
 
-            // 5. Kiểm tra ảnh
+        
             string duoiMoRong = "";
 
             if (!fuAnhBanh.HasFile)
@@ -179,7 +178,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Tạo tên ảnh mới để tránh trùng tên file
+           
             string tenFile =
                 "sp_" + Guid.NewGuid().ToString("N")
                 + duoiMoRong;
@@ -197,7 +196,7 @@ namespace baiTapLonBanh
                     Directory.CreateDirectory(thuMucAnh);
                 }
 
-                // Lưu ảnh vào thư mục hình sản phẩm
+              
                 fuAnhBanh.SaveAs(duongDanAnh);
 
                 Application.Lock();
@@ -237,8 +236,7 @@ namespace baiTapLonBanh
             }
             catch (Exception)
             {
-                // Nếu lưu hoặc thêm sản phẩm thất bại,
-                // cố gắng xóa file ảnh đã tải lên.
+                
                 try
                 {
                     if (File.Exists(duongDanAnh))
@@ -248,7 +246,7 @@ namespace baiTapLonBanh
                 }
                 catch
                 {
-                    // Không để lỗi xóa file che mất thông báo chính.
+             
                 }
 
                 lblThongBao.Text =
@@ -260,7 +258,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Chuyển về danh sách để tránh thêm trùng khi nhấn F5
+           
             Response.Redirect(
                 ResolveUrl("~/QuanLySanPham.aspx?them=thanhcong"),
                 false);

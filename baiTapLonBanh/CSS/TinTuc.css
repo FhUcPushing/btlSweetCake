@@ -1,10 +1,8 @@
-﻿/* =========================
-   TRANG TIN TUC SWEETCAKE
-   ========================= */
+﻿
 .news-page,
 .news-banner,
 .news-cta {
-    /* PHÔNG CHỮ: muốn đổi chỉ cần sửa 2 dòng này */
+   
     --tt-font-heading: "Be Vietnam Pro", "Nunito", "Segoe UI", Arial, sans-serif;
     --tt-font-body: "Nunito", "Segoe UI", Arial, sans-serif;
     font-family: var(--tt-font-body);
@@ -30,9 +28,7 @@
     padding: 65px 20px 80px;
 }
 
-/* =========================
-   BANNER
-   ========================= */
+
 
 .news-banner {
     position: relative;
@@ -101,9 +97,7 @@
     line-height: 1.8;
 }
 
-/* =========================
-   TIEU DE DANH SACH
-   ========================= */
+
 
 .news-heading {
     margin-bottom: 40px;
@@ -143,9 +137,7 @@
     background: #e7a0b8;
 }
 
-/* =========================
-   LUOI BAI VIET
-   ========================= */
+
 
 .news-grid {
     display: grid;
@@ -169,7 +161,7 @@
         box-shadow: 0 12px 30px rgba(105, 55, 75, 0.13);
     }
 
-/* ANH BAI VIET */
+
 
 .news-image {
     position: relative;
@@ -205,7 +197,7 @@
     letter-spacing: 1px;
 }
 
-/* THONG TIN BAI VIET */
+
 
 .news-info {
     display: flex;
@@ -277,13 +269,9 @@
         box-shadow: 0 6px 16px rgba(207, 124, 155, 0.30);
     }
 
-/* =========================
-   LOI MOI CUOI TRANG
-   (giống khung "Tham gia gia đình SweetCake" ở trang chủ)
-   ========================= */
 
 .news-cta-wrap {
-    padding: 0 20px 20px; /* phần còn lại do footer (margin-top) tạo khoảng cách */
+    padding: 0 20px 20px;
 }
 
 .news-cta {
@@ -357,9 +345,7 @@
         transform: translateY(-2px);
     }
 
-/* =========================
-   TABLET
-   ========================= */
+
 
 @media (max-width: 992px) {
     .news-page {
@@ -380,9 +366,7 @@
     }
 }
 
-/* =========================
-   DIEN THOAI
-   ========================= */
+
 
 @media (max-width: 576px) {
     .news-banner {
@@ -448,9 +432,7 @@
         }
 }
 
-/* =========================
-   ĐIỆN THOẠI: bỏ 2 vòng cung ở banner, nút Xem thêm ra giữa
-   ========================= */
+
 
 @media (max-width: 576px) {
     .news-banner::before,
@@ -463,9 +445,6 @@
     }
 }
 
-/* =========================
-   KHUNG "TRAO NGỌT NGÀO" TRÊN MÀN HÌNH NHỎ
-   ========================= */
 
 @media (max-width: 700px) {
     .news-cta-wrap {

@@ -1,6 +1,4 @@
-﻿/* ===== SWEETCAKE - ĐẶT HÀNG =====
-   hồng #d9457c | hồng đậm #b0306a | hồng nhạt #fff1f6 | viền #f3d4e0 | chữ #6b4a58 */
-
+﻿
 .dat-hang-page {
     padding-top: 32px;
     padding-bottom: 70px;
@@ -29,7 +27,7 @@
             transform: translateX(-50%);
         }
 
-    /* ===== Nút bấm ===== */
+   
 
     .dat-hang-page .nut-hong {
         display: inline-flex;
@@ -63,7 +61,7 @@
             margin-top: 20px;
         }
 
-    /* ===== Bố cục 2 cột ===== */
+  
 
     .dat-hang-page .dat-hang-luoi {
         display: grid;
@@ -72,7 +70,7 @@
         align-items: start;
     }
 
-    /* ===== Các khối thông tin bên trái ===== */
+  
 
     .dat-hang-page .khoi-dat-hang {
         margin-bottom: 20px;
@@ -163,7 +161,7 @@
         line-height: 1.6;
     }
 
-    /* ===== Phương thức thanh toán ===== */
+ 
 
     .dat-hang-page .danh-sach-thanh-toan {
         display: grid;
@@ -227,7 +225,7 @@
             font-size: 13px;
         }
 
-    /* ===== Tóm tắt đơn hàng (bên phải) ===== */
+
 
     .dat-hang-page .dat-hang-phai {
         position: sticky;
@@ -318,7 +316,7 @@
         white-space: nowrap;
     }
 
-    /* Mã giảm giá */
+   
 
     .dat-hang-page .khung-ma {
         margin: 6px 0 16px;
@@ -369,7 +367,7 @@
             color: #b0306a;
         }
 
-    /* Các khoản tiền */
+
 
     .dat-hang-page .tt-hang {
         display: flex;
@@ -423,7 +421,7 @@
             color: #d9457c;
         }
 
-    /* ===== Thông báo lỗi ===== */
+
 
     .dat-hang-page .dat-hang-loi {
         margin-bottom: 22px;
@@ -443,7 +441,7 @@
             margin-bottom: 3px;
         }
 
-    /* ===== Đặt hàng thành công ===== */
+   
 
     .dat-hang-page .dat-hang-thanh-cong {
         max-width: 640px;
@@ -520,7 +518,7 @@
             font-weight: 800;
         }
 
-/* ===== Responsive ===== */
+
 
 @media (max-width: 900px) {
     .dat-hang-page .dat-hang-luoi {

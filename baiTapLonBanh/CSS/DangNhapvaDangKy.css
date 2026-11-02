@@ -98,14 +98,14 @@
         .auth-footer a:hover {
             text-decoration: underline;
         }
-/* Style cho ô Nhớ mật khẩu */
+
 .form-group.remember-me label {
     font-weight: normal;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    user-select: none; /* Tránh bôi đen chữ khi bấm vào */
+    user-select: none; 
 }
 
 .form-group.remember-me {
@@ -116,12 +116,12 @@
     .form-group.remember-me input[type="checkbox"] {
         width: 16px;
         height: 16px;
-        accent-color: #ff6b8b; /* Màu checkbox tông hồng SweetCake */
+        accent-color: #ff6b8b; 
         cursor: pointer;
     }
 
 
-/* THÔNG BÁO LỖI NGAY DƯỚI Ô NHẬP */
+
 .field-error:empty {
     display: none;
 }
@@ -152,7 +152,7 @@
         font-weight: bold;
         text-decoration: underline;
     }
-/* Giữ form đăng ký ở chính giữa trang */
+
 .dangky-layout {
     display: block;
     width: 100%;
@@ -165,7 +165,7 @@
     min-width: 0;
 }
 
-    /* Giữ nguyên kích thước và căn giữa form */
+    
     .dangky-form .auth-container {
         width: 100%;
         max-width: 420px;
@@ -173,7 +173,7 @@
         box-sizing: border-box;
     }
 
-/* Thông báo nhỏ ở góc trên bên phải màn hình */
+
 .dangky-thongbao {
     position: fixed;
     top: 100px;
@@ -184,7 +184,7 @@
     padding: 0;
 }
 
-    /* Kiểu dáng thông báo thành công */
+    
     .dangky-thongbao .message.success {
         width: 100%;
         box-sizing: border-box;
@@ -206,7 +206,7 @@
             text-decoration: underline;
         }
 
-/* Điều chỉnh trên điện thoại */
+
 @media (max-width: 768px) {
     .dangky-thongbao {
         top: 90px;
@@ -215,7 +215,7 @@
         max-width: calc(100vw - 24px);
     }
 }
-/* Thu gọn form đăng ký */
+
 .dangky-form .auth-container {
     padding: 24px 28px;
     margin: 22px auto;
@@ -223,7 +223,7 @@
     box-sizing: border-box;
 }
 
-/* Thu gọn phần tiêu đề */
+
 .dangky-form .brand-header {
     margin-bottom: 16px;
 }
@@ -239,7 +239,7 @@
         margin: 0;
     }
 
-/* Giảm khoảng cách giữa các ô nhập */
+
 .dangky-form .form-group {
     margin-bottom: 12px;
 }
@@ -249,7 +249,7 @@
         margin-bottom: 4px;
     }
 
-    /* Giảm chiều cao ô nhập liệu */
+   
     .dangky-form .form-group input {
         box-sizing: border-box;
         padding: 9px 12px;
@@ -257,13 +257,13 @@
         line-height: 1.4;
     }
 
-/* Thu gọn nút đăng ký */
+
 .dangky-form .btn-submit {
     padding: 10px;
     font-size: 15px;
 }
 
-/* Đưa liên kết đăng nhập lên gần nút hơn */
+
 .dangky-form .auth-footer {
     margin-top: 14px;
     font-size: 13px;

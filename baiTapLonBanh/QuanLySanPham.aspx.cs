@@ -9,7 +9,7 @@ namespace baiTapLonBanh
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Kiểm tra đăng nhập
+           
             NguoiDung taiKhoan =
                 Session["TaiKhoan"] as NguoiDung;
 
@@ -22,7 +22,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Chỉ Admin được quản lý sản phẩm
+           
             if (taiKhoan.VaiTro != "Admin")
             {
                 Response.Redirect(
@@ -90,7 +90,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Kiểm tra quyền Admin
+            
             NguoiDung taiKhoan =
                 Session["TaiKhoan"] as NguoiDung;
 
@@ -112,7 +112,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Lấy mã bánh cần xóa
+         
             string maBanh = Convert.ToString(e.CommandArgument);
 
             if (string.IsNullOrWhiteSpace(maBanh))
@@ -140,7 +140,7 @@ namespace baiTapLonBanh
                 {
                     SanPhamBanh banhCanXoa = null;
 
-                    // Tìm sản phẩm theo mã
+                   
                     foreach (SanPhamBanh banh in dsBanh)
                     {
                         if (banh.maBanh == maBanh)
@@ -154,7 +154,7 @@ namespace baiTapLonBanh
                     {
                         timThay = true;
 
-                        // Kiểm tra sản phẩm đã xuất hiện trong đơn hàng chưa
+                        
                         if (dsDonHang != null)
                         {
                             foreach (DonHang don in dsDonHang)
@@ -186,7 +186,7 @@ namespace baiTapLonBanh
                             }
                         }
 
-                        // Chỉ xóa nếu sản phẩm chưa được đặt hàng
+                        
                         if (!daDuocDat)
                         {
                             dsBanh.Remove(banhCanXoa);
@@ -203,7 +203,7 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Hiển thị kết quả
+       
             if (daXoa)
             {
                 lblThongBao.Text = "Xóa sản phẩm thành công!";
@@ -224,7 +224,7 @@ namespace baiTapLonBanh
                 lblThongBao.CssClass = "admin-message that-bai";
             }
 
-            // Cập nhật lại danh sách sau thao tác
+            
             HienThiSanPham();
         }
     }

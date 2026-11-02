@@ -1,4 +1,4 @@
-﻿/* ===== Trang chi tiết sản phẩm - SweetCake (tông hồng) ===== */
+﻿
 .product-page {
     --hong: #d6457f;
     --hong-dam: #b8346a;
@@ -11,12 +11,11 @@
     color: var(--chu);
 }
 
-/* ===== Khối chi tiết: ảnh và mô tả ngang hàng ===== */
 .chi_tiet_san_pham {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    align-items: start; /* hai cột cao bằng nhau */
+    align-items: start;
 }
 
 .khung_anh_banh {
@@ -85,7 +84,7 @@
 
 
 
-/* ===== Chọn size ===== */
+
 .chon_size {
     margin: 12px 0;
 }
@@ -145,7 +144,7 @@
     color: var(--hong-dam);
 }
 
-/* ===== Số lượng, tạm tính ===== */
+
 .chon_so_luong {
     display: flex;
     align-items: center;
@@ -188,7 +187,6 @@
         font-size: 20px;
     }
 
-/* ===== Nút hành động ===== */
 .hanh_dong_mua_hang {
     display: flex;
     flex-wrap: wrap;
@@ -222,7 +220,6 @@
             color: var(--hong-dam);
         }
 
-/* ===== Thông báo ===== */
 .thong_bao_gio_hang {
     margin: 12px 0 0;
     padding: 10px 14px;
@@ -247,7 +244,7 @@
     color: #888;
 }
 
-/* ===== Sản phẩm gợi ý ===== */
+
 .goi-y-san-pham {
     margin-top: 48px;
 }
@@ -352,7 +349,7 @@
     margin-bottom: 18px;
 }
 
-.goi_y_hang_duoi { /* giá, Mua ngay, giỏ hàng cùng một hàng */
+.goi_y_hang_duoi {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -406,7 +403,7 @@
         background: var(--hong-nhat);
     }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 992px) {
     .danh-sach-goi-y {
         grid-template-columns: repeat(2, 1fr);
@@ -444,7 +441,7 @@
     }
 }
 
-/* ===== Cập nhật: ảnh bên trái, mô tả + chọn size cùng cột bên phải ===== */
+
 .chi_tiet_san_pham {
     align-items: start;
 }
@@ -456,7 +453,7 @@
         margin: 16px 0;
     }
 
-/* Khung mô tả nền hồng nhạt, nhãn đậm màu hồng */
+
 .thong_tin_chi_tiet {
     list-style: none;
     margin: 12px 0;
@@ -479,7 +476,7 @@
             color: #b8346a;
         }
 
-/* Chữ "Có lẽ bạn cũng sẽ thích" màu hồng */
+
 .product-page .goi-y-header h2 {
     color: #d6457f;
 }
@@ -492,9 +489,6 @@
     }
 }
 
-/* ===================================================================
-   CHỈ DÀNH CHO ĐIỆN THOẠI (màn hình <= 768px). Máy tính không bị ảnh hưởng.
-   =================================================================== */
 @media (max-width: 768px) {
     .product-page {
         padding: 14px 12px 32px;
@@ -506,10 +500,9 @@
         .product-page .the_san_pham {
             min-width: 0;
         }
-
-        /* Xếp dọc: ảnh trên, nội dung dưới, ảnh không dính */
+/
         .product-page .chi_tiet_san_pham {
-            display: block; /* bỏ grid, xếp dọc bình thường */
+            display: block; 
         }
 
         .product-page .khung_anh_banh {
@@ -539,7 +532,7 @@
             border-radius: 14px;
         }
 
-        /* Chọn size: 3 ô đều nhau trên một hàng */
+        
         .product-page .danh_sach_size {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -565,7 +558,6 @@
             flex-wrap: wrap;
         }
 
-        /* Hai nút mua rộng hết hàng, dễ bấm */
         .product-page .hanh_dong_mua_hang {
             gap: 8px;
         }
@@ -575,7 +567,7 @@
                 padding: 13px 16px;
             }
 
-        /* Gợi ý */
+       
         .product-page .goi-y-san-pham {
             margin-top: 32px;
         }
@@ -654,7 +646,7 @@
         font-size: 13px;
     }
 }
-/* ===== Điện thoại: sản phẩm gợi ý giống thẻ ở trang chủ ===== */
+
 @media (max-width: 768px) {
     .product-page .danh-sach-goi-y {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -693,7 +685,6 @@
         line-height: 1.45;
     }
 
-    /* Giá + Mua ngay + giỏ hàng cùng hàng; hẹp quá thì tự xuống dòng như trang chủ */
     .product-page .goi_y_hang_duoi {
         flex-wrap: wrap;
         gap: 7px;
@@ -744,7 +735,7 @@
             object-fit: cover !important;
         }
 }
-/* Mua ngay + Thêm vào giỏ hàng: 2 nút bằng nhau, tổng rộng đúng bằng khung mô tả */
+
 .product-page .hanh_dong_mua_hang {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -761,10 +752,10 @@
         min-width: 0;
         white-space: nowrap;
     }
-/* Điện thoại: "Có lẽ bạn cũng sẽ thích" - giá sát tên, nút Mua ngay + giỏ hàng rộng bằng thẻ */
+
 @media (max-width: 768px) {
 
-    /* Cả thẻ xếp dọc, các thẻ cùng hàng cao bằng nhau */
+   
     .product-page .the_san_pham {
         display: flex;
         flex-direction: column;
@@ -776,7 +767,7 @@
         flex: 1;
     }
 
-    /* Tên bánh: tối đa 2 dòng, KHÔNG chừa chỗ thừa */
+   
     .product-page .goi_y_ten {
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -787,7 +778,7 @@
         line-height: 1.45;
     }
 
-    /* Giá nằm ngay dưới tên, nút nằm dưới giá */
+    
     .product-page .goi_y_hang_duoi {
         display: flex;
         flex-direction: column;
@@ -803,7 +794,7 @@
         font-size: 15px;
     }
 
-    /* Hàng nút dính đáy thẻ và rộng bằng cả thẻ */
+    
     .product-page .goi_y_hanh_dong {
         width: 100%;
         margin-top: auto;
@@ -811,7 +802,7 @@
     }
 
     .product-page .nut_mua_ngay {
-        flex: 1; /* Mua ngay kéo dài hết phần còn lại */
+        flex: 1; 
         display: inline-flex;
         align-items: center;
         justify-content: center;

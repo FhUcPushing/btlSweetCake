@@ -65,18 +65,18 @@
     .admin-message.that-bai {
         color: #dc3545;
     }
-/* Đơn hàng đã hủy */
+
 .admin-order-table tr.don-da-huy > td {
     background-color: #f8d7da !important;
     color: #721c24;
 }
 
-/* Khi rê chuột vào đơn đã hủy */
+
 .admin-order-table tr.don-da-huy:hover > td {
     background-color: #f1c1c7 !important;
 }
 
-/* Ô trạng thái của đơn đã hủy */
+
 .admin-order-table tr.don-da-huy .admin-select {
     border-color: #dc3545;
     color: #721c24;
@@ -213,7 +213,7 @@
     .admin-delete-btn:hover {
         background-color: #bb2d3b;
     }
-/* Liên kết xem chi tiết đơn hàng */
+
 .admin-order-detail-link {
     background: none;
     border: none;

@@ -38,7 +38,6 @@ namespace baiTapLonBanh
             }
         }
 
-        // Thêm vào giỏ hàng: không còn xử lý ở đây nữa.
-        // Nút giỏ hàng gọi ThemGioHang.ashx bằng JS (xem JS/TrangChu.js), trang không tải lại.
+        
     }
 }

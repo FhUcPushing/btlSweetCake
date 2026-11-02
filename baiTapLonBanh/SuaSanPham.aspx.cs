@@ -16,7 +16,7 @@ namespace baiTapLonBanh
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Kiểm tra quyền truy cập
+         
             if (!LaAdmin())
             {
                 string trang = Session["TaiKhoan"] == null
@@ -42,7 +42,7 @@ namespace baiTapLonBanh
                     return;
                 }
 
-                // Hiển thị dữ liệu hiện tại
+       
                 lblMaBanh.Text = Server.HtmlEncode(banh.maBanh);
                 txtTenBanh.Text = banh.tenBanh;
                 txtGiaBanh.Text =
@@ -113,7 +113,7 @@ namespace baiTapLonBanh
 
         protected void btnCapNhat_Click(object sender, EventArgs e)
         {
-            // Kiểm tra quyền khi gửi yêu cầu cập nhật
+            
             if (!LaAdmin())
             {
                 Response.Redirect(
@@ -143,7 +143,7 @@ namespace baiTapLonBanh
 
             bool hopLe = true;
 
-            // Kiểm tra tên bánh
+           
             if (ten.Length < 2 || ten.Length > 100)
             {
                 loiTenBanh.Text =
@@ -151,7 +151,7 @@ namespace baiTapLonBanh
                 hopLe = false;
             }
 
-            // Kiểm tra giá
+         
             if (!decimal.TryParse(
                     txtGiaBanh.Text.Trim(),
                     NumberStyles.AllowDecimalPoint,
@@ -164,14 +164,14 @@ namespace baiTapLonBanh
                 hopLe = false;
             }
 
-            // Kiểm tra loại
+        
             if (!LoaiBanhHopLe(loai))
             {
                 loiLoaiBanh.Text = "Vui lòng chọn loại bánh hợp lệ.";
                 hopLe = false;
             }
 
-            // Mô tả có thể để trống để giữ cách hiển thị mặc định
+            
             if (moTa.Length > 500 ||
                 (moTa.Length > 0 && moTa.Length < 5))
             {
@@ -214,13 +214,13 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Nếu không tải ảnh mới thì giữ ảnh cũ
+          
             string anhMoi = banhCu.anhBanh;
             string duongDanAnhMoi = "";
 
             try
             {
-                // Lưu ảnh mới nếu Admin đã chọn ảnh
+          
                 if (fuAnhBanh.HasFile)
                 {
                     string thuMucAnh =
@@ -254,7 +254,7 @@ namespace baiTapLonBanh
 
                     if (ds != null)
                     {
-                        // Tạo danh sách mới để thay đổi đồng bộ
+                       
                         List<SanPhamBanh> dsMoi =
                             new List<SanPhamBanh>(ds);
 
@@ -306,7 +306,7 @@ namespace baiTapLonBanh
             }
             catch (Exception)
             {
-                // Dọn ảnh mới nếu cập nhật thất bại
+              
                 try
                 {
                     if (!string.IsNullOrEmpty(duongDanAnhMoi) &&
@@ -317,7 +317,7 @@ namespace baiTapLonBanh
                 }
                 catch
                 {
-                    // Bỏ qua lỗi dọn file.
+                    
                 }
 
                 lblThongBao.Text =
@@ -327,7 +327,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Quay về danh sách sau khi cập nhật thành công
+        
             Response.Redirect(
                 ResolveUrl("~/QuanLySanPham.aspx?sua=thanhcong"),
                 false);

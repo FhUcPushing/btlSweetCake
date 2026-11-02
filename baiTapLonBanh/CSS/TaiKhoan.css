@@ -1,4 +1,4 @@
-﻿/* ===== SWEETCAKE - TÀI KHOẢN & CHI TIẾT ĐƠN HÀNG (bản gọn) ===== */
+﻿
 .tai-khoan-page {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -27,7 +27,7 @@
             transform: translateX(-50%);
         }
 
-    /* Bố cục 2 cột */
+  
     .tai-khoan-page .tk-luoi {
         display: grid;
         grid-template-columns: 220px minmax(0, 1fr);
@@ -35,7 +35,7 @@
         align-items: start;
     }
 
-    /* Menu trái */
+  
     .tai-khoan-page .tk-menu {
         position: sticky;
         top: 84px;
@@ -102,7 +102,7 @@
             border: 1px solid #f0bad0;
         }
 
-    /* Khối nội dung */
+   
     .tai-khoan-page .tk-khoi {
         margin-bottom: 16px;
         padding: 20px 22px;
@@ -122,7 +122,7 @@
             font-weight: 800;
         }
 
-    /* Form: các ô xếp hàng ngang */
+   
     .tai-khoan-page .tk-hang {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -180,7 +180,7 @@
             font-size: 12px;
             font-weight: 600;
         }
-    /* Lỗi hiện dưới từng ô */
+   
     .tai-khoan-page .tk-o.tk-o-loi {
         border-color: #e53935;
         background: #fff6f6;
@@ -202,7 +202,7 @@
         .tai-khoan-page .tk-loi:empty {
             display: none;
         }
-    /* Nút */
+    
     .tai-khoan-page .tk-nut {
         display: inline-flex;
         align-items: center;
@@ -239,7 +239,7 @@
                 color: #b0306a;
             }
 
-    /* Thông báo */
+    
     .tai-khoan-page .tk-thong-bao {
         margin-bottom: 12px;
         padding: 10px 14px;
@@ -258,7 +258,7 @@
             color: #b0306a;
         }
 
-    /* Bảng */
+    
     .tai-khoan-page .tk-bang-khung {
         overflow-x: auto;
     }
@@ -321,8 +321,8 @@
         font-weight: 700;
     }
 
-    /* Chi tiết đơn */
-    /* Chi tiết đơn */
+    
+  
     .tai-khoan-page .ct-dau {
         display: flex;
         align-items: center;
@@ -455,14 +455,14 @@
             font-weight: 800;
         }
 
-/* ===== Máy tính bảng ===== */
+
 @media (max-width: 900px) {
     .tai-khoan-page .tk-luoi {
         grid-template-columns: 1fr;
         gap: 14px;
     }
 
-    /* Menu thành hàng nút nằm ngang, bỏ khối chào để đỡ cuộn */
+    
     .tai-khoan-page .tk-menu {
         position: static;
         display: flex;
@@ -496,13 +496,12 @@
     }
 }
 
-/* ===== Điện thoại ===== */
+
 @media (max-width: 600px) {
     .tai-khoan-page .ct-tieu-de {
         font-size: 18px;
     }
 
-    /* Sản phẩm: mỗi dòng là 1 thẻ nhỏ */
     .tai-khoan-page .tk-bang-sp thead {
         display: none;
     }
@@ -565,7 +564,7 @@
         .tai-khoan-page .tk-o {
             font-size: 16px;
         }
-        /* 16px để iPhone không tự phóng to */
+      
         .tai-khoan-page .tk-nut {
             width: 100%;
         }
@@ -576,7 +575,7 @@
             font-size: 12px;
         }
 
-        /* Danh sách đơn hàng: mỗi đơn là 1 thẻ nhỏ */
+      
         .tai-khoan-page .tk-bang-don thead {
             display: none;
         }
@@ -615,7 +614,7 @@
                     padding-top: 6px;
                 }
 }
-/* Khu vực nút hủy đơn */
+
 .ct-hanh-dong {
     display: flex;
     flex-direction: column;
@@ -624,7 +623,7 @@
     margin-top: 16px;
 }
 
-/* Nút hủy đơn hàng */
+
 .ct-nut-huy {
     padding: 10px 16px;
     background-color: #dc3545;
@@ -641,7 +640,7 @@
         background-color: #bb2d3b;
     }
 
-/* Thông báo kết quả */
+
 .ct-thong-bao {
     display: inline-block;
     padding: 10px 14px;

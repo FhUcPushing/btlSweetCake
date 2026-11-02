@@ -7,7 +7,7 @@
 
         <h1>Giỏ hàng của bạn</h1>
 
-        <!-- Giỏ hàng trống -->
+     
         <asp:Panel ID="thongBaoRong" runat="server" Visible="false" CssClass="gio-hang-rong">
             <div class="rong-icon"><i class="fa-solid fa-cart-shopping"></i></div>
             <p>Giỏ hàng của bạn đang trống.</p>
@@ -16,7 +16,7 @@
             </a>
         </asp:Panel>
 
-        <!-- Giỏ hàng có sản phẩm -->
+       
         <asp:Panel ID="panelGioHang" runat="server" Visible="false">
 
             <div class="bang-gio-hang-khung">

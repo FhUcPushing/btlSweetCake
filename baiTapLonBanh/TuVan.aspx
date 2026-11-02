@@ -13,7 +13,7 @@
 
 <div class="huong-dan">
 
-    <!-- TIÊU ĐỀ -->
+  
     <div class="huong-dan-tieu-de">
         <h1>HƯỚNG DẪN MUA BÁNH</h1>
         <p>
@@ -22,7 +22,7 @@
         </p>
     </div>
 
-    <!-- BƯỚC 1 -->
+  
     <div class="buoc">
         <div class="so-buoc">01</div>
 
@@ -43,7 +43,6 @@
         </div>
     </div>
 
-    <!-- BƯỚC 2 -->
     <div class="buoc">
         <div class="so-buoc">02</div>
 
@@ -64,7 +63,7 @@
         </div>
     </div>
 
-    <!-- BƯỚC 3 -->
+
     <div class="buoc">
         <div class="so-buoc">03</div>
 
@@ -85,7 +84,7 @@
         </div>
     </div>
 
-    <!-- BƯỚC 4 -->
+
     <div class="buoc">
         <div class="so-buoc">04</div>
 
@@ -107,7 +106,7 @@
         </div>
     </div>
 
-    <!-- BƯỚC 5 -->
+  
     <div class="buoc">
         <div class="so-buoc">05</div>
 
@@ -125,7 +124,7 @@
         </div>
     </div>
 
-    <!-- BƯỚC 6 -->
+  
     <div class="buoc">
         <div class="so-buoc">06</div>
 
@@ -146,7 +145,7 @@
         </div>
     </div>
 
-    <!-- LƯU Ý -->
+
     <div class="luu-y">
         <h2>LƯU Ý KHI ĐẶT BÁNH</h2>
 

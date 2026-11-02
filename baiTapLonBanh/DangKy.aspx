@@ -3,10 +3,10 @@
     <link href="CSS/DangNhapvaDangKy.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- Nhúng CSS riêng dùng chung cho Đăng Nhập / Đăng Ký -->
+ 
         <div class="dangky-layout">
 
-    <!-- Cột bên trái: Form đăng ký -->
+
     <div class="dangky-form">
         <div class="auth-container">
 

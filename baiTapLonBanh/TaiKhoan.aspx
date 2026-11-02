@@ -20,7 +20,7 @@
                 <a href="TaiKhoan.aspx?tab=donhang" class='<%= tab == "donhang" ? "dang-chon" : "" %>'>
                     <i class="fa-solid fa-receipt"></i> Đơn hàng của tôi
                 </a>
-                <!-- Menu dành riêng cho Admin -->
+               
 <asp:Panel ID="pnlMenuQuanTri"
     runat="server"
     Visible="false">
@@ -49,10 +49,10 @@
                 </a>
             </aside>
 
-            <!-- ===== NỘI DUNG PHẢI ===== -->
+         
             <div class="tk-noi-dung">
 
-                <!-- TAB: THÔNG TIN TÀI KHOẢN -->
+           
               <asp:Panel ID="pnlThongTin" runat="server" DefaultButton="btnCapNhat">
     <section class="tk-khoi">
         <h2>Thông tin tài khoản</h2>
@@ -95,7 +95,7 @@
 </asp:Panel>
 
 
-                <!-- TAB: ĐƠN HÀNG -->
+          
                 <asp:Panel ID="pnlDonHang" runat="server">
                     <section class="tk-khoi">
                         <h2>Lịch sử đơn hàng</h2>

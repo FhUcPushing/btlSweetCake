@@ -10,7 +10,7 @@ namespace baiTapLonBanh
                 || banh.loaiBanh == "Bánh Sinh Nhật"
                 || banh.loaiBanh == "Bánh Kem";
         }
-        // Bánh có size: "B01|20", bánh không có size: "B01"
+      
         public static string Tao(string maBanh, string maSize)
         {
             return string.IsNullOrEmpty(maSize) ? maBanh : maBanh + "|" + maSize;
@@ -23,7 +23,7 @@ namespace baiTapLonBanh
             else { maBanh = khoa.Substring(0, i); maSize = khoa.Substring(i + 1); }
         }
 
-        // Giá theo size: cùng công thức với trang chi tiết (hệ số 1 / 1.5 / 2, làm tròn nghìn)
+    
         public static decimal DonGia(SanPhamBanh banh, string maSize)
         {
             if (string.IsNullOrEmpty(maSize)) return banh.giaBanh;

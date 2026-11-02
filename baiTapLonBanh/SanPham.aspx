@@ -23,8 +23,7 @@
         </section>
         <% } %>
 
-        <!-- LOẠI BÁNH: mỗi mục là một đường dẫn GET (?loai=...), giữ nguyên từ khóa / xem / sắp xếp.
-             Đường dẫn kết thúc bằng #khuLoaiBanh nên bấm xong trang tự cuộn tới đây (thấy icon + bộ lọc + bánh), không phải cuộn tay. -->
+      
         <section class="product-category-section" id="khuLoaiBanh">
             <ul class="category-list">
                 <li id="tat_ca_loai_banh"
@@ -59,9 +58,7 @@
         </section>
 
         <section class="product-list-section" id="khuDanhSach">
-            <!-- Thanh đầu danh sách: tiêu đề + số sản phẩm (trái), Xem / Sắp xếp (phải).
-                 Chọn xong sẽ chuyển trang bằng GET (xem SanPham.js).
-                 Tìm kiếm nằm ở ô trên thanh điều hướng và gửi ?q=... tới trang này. -->
+            
             <div class="list-head">
                 <div class="list-head-title">
                     <h2>Danh sách bánh</h2>
@@ -107,7 +104,7 @@
 
                         <article class='the_san_pham <%# LayClassSanPham(Eval("loaiBanh").ToString()) %>'>
 
-                            <!-- Bấm ảnh để xem chi tiết bánh -->
+                           
                             <a class="lien-ket-anh"
                                href='ChiTietSanPham.aspx?id=<%# HttpUtility.UrlEncode(Eval("maBanh").ToString()) %>'>
                                 <img src='<%# ResolveUrl("~/" + Eval("anhBanh")) %>'
@@ -115,7 +112,7 @@
                                      onerror="this.closest('.the_san_pham').classList.add('khong-anh');" />
                             </a>
 
-                            <!-- Bấm tên bánh để xem chi tiết bánh -->
+                          
                             <a class="lien-ket-ten"
                                href='ChiTietSanPham.aspx?id=<%# HttpUtility.UrlEncode(Eval("maBanh").ToString()) %>'>
                                 <span class="ten_banh"><%# HttpUtility.HtmlEncode(Convert.ToString(Eval("tenBanh"))) %></span>
@@ -126,13 +123,13 @@
                             </p>
 
                             <div class="nhom-nut-mua">
-                                <!-- Mua ngay: chuyển đến trang đặt hàng -->
+                               
                                 <a class="nut-mua-ngay"
                                    href='DatHang.aspx?maBanh=<%# HttpUtility.UrlEncode(Eval("maBanh").ToString()) %>'>
                                     <span>Mua ngay</span>
                                 </a>
 
-                                <!-- Thêm vào giỏ: không tải lại trang, xử lý bằng JS (xem SanPham.js) -->
+                               
                                 <button type="button"
                                         class="nut-them-gio"
                                         data-ma-banh='<%# HttpUtility.HtmlAttributeEncode(Convert.ToString(Eval("maBanh"))) %>'
@@ -149,19 +146,19 @@
             </div>
         </section>
 
-        <!-- PHÂN TRANG: các đường dẫn GET (?trang=2...) do SanPham.aspx.cs tạo sẵn -->
+      
         <section class="product-pagination-section">
             <div id="phanTrang" class="phan_trang"><%= PhanTrangHtml %></div>
         </section>
 
-    <!-- Thông báo thêm giỏ hàng: JS hiện / ẩn, data-url là địa chỉ xử lý thêm giỏ -->
+    
     <div id="thongBaoGioHang"
          class="thong-bao-gio-hang an-thong-bao"
          role="status"
          aria-live="polite"
          data-url='<%= ResolveUrl("~/ThemGioHang.ashx") %>'></div>
     </div>
-    <!-- NÚT LÊN ĐẦU TRANG -->
+  
 <button type="button"
         id="btnLenDauTrang"
         class="btn-len-dau"

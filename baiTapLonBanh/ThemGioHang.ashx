@@ -12,7 +12,7 @@ public class ThemGioHang : IHttpHandler, IRequiresSessionState
     {
         context.Response.ContentType = "application/json";
 
-        // Chỉ chấp nhận POST
+        
         if (context.Request.HttpMethod != "POST")
         {
             context.Response.StatusCode = 405;
@@ -30,7 +30,7 @@ public class ThemGioHang : IHttpHandler, IRequiresSessionState
             return;
         }
 
-        // Tìm bánh trong danh sách sản phẩm
+       
         SanPhamBanh banh = null;
 
         context.Application.Lock();
@@ -58,7 +58,7 @@ public class ThemGioHang : IHttpHandler, IRequiresSessionState
             context.Application.UnLock();
         }
 
-        // Không cho thêm mã bánh không tồn tại
+        
         if (banh == null)
         {
             context.Response.StatusCode = 404;
@@ -66,12 +66,12 @@ public class ThemGioHang : IHttpHandler, IRequiresSessionState
             return;
         }
 
-        // Bánh kem, mousse, sinh nhật mặc định size 16 cm
+       
         string maSize = GioHangKey.LaBanhKem(banh)
             ? "16"
             : null;
 
-        // Dùng chung cách tạo khóa với các trang khác
+       
         string khoa = GioHangKey.Tao(banh.maBanh, maSize);
 
         Dictionary<string, int> gioHang =
@@ -83,7 +83,7 @@ public class ThemGioHang : IHttpHandler, IRequiresSessionState
             gioHang = new Dictionary<string, int>();
         }
 
-        // Tăng số lượng nếu bánh đã có trong giỏ
+        
         if (gioHang.ContainsKey(khoa))
         {
             gioHang[khoa]++;

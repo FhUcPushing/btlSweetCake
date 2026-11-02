@@ -9,7 +9,7 @@ namespace baiTapLonBanh
 {
     public class Global : System.Web.HttpApplication
     {
-        // Thêm 1 sản phẩm vào danh sách (không còn mô tả: trang chi tiết tự tạo mô tả theo loại bánh)
+      
         private static void ThemSanPham(List<SanPhamBanh> ds, string ma, string ten, decimal gia,
                                         string anh, string loai, DateTime ngay)
         {
@@ -28,7 +28,7 @@ namespace baiTapLonBanh
         {
             List<SanPhamBanh> ds = new List<SanPhamBanh>();
 
-            // ===== BÁNH KEM =====
+            
             ThemSanPham(ds, "1", "Bánh Mousse Hawai", 100000m, "image/SanPham/banhMousseHawaii_SP.png", "Bánh Mousse", new DateTime(2025, 1, 15));
             ThemSanPham(ds, "2", "Bánh Kem Nơ Hồng", 120000m, "image/SanPham/banhkemnohong_SP.png", "Bánh Sinh Nhật", new DateTime(2025, 6, 20));
             ThemSanPham(ds, "4", "Bánh Cưới 3 tầng", 500000m, "image/SanPham/banh3tang_SP.jpg", "Bánh Sinh Nhật", new DateTime(2025, 6, 20));
@@ -43,7 +43,7 @@ namespace baiTapLonBanh
             ThemSanPham(ds, "13", "Bánh Kem Hoa Hồng", 450000m, "image/SanPham/banhkemhh_SP.jpg", "Bánh Kem", new DateTime(2025, 9, 9));
             ThemSanPham(ds, "14", "Bánh Tiramisu", 350000m, "image/SanPham/tiramisu1_SP.jpg", "Bánh Kem", new DateTime(2025, 9, 25));
 
-            // ===== BÁNH TƯƠI =====
+           
             ThemSanPham(ds, "3", "Bánh Su Kem", 10000m, "image/SanPham/sukem_SP.jpg", "Bánh Tươi", new DateTime(2025, 6, 20));
             ThemSanPham(ds, "15", "Bánh Croissant Bơ", 29000m, "image/SanPham/croissant_TC.jpg", "Bánh Tươi", new DateTime(2025, 3, 20));
             ThemSanPham(ds, "16", "Bánh Bông Lan Trứng Muối", 35000m, "image/SanPham/bonglan_SP.jpg", "Bánh Tươi", new DateTime(2025, 4, 8));
@@ -54,7 +54,7 @@ namespace baiTapLonBanh
             ThemSanPham(ds, "21", "Bánh Macaron", 15000m, "image/SanPham/banhmacaron_SP.jpg", "Bánh Tươi", new DateTime(2025, 9, 1));
             ThemSanPham(ds, "22", "Bánh Flan Caramel", 20000m, "image/SanPham/bànhlan_SP.jpg", "Bánh Tươi", new DateTime(2025, 9, 18));
 
-            // ===== BÁNH MÌ =====
+            
             ThemSanPham(ds, "23", "Bánh Mì Hấp Xúc Xích Phô Mai", 25000m, "image/SanPham/hotdog_TC.jpg", "Bánh Mì", new DateTime(2025, 2, 3));
             ThemSanPham(ds, "24", "Bánh Mì Xúc Xích Đại", 39000m, "image/SanPham/xucxich_TC.jpg", "Bánh Mì", new DateTime(2025, 3, 14));
             ThemSanPham(ds, "25", "Pizza Gà Nướng Kiểu Thái", 49000m, "image/SanPham/pizza_TC.jpg", "Bánh Mì", new DateTime(2025, 4, 22));
@@ -67,7 +67,7 @@ namespace baiTapLonBanh
             // Khởi tạo danh sách tài khoản
             List<NguoiDung> dsTaiKhoan = new List<NguoiDung>();
 
-            // Tạo tài khoản quản trị mặc định để thử nghiệm
+            
             dsTaiKhoan.Add(new NguoiDung
             {
                 HoTen = "Quản trị viên",

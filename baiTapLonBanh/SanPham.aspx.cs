@@ -11,20 +11,7 @@ namespace baiTapLonBanh
 {
     public partial class SanPham : System.Web.UI.Page
     {
-        // ==========================================================
-        // TRANG SẢN PHẨM - LỌC / SẮP XẾP / PHÂN TRANG BẰNG GET (query string)
-        //
-        //   SanPham.aspx?loai=banh_kem&q=xoai&xem=8&sapxep=oldest&trang=2
-        //
-        //   loai   : banh_kem | banh_tuoi | banh_mi   (bỏ trống = tất cả)
-        //   q      : từ khóa tìm theo tên bánh (không phân biệt dấu), gửi từ ô tìm kiếm trên thanh điều hướng
-        //   xem    : 1 | 4 | 8 | 12 | all             (mặc định 12 bánh / trang)
-        //   sapxep : newest | oldest                  (mặc định newest = mới nhất)
-        //   trang  : số trang, bắt đầu từ 1
-        // ==========================================================
-
-
-        // Các giá trị này được dùng trực tiếp trong SanPham.aspx
+       
         protected string LoaiHienTai = "";
         protected string TuKhoa = "";
         protected string XemHienTai = "12";
@@ -51,7 +38,7 @@ namespace baiTapLonBanh
 
             string tuKhoaKhongDau = BoDau(TuKhoa);
 
-            // 1. Lọc sản phẩm
+        
             List<SanPhamBanh> danhSachSauLoc =
                 new List<SanPhamBanh>();
 
@@ -65,7 +52,7 @@ namespace baiTapLonBanh
                 }
             }
 
-            // 2. Sắp xếp theo ngày tạo
+         
             List<SanPhamBanh> danhSachLoc = danhSachSauLoc;
 
             for (int i = 0; i < danhSachLoc.Count - 1; i++)
@@ -88,7 +75,7 @@ namespace baiTapLonBanh
                 }
             }
 
-            // 3. Tính số bánh trên mỗi trang
+            
             int soMoiTrang;
 
             if (XemHienTai == "all")
@@ -100,7 +87,7 @@ namespace baiTapLonBanh
                 soMoiTrang = int.Parse(XemHienTai);
             }
 
-            // Tính tổng số trang
+      
             TongTrang = Math.Max(
                 1,
                 (int)Math.Ceiling(
@@ -108,7 +95,7 @@ namespace baiTapLonBanh
                 )
             );
 
-            // Đảm bảo trang hiện tại hợp lệ
+           
             if (TrangHienTai > TongTrang)
             {
                 TrangHienTai = TongTrang;
@@ -119,7 +106,7 @@ namespace baiTapLonBanh
                 TrangHienTai = 1;
             }
 
-            // 4. Lấy bánh thuộc trang hiện tại
+            
             List<SanPhamBanh> danhSachTrang =
                 new List<SanPhamBanh>();
 
@@ -136,7 +123,7 @@ namespace baiTapLonBanh
             }
 
 
-            // 4. Hiển thị
+     
             danhSachBanh.Attributes["class"] =
                 "danh-sach-banh" + (XemHienTai == "1" ? " xem-1" : "");
 
@@ -148,12 +135,12 @@ namespace baiTapLonBanh
             PhanTrangHtml = TaoPhanTrang();
         }
 
-        // ---------- ĐỌC THAM SỐ TRÊN URL ----------
+      
 
 
         private void DocThamSo()
         {
-            // 1. Đọc loại bánh
+           
             string loai = Request.QueryString["loai"];
 
             if (loai == "banh_kem" ||
@@ -163,7 +150,7 @@ namespace baiTapLonBanh
                 LoaiHienTai = loai;
             }
 
-            // 2. Đọc từ khóa tìm kiếm
+         
             string q = (Request.QueryString["q"] ?? "").Trim();
 
             if (q.Length > 100)
@@ -173,7 +160,7 @@ namespace baiTapLonBanh
 
             TuKhoa = q;
 
-            // 3. Đọc số lượng bánh mỗi trang
+        
             string xem = Request.QueryString["xem"];
 
             if (xem == "1" || xem == "4" ||
@@ -183,13 +170,13 @@ namespace baiTapLonBanh
                 XemHienTai = xem;
             }
 
-            // 4. Đọc cách sắp xếp
+
             if (Request.QueryString["sapxep"] == "oldest")
             {
                 SapXepHienTai = "oldest";
             }
 
-            // 5. Đọc số trang
+            
             int trang;
 
             if (int.TryParse(Request.QueryString["trang"], out trang)
@@ -217,7 +204,7 @@ namespace baiTapLonBanh
             return true;
         }
 
-        // Bỏ dấu tiếng Việt, chữ thường: "Bánh Xoài" -> "banh xoai"
+        
         private static string BoDau(string chuoi)
         {
             if (string.IsNullOrEmpty(chuoi)) return "";
@@ -236,9 +223,7 @@ namespace baiTapLonBanh
             return sb.ToString().Normalize(NormalizationForm.FormC);
         }
 
-        // ---------- TẠO ĐƯỜNG DẪN (GET) ----------
-
-        // Giữ nguyên các lựa chọn hiện tại (từ khóa, xem, sắp xếp), chỉ đổi loại và trang.
+        
         protected string TaoUrl(string loai, int trang)
         {
             List<string> thamSo = new List<string>();
@@ -268,13 +253,13 @@ namespace baiTapLonBanh
             return url;
         }
 
-        // Dùng trong thuộc tính href của SanPham.aspx
+
         protected string TaoLienKet(string loai, int trang)
         {
             return HttpUtility.HtmlAttributeEncode(TaoUrl(loai, trang));
         }
 
-        // Giống TaoLienKet nhưng bỏ từ khóa tìm kiếm (dùng cho nút "Xóa tìm kiếm")
+        
         protected string TaoLienKetBoTuKhoa()
         {
             string cu = TuKhoa;
@@ -284,13 +269,12 @@ namespace baiTapLonBanh
             return ketQua;
         }
 
-        // Trả về selected="selected" cho thẻ option đang được chọn
+       
         protected string Chon(string giaTri, string hienTai)
         {
             return giaTri == hienTai ? "selected=\"selected\"" : "";
         }
 
-        // ---------- PHÂN TRANG ----------
 
         private string TaoPhanTrang()
         {
@@ -298,13 +282,12 @@ namespace baiTapLonBanh
 
             StringBuilder sb = new StringBuilder();
 
-            // Nút trang trước
+        
             if (TrangHienTai > 1)
                 sb.Append(NutTrang("&lt;", TrangHienTai - 1, false, "Trang trước"));
             else
                 sb.Append("<span class=\"khoa\">&lt;</span>");
 
-            // Các số trang (nhiều trang thì rút gọn bằng dấu ...)
             int soTruoc = 0;
 
             for (int p = 1; p <= TongTrang; p++)
@@ -325,7 +308,7 @@ namespace baiTapLonBanh
                 soTruoc = p;
             }
 
-            // Nút trang sau
+          
             if (TrangHienTai < TongTrang)
                 sb.Append(NutTrang("&gt;", TrangHienTai + 1, false, "Trang sau"));
             else
@@ -336,7 +319,7 @@ namespace baiTapLonBanh
 
         private string NutTrang(string nhan, int trang, bool dangChon, string nhanAria)
         {
-            // #khuDanhSach: bấm xong tự cuộn xuống đầu danh sách bánh
+            
             string href = TaoLienKet(LoaiHienTai, trang) + "#khuDanhSach";
 
             return "<a href=\"" + href + "\"" +
@@ -366,7 +349,7 @@ namespace baiTapLonBanh
                     return "";
             }
         }
-        // Tính đơn giá và tên hiển thị theo size đã chọn (dùng chung cho Giỏ hàng + Đặt hàng)
+     
         public static class GiaTheoSize
         {
             public static bool LaBanhKem(SanPhamBanh b)
@@ -376,7 +359,7 @@ namespace baiTapLonBanh
                     || b.loaiBanh == "Bánh Kem";
             }
 
-            // Size đã chọn của bánh; chưa chọn thì mặc định 16cm. Bánh không có size trả về ""
+           
             public static string TenSize(SanPhamBanh b, Dictionary<string, string> tuyChon)
             {
                 if (!LaBanhKem(b)) return "";
@@ -386,7 +369,7 @@ namespace baiTapLonBanh
                 return "16cm";
             }
 
-            // Đơn giá theo size (cùng công thức với trang chi tiết: 16cm x1, 20cm x1.5, 24cm x2)
+           
             public static decimal DonGia(SanPhamBanh b, Dictionary<string, string> tuyChon)
             {
                 if (!LaBanhKem(b)) return b.giaBanh;
@@ -399,7 +382,7 @@ namespace baiTapLonBanh
                 return Math.Round(b.giaBanh * heSo / 1000m, 0) * 1000m;
             }
 
-            // Tên hiện trong giỏ: "Bánh Mousse Hawaii (20cm)"
+       
             public static string TenHienThi(SanPhamBanh b, Dictionary<string, string> tuyChon)
             {
                 string size = TenSize(b, tuyChon);

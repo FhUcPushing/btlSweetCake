@@ -28,7 +28,7 @@
 
                 <ul id="thongTinChiTiet" runat="server" class="thong_tin_chi_tiet"></ul>
 
-                <!-- Chọn size: chỉ hiện với các loại bánh kem / mousse / sinh nhật -->
+               
                 <div id="khuVucSize" runat="server" visible="false" class="chon_size">
                     <p class="nhan_nho">Chọn size bánh</p>
 

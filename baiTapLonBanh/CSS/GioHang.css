@@ -1,7 +1,4 @@
-﻿/* ===== SWEETCAKE - GIỎ HÀNG =====
-   Màu đồng bộ các trang khác:
-   hồng #d9457c | hồng đậm #b0306a | hồng nhạt #fff1f6 | viền #f3d4e0 | chữ #6b4a58 */
-
+﻿
 .gio-hang-page {
     padding-top: 32px;
     padding-bottom: 70px;
@@ -30,7 +27,7 @@
             transform: translateX(-50%);
         }
 
-    /* ===== Nút bấm (giống nút ở trang chi tiết) ===== */
+    
 
     .gio-hang-page .nut-hong {
         display: inline-flex;
@@ -58,7 +55,7 @@
             color: #ffffff;
         }
 
-        /* Nút viền hồng, nền trắng */
+   
         .gio-hang-page .nut-hong.nut-vien {
             background: #ffffff;
             color: #d9457c;
@@ -70,7 +67,7 @@
                 color: #b0306a;
             }
 
-    /* ===== Bảng giỏ hàng ===== */
+   
 
     .gio-hang-page .bang-gio-hang-khung {
         overflow-x: auto;
@@ -112,7 +109,7 @@
             background: #fffafd;
         }
 
-    /* Ảnh + tên bánh */
+
 
     .gio-hang-page .san-pham-o {
         display: flex;
@@ -138,7 +135,7 @@
             object-fit: cover;
         }
 
-        /* Ảnh lỗi: ẩn ảnh, hiện 🧁 */
+       
         .gio-hang-page .anh-nho.khong-anh img {
             display: none;
         }
@@ -161,7 +158,6 @@
         white-space: nowrap;
     }
 
-    /* Nút tăng / giảm số lượng */
 
     .gio-hang-page .so-luong-gio {
         display: inline-flex;
@@ -200,7 +196,7 @@
         text-align: center;
     }
 
-    /* Nút Xóa: icon + chữ */
+   
 
     .gio-hang-page .nut-xoa {
         display: inline-flex;
@@ -224,7 +220,7 @@
             color: #ffffff;
         }
 
-    /* ===== Tổng tiền + nút hành động ===== */
+
 
     .gio-hang-page .tong-ket-gio {
         display: flex;
@@ -261,7 +257,7 @@
         margin-top: 28px;
     }
 
-    /* ===== Giỏ hàng trống ===== */
+   
 
     .gio-hang-page .gio-hang-rong {
         padding: 48px 24px;
@@ -289,8 +285,6 @@
             font-size: 18px;
             font-weight: 700;
         }
-
-/* ===== Màn hình nhỏ: mỗi sản phẩm là một thẻ ===== */
 
 @media (max-width: 700px) {
     .gio-hang-page h1 {

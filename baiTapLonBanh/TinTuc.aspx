@@ -17,7 +17,7 @@
 <asp:Content ID="Content2"
     ContentPlaceHolderID="ContentPlaceHolder1"
     runat="server">
-    <!-- BANNER TIN TUC -->
+  
     <section class="news-banner">
         <div class="news-banner-content">
             <span class="news-subtitle">GÓC NHÀ SWEETCAKE</span>
@@ -29,7 +29,6 @@
         </div>
     </section>
 
-    <!-- NOI DUNG TIN TUC -->
     <section class="news-page">
 
         <div class="news-heading">
@@ -37,10 +36,10 @@
             <span class="news-heading-line"></span>
         </div>
 
-        <!-- DANH SACH BAI VIET -->
+     
         <div class="news-grid">
 
-            <!-- BAI VIET 1 -->
+           
             <article class="news-card">
     <a href="ChiTietTinTuc.aspx?id=1" class="news-image">
         <img src="image/TinTuc/banh1_TT.jpg"
@@ -72,7 +71,7 @@
     </div>
 </article>
 
-            <!-- BAI VIET 2 -->
+     
             <article class="news-card">
     <a href="ChiTietTinTuc.aspx?id=2" class="news-image">
         <img src="image/TinTuc/banh11_TT.jpg"
@@ -104,7 +103,7 @@
     </div>
 </article>
 
-            <!-- BAI VIET 3 -->
+       
             <article class="news-card">
     <a href="ChiTietTinTuc.aspx?id=3" class="news-image">
         <img src="image/TinTuc/banh7_TT.jpg"
@@ -136,7 +135,7 @@
     </div>
 </article>
 
-            <!-- BAI VIET 4 -->
+  
            <article class="news-card">
     <a href="ChiTietTinTuc.aspx?id=4" class="news-image">
         <img src="image/TinTuc/banh9_TT.jpg"
@@ -168,7 +167,7 @@
     </div>
 </article>
 
-            <!-- BAI VIET 5 -->
+      
            <article class="news-card">
     <a href="ChiTietTinTuc.aspx?id=5" class="news-image">
         <img src="image/TinTuc/banh3_TT.jpg"
@@ -199,7 +198,7 @@
         </a>
     </div>
 </article>
-            <!-- BAI VIET 6 -->
+       
             <article class="news-card">
     <a href="ChiTietTinTuc.aspx?id=6" class="news-image">
         <img src="image/TinTuc/banh8_TT.jpg"
@@ -234,7 +233,7 @@
 
     </section>
 
-    <!-- LOI MOI CUOI TRANG (giong khung "Tham gia gia dinh SweetCake") -->
+    
     <section class="news-cta-wrap">
         <div class="news-cta">
             <div class="news-cta-icon">

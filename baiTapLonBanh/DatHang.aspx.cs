@@ -12,17 +12,11 @@ namespace baiTapLonBanh
 {
     public partial class DatHang : System.Web.UI.Page
     {
-        // ================== CẤU HÌNH (sửa ở đây) ==================
-        private const decimal PhiShipMacDinh = 30000m;   // phí giao hàng
-        private const decimal MienPhiShipTu = 500000m;   // đơn từ mức này thì miễn phí ship
+       
+        private const decimal PhiShipMacDinh = 30000m;   
+        private const decimal MienPhiShipTu = 500000m;   
 
-        // Mã giảm giá có sẵn (dùng thử):
-        //   SWEET10  -> giảm 10% tiền bánh
-        //   FREESHIP -> miễn phí vận chuyển
-        //   CHAO20K  -> giảm 20,000đ
-        // ==========================================================
-
-        // Một dòng sản phẩm trong đơn (Repeater đọc các thuộc tính này)
+      
         public class DongGioHang
         {
             public string maBanh { get; set; }
@@ -41,7 +35,7 @@ namespace baiTapLonBanh
             public decimal TongCong;
         }
 
-        // Mã giảm giá đang áp dụng (giữ qua các lần bấm nút)
+       
         private string MaDangDung
         {
             get { return ViewState["MaGiamGia"] as string ?? ""; }
@@ -55,21 +49,21 @@ namespace baiTapLonBanh
                 Response.Redirect("DangNhap.aspx");
                 return;
             }
-            // Không cho chọn ngày nhận trong quá khứ
+            
             ngayNhan.Attributes["min"] = DateTime.Today.ToString("yyyy-MM-dd");
 
             if (!IsPostBack)
             {
-                // Lấy mã bánh từ nút Mua ngay ở trang chủ
+                
                 string maBanh = Request.QueryString["maBanh"];
 
                 if (!string.IsNullOrEmpty(maBanh))
                 {
-                    // Lấy danh sách sản phẩm
+                   
                     List<SanPhamBanh> danhSachSanPham =
                         Application["DanhSachSanPham"] as List<SanPhamBanh>;
 
-                    // Tìm bánh theo mã
+                    
                     SanPhamBanh banhDuocChon = null;
 
                     if (danhSachSanPham != null)
@@ -81,7 +75,7 @@ namespace baiTapLonBanh
 
                     if (banhDuocChon != null)
                     {
-                        // Lấy giỏ hàng hiện tại
+                       
                         Dictionary<string, int> gioHang =
                             Session["GioHang"] as Dictionary<string, int>;
 
@@ -89,7 +83,7 @@ namespace baiTapLonBanh
                         {
                             gioHang = new Dictionary<string, int>();
                         }
-                        // Thêm bánh đã chọn vào giỏ hàng (bánh kem mặc định size 16)
+                     
                         string khoa = GioHangKey.Tao(maBanh, GioHangKey.LaBanhKem(banhDuocChon) ? "16" : null);
 
                         if (gioHang.ContainsKey(khoa))
@@ -103,25 +97,24 @@ namespace baiTapLonBanh
 
                         Session["GioHang"] = gioHang;
                     }
-                    // Xóa maBanh khỏi URL để tránh thêm bánh lần nữa khi F5
+                
                     Response.Redirect("DatHang.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
                     return;
                 }
 
-                // Chỉ chuyển về giỏ hàng nếu thực sự không có sản phẩm
                 if (LayGioHang().Count == 0)
                 {
                     Response.Redirect("GioHang.aspx");
                     return;
                 }
 
-                // Hiển thị tóm tắt đơn hàng
+               
                 HienThiTomTat();
             }
         }
 
-        // Dùng trong .aspx để giữ lại lựa chọn thanh toán sau khi bấm nút
+       
         protected string DaChon(string giaTri)
         {
             string dangChon = Request.Form["thanhToan"] ?? "cod";
@@ -150,7 +143,7 @@ namespace baiTapLonBanh
 
                 SanPhamBanh b = null;
 
-                // Tìm bánh theo mã
+              
                 foreach (SanPhamBanh sanPham in danhSachSanPham)
                 {
                     if (sanPham.maBanh == ma)
@@ -180,13 +173,13 @@ namespace baiTapLonBanh
             return ketQua;
         }
 
-        // ---------- Tính tiền ----------
+       
         private TienDonHang TinhTien(
     List<DongGioHang> dong, string maGiamGia)
         {
             TienDonHang t = new TienDonHang();
 
-            // Tính tổng tiền bánh
+     
             decimal tamTinh = 0;
 
             foreach (DongGioHang sanPham in dong)
@@ -196,7 +189,7 @@ namespace baiTapLonBanh
 
             t.TamTinh = tamTinh;
 
-            // Tính phí vận chuyển
+
             if (t.TamTinh >= MienPhiShipTu)
             {
                 t.PhiShip = 0;
@@ -206,11 +199,11 @@ namespace baiTapLonBanh
                 t.PhiShip = PhiShipMacDinh;
             }
 
-            // Tính giảm giá
+
             t.GiamGia = TinhGiamGia(
                 maGiamGia, t.TamTinh, t.PhiShip);
 
-            // Tính tổng tiền khách phải trả
+
             t.TongCong =
                 t.TamTinh + t.PhiShip - t.GiamGia;
 
@@ -233,7 +226,7 @@ namespace baiTapLonBanh
             }
         }
 
-        // Mô tả mã giảm giá; trả về null nếu mã không tồn tại
+
         private string MoTaMa(string ma)
         {
             switch (ma)
@@ -250,7 +243,7 @@ namespace baiTapLonBanh
             return so.ToString("N0") + "đ";
         }
 
-        // ---------- Hiển thị phần tóm tắt bên phải ----------
+
         private void HienThiTomTat()
         {
             List<DongGioHang> dong = LayGioHang();
@@ -276,7 +269,7 @@ namespace baiTapLonBanh
             }
         }
 
-        // ---------- Nút "Áp dụng" mã giảm giá ----------
+
         protected void btnApDungMa_Click(object sender, EventArgs e)
         {
             string ma = txtMaGiamGia.Text.Trim().ToUpperInvariant();
@@ -306,7 +299,7 @@ namespace baiTapLonBanh
             HienThiTomTat();
         }
 
-        // ---------- Nút "Xác nhận đặt hàng" ----------
+
         protected void btnXacNhanDatHang_Click(object sender, EventArgs e)
         {
             List<DongGioHang> dong = LayGioHang();
@@ -318,7 +311,7 @@ namespace baiTapLonBanh
 
             List<string> loi = new List<string>();
 
-            // 1. Người nhận
+     
             string hoTen = txtHoTen.Text.Trim();
             string sdt = Regex.Replace(txtSoDienThoai.Text.Trim(), @"[\s\.\-]", "");
             string email = txtEmail.Text.Trim();
@@ -342,7 +335,7 @@ namespace baiTapLonBanh
                 loi.Add("Vui lòng nhập địa chỉ nhận hàng đầy đủ.");
             }
 
-            // 2. Thời gian nhận hàng
+      
             DateTime ngay;
             bool coNgay = DateTime.TryParseExact(ngayNhan.Value, "yyyy-MM-dd",
                 CultureInfo.InvariantCulture, DateTimeStyles.None, out ngay);
@@ -366,7 +359,7 @@ namespace baiTapLonBanh
                 loi.Add("Khung giờ nhận hàng đã qua, vui lòng chọn khung giờ khác.");
             }
 
-            // 4. Thanh toán
+
             string maThanhToan = Request.Form["thanhToan"] ?? "cod";
             string tenThanhToan;
             switch (maThanhToan)
@@ -380,7 +373,7 @@ namespace baiTapLonBanh
                     break;
             }
 
-            // Có lỗi -> báo lại, giữ nguyên dữ liệu đã nhập
+         
             if (loi.Count > 0)
             {
                 StringBuilder sb = new StringBuilder();
@@ -397,7 +390,6 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Hợp lệ -> xác nhận đơn
             TienDonHang t = TinhTien(dong, MaDangDung);
             string maDon = "DH"
     + DateTime.Now.ToString("yyyyMMddHHmmss")
@@ -409,8 +401,7 @@ namespace baiTapLonBanh
             litThoiGian.Text = ngay.ToString("dd/MM/yyyy") + ", " + ddlGio.SelectedItem.Text;
             litThanhToan.Text = tenThanhToan;
             litTongThanhToan.Text = Tien(t.TongCong);
-            // Lưu đơn vào danh sách để trang Tài khoản đọc ra
-            // Tạo danh sách chi tiết đơn hàng
+           
             List<ChiTietDon> dsChiTiet = new List<ChiTietDon>();
 
             foreach (DongGioHang sanPham in dong)
@@ -464,10 +455,10 @@ namespace baiTapLonBanh
             {
                 Application.UnLock();
             }
-            // Giữ mã đơn gần nhất như bản cũ
+        
             Session["DonHangGanNhat"] = maDon;
 
-            // Đặt xong thì làm trống giỏ hàng
+            
             Session.Remove("GioHang");
             Session.Remove("TuyChonBanh");
             pnlDatHang.Visible = false;

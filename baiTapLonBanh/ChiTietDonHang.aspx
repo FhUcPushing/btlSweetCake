@@ -12,7 +12,7 @@
 
         <asp:Panel ID="pnlChiTiet" runat="server">
 
-            <!-- Dòng đầu: quay lại + mã đơn + trạng thái -->
+           
             <div class="ct-dau">
                 <a id="lnkQuayLai" runat="server" class="ct-quay-lai">
     <i class="fa-solid fa-arrow-left"></i>
@@ -23,11 +23,11 @@
                     <span class="tk-trang-thai"><asp:Literal ID="litTrangThai" runat="server" /></span>
                 </div>
             </div>
-            <!-- Nút hủy đơn hàng và thông báo -->
+            
 
             <div class="ct-luoi">
 
-                <!-- ===== TRÁI: SẢN PHẨM ===== -->
+               
                 <section class="tk-khoi">
                     <h2>Sản phẩm</h2>
                     <div class="tk-bang-khung">
@@ -59,7 +59,7 @@
                     </div>
                 </section>
 
-                <!-- ===== PHẢI: THÔNG TIN + TỔNG TIỀN ===== -->
+                
                 <section class="tk-khoi ct-phai">
                     <h2>Thông tin giao hàng</h2>
                     <dl class="tk-thong-tin">

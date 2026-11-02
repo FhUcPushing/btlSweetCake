@@ -10,11 +10,11 @@ namespace baiTapLonBanh
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Lấy tài khoản đang đăng nhập
+            
             NguoiDung taiKhoan =
                 Session["TaiKhoan"] as NguoiDung;
 
-            // Chưa đăng nhập
+          
             if (taiKhoan == null)
             {
                 Response.Redirect(ResolveUrl("~/DangNhap.aspx"), false);
@@ -22,7 +22,6 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Không phải quản trị viên
             if (taiKhoan.VaiTro != "Admin")
             {
                 Response.Redirect(ResolveUrl("~/TrangChu.aspx"), false);
@@ -30,7 +29,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Hiển thị tên quản trị viên
+          
             if (!IsPostBack)
             {
                 HienThiDonHang();
@@ -61,7 +60,7 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Sắp xếp đơn hàng mới nhất lên đầu
+           
             for (int i = 0; i < dsDon.Count - 1; i++)
             {
                 for (int j = i + 1; j < dsDon.Count; j++)
@@ -76,7 +75,7 @@ namespace baiTapLonBanh
                 }
             }
 
-            // Hiển thị danh sách đơn hàng
+        
             gvDonHang.DataSource = dsDon;
             gvDonHang.DataBind();
 
@@ -88,17 +87,17 @@ namespace baiTapLonBanh
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                // Lấy trạng thái của đơn hàng
+             
                 string trangThai = Convert.ToString(
                     DataBinder.Eval(e.Row.DataItem, "TrangThai"));
 
-                // Nếu đơn đã hủy thì đánh dấu hàng
+               
                 if (trangThai == "Đã hủy")
                 {
                     e.Row.CssClass = "don-da-huy";
                 }
 
-                // Hiển thị đúng trạng thái trong ô chọn
+                
                 DropDownList ddl =
                     e.Row.FindControl("ddlTrangThai") as DropDownList;
 
@@ -117,7 +116,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Kiểm tra quyền một lần nữa khi xử lý thao tác
+       
             NguoiDung taiKhoan =
                 Session["TaiKhoan"] as NguoiDung;
 
@@ -135,7 +134,7 @@ namespace baiTapLonBanh
                 return;
             }
 
-            // Lấy mã đơn và trạng thái Admin chọn
+          
             string maDon = Convert.ToString(e.CommandArgument);
 
             GridViewRow row =
@@ -157,7 +156,7 @@ namespace baiTapLonBanh
             string trangThaiMoi = ddl.SelectedValue;
             bool daCapNhat = false;
 
-            // Tìm và cập nhật đúng đơn hàng
+           
             Application.Lock();
 
             try
@@ -183,7 +182,7 @@ namespace baiTapLonBanh
                 Application.UnLock();
             }
 
-            // Thông báo và tải lại bảng
+         
             if (daCapNhat)
             {
                 lblThongBao.Text = "Cập nhật trạng thái đơn hàng thành công!";
