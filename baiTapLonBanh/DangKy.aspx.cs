@@ -16,10 +16,8 @@ namespace baiTapLonBanh
             {
                 if (Request.QueryString["dangky"] == "thanhcong")
                 {
-                    divThongBao.InnerHtml =
-                        "<div class='message success'>Đăng ký thành công! Vui lòng đăng nhập.</div>";
+                    divThongBao.InnerHtml = "<div class='message success'>Đăng ký thành công!Vui lòng đăng nhập.</div>";
                 }
-
                 return;
             }
             loiFullname.InnerText = "";
@@ -36,6 +34,7 @@ namespace baiTapLonBanh
             {
                 loiFullname.InnerText = "Vui lòng nhập họ và tên.";
                 duLieuHopLe = false;
+                return;
             }
             else if (fullname.Length < 2 || fullname.Length > 50)
             {

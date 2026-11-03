@@ -13,7 +13,6 @@ namespace baiTapLonBanh
         public string savedUser = "";
         public bool isRemembered = false;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack && Request.QueryString["dangxuat"] == "1")
@@ -34,18 +33,19 @@ namespace baiTapLonBanh
 
                 if (Request.Cookies["SweetCakePass"] != null)
                 {
-                    Response.Cookies["SweetCakePass"].Expires =
-                        DateTime.Now.AddDays(-1);
+                    Response.Cookies["SweetCakePass"].Expires = DateTime.Now.AddDays(-1);
                 }
 
                 return;
             }
-            
+
             savedUser = (Request.Form["username"] ?? "").Trim();
             isRemembered = Request.Form["remember"] == "true";
+
             loiUsername.InnerText = "";
             loiPassword.InnerText = "";
             divThongBao.InnerHtml = "";
+
             string username = (Request.Form["username"] ?? "").Trim();
             string password = Request.Form["password"] ?? "";
             string remember = Request.Form["remember"];
@@ -54,13 +54,13 @@ namespace baiTapLonBanh
 
             if (username == "")
             {
-                loiUsername.InnerText = "Vui lòng nhập tên đăng nhập.";
+                loiUsername.InnerText = "Tên đăng nhập không được để trống!";
                 duLieuHopLe = false;
             }
 
             if (password == "")
             {
-                loiPassword.InnerText = "Vui lòng nhập mật khẩu.";
+                loiPassword.InnerText = "Mật khẩu không được để trống!";
                 duLieuHopLe = false;
             }
 
@@ -68,53 +68,50 @@ namespace baiTapLonBanh
             {
                 return;
             }
-            List<NguoiDung> dsTaiKhoan =
-                Application["DanhSachNguoiDung"] as List<NguoiDung>;
 
             NguoiDung userFound = null;
+            List<NguoiDung> dsNguoiDung = Application["DanhSachNguoiDung"] as List<NguoiDung>;
 
-            if (dsTaiKhoan != null)
+            if (dsNguoiDung != null)
             {
-                foreach (NguoiDung u in dsTaiKhoan)
+                foreach (NguoiDung u in dsNguoiDung)
                 {
-                    if (u.TenDangNhap == username &&
-                        u.MatKhau == password)
+                    if (username == u.TenDangNhap && password == u.MatKhau)
                     {
                         userFound = u;
                         break;
                     }
                 }
             }
+
             if (userFound != null)
             {
                 Session["TaiKhoan"] = userFound;
                 Session["TenHienThi"] = userFound.TenDangNhap;
+
                 if (Request.Cookies["SweetCakePass"] != null)
                 {
-                    Response.Cookies["SweetCakePass"].Expires =
-                        DateTime.Now.AddDays(-1);
+                    Response.Cookies["SweetCakePass"].Expires = DateTime.Now.AddDays(-1);
                 }
+
                 if (remember == "true")
                 {
                     Response.Cookies["SweetCakeUser"].Value = username;
-                    Response.Cookies["SweetCakeUser"].Expires =
-                        DateTime.Now.AddDays(30);
+                    Response.Cookies["SweetCakeUser"].Expires = DateTime.Now.AddDays(30);
                 }
                 else
                 {
                     if (Request.Cookies["SweetCakeUser"] != null)
                     {
-                        Response.Cookies["SweetCakeUser"].Expires =
-                            DateTime.Now.AddDays(-1);
+                        Response.Cookies["SweetCakeUser"].Expires = DateTime.Now.AddDays(-1);
                     }
                 }
 
                 Response.Redirect("TrangChu.aspx");
                 return;
             }
-            divThongBao.InnerHtml =
-                "<div class='message error'>Mật khẩu hoặc tên đăng nhập không đúng!</div>";
-        }
 
+            divThongBao.InnerHtml = "<div class='message error'>Tên đăng nhập hoặc mật khẩu không đúng!</div>";
+        }
     }
 }

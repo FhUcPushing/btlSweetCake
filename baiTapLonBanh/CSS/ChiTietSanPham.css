@@ -1,5 +1,4 @@
-﻿
-.product-page {
+﻿.product-page {
     --hong: #d6457f;
     --hong-dam: #b8346a;
     --hong-nhat: #fff0f6;
@@ -82,9 +81,6 @@
     line-height: 1.5;
 }
 
-
-
-
 .chon_size {
     margin: 12px 0;
 }
@@ -143,7 +139,6 @@
     font-size: 14px;
     color: var(--hong-dam);
 }
-
 
 .chon_so_luong {
     display: flex;
@@ -243,7 +238,6 @@
     font-size: 18px;
     color: #888;
 }
-
 
 .goi-y-san-pham {
     margin-top: 48px;
@@ -403,7 +397,6 @@
         background: var(--hong-nhat);
     }
 
-
 @media (max-width: 992px) {
     .danh-sach-goi-y {
         grid-template-columns: repeat(2, 1fr);
@@ -441,7 +434,6 @@
     }
 }
 
-
 .chi_tiet_san_pham {
     align-items: start;
 }
@@ -449,10 +441,9 @@
 
 
 
-    .noi_dung_banh .chon_size {
-        margin: 16px 0;
-    }
-
+.noi_dung_banh .chon_size {
+    margin: 16px 0;
+}
 
 .thong_tin_chi_tiet {
     list-style: none;
@@ -475,7 +466,6 @@
         .thong_tin_chi_tiet li strong {
             color: #b8346a;
         }
-
 
 .product-page .goi-y-header h2 {
     color: #d6457f;
@@ -500,9 +490,9 @@
         .product-page .the_san_pham {
             min-width: 0;
         }
-/
+
         .product-page .chi_tiet_san_pham {
-            display: block; 
+            display: block;
         }
 
         .product-page .khung_anh_banh {
@@ -532,7 +522,6 @@
             border-radius: 14px;
         }
 
-        
         .product-page .danh_sach_size {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -567,7 +556,6 @@
                 padding: 13px 16px;
             }
 
-       
         .product-page .goi-y-san-pham {
             margin-top: 32px;
         }
@@ -717,6 +705,7 @@
         font-size: 12px;
     }
 }
+
 @media (max-width: 768px) {
     .product-page .khung_anh_banh {
         aspect-ratio: auto !important;
@@ -755,7 +744,7 @@
 
 @media (max-width: 768px) {
 
-   
+
     .product-page .the_san_pham {
         display: flex;
         flex-direction: column;
@@ -767,7 +756,7 @@
         flex: 1;
     }
 
-   
+
     .product-page .goi_y_ten {
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -778,7 +767,7 @@
         line-height: 1.45;
     }
 
-    
+
     .product-page .goi_y_hang_duoi {
         display: flex;
         flex-direction: column;
@@ -794,7 +783,7 @@
         font-size: 15px;
     }
 
-    
+
     .product-page .goi_y_hanh_dong {
         width: 100%;
         margin-top: auto;
@@ -802,7 +791,7 @@
     }
 
     .product-page .nut_mua_ngay {
-        flex: 1; 
+        flex: 1;
         display: inline-flex;
         align-items: center;
         justify-content: center;
