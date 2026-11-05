@@ -39,7 +39,6 @@ namespace baiTapLonBanh
         {
             List<DonHang> dsDon = new List<DonHang>();
 
-            // Lấy danh sách đơn hàng
             Application.Lock();
 
             try
@@ -87,7 +86,6 @@ namespace baiTapLonBanh
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-             
                 string trangThai = Convert.ToString(
                     DataBinder.Eval(e.Row.DataItem, "TrangThai"));
 

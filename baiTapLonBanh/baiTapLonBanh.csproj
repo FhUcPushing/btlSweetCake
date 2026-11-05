@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -80,6 +80,16 @@
     <Content Include="CSS\TinTuc.css" />
     <Content Include="CSS\TrangChu.css" />
     <Content Include="CSS\TuVan.css" />
+    <Content Include="fontawesome\LICENSE.txt" />
+    <Content Include="fontawesome\css\all.min.css" />
+    <Content Include="fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="fontawesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="fontawesome\webfonts\fa-v4compatibility.woff2" />
     <Content Include="DangKy.aspx" />
     <Content Include="DangNhap.aspx" />
     <Content Include="DatHang.aspx" />
